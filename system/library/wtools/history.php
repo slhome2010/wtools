@@ -76,8 +76,9 @@ Class History {
         $events[] = $this->history_data[0];
 
         foreach ($this->months as $end_of_month) {
-            if ($end_of_month < $this->date_end && $end_of_month >= $this->date_created) {
-                // новый месяц
+            // новый месяц
+            if ($end_of_month >= $this->date_created && $end_of_month < $this->date_end) {
+                // объект был создан раньше этого месяца и месяц попадает в расчетный период
                 $next = current($this->history_data);
                 while ($next != false && (new DateTime($next['date_changed'])) <= $end_of_month) {
                     // события внутри месяца
@@ -147,7 +148,7 @@ Class History {
                 }
             }
         }
-        // конец истории - это последние событие если оно случилось до окончания периода
+        // возможно мы вышли без событий  в предыдущие и последний месяц, тогда будет единственное событие - начало истории - как проверить?
         // $end_of_history = end($this->history_data);
         // if ($this->history_date_end < $this->date_end) {
         //      $end_of_history['event_name'] = 'Конец истории';
