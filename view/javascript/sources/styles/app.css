@@ -1,0 +1,90 @@
+/* dataview with qa cards */
+.webix_dataview .webix_dataview_item.tiles .webix_dataview_inner_item{
+	padding:11px;
+	line-height:20px;
+	font-size:14px;
+	color:#475466;
+}
+.userphoto, .userpic{
+	width:72px;
+	height:72px;
+	float:left;
+	margin-right: 8px;
+}
+.userpic{
+	background-color:#1a73c7;
+  	color:#fff;
+  	text-align:center;
+	line-height:55px;
+	font-size:33px;
+}
+.tasks{
+	float:right;
+	font-weight:500;
+	display:block;
+	font-size:16px;
+	line-height:16px;
+	color:#313131;
+}
+.qaname{
+	font-weight:500;
+	display:block;
+	color:#313131;
+}
+.stars{
+	display:block;
+	width:90px;
+	margin-left:80px;
+}
+.star{
+	margin-right:-3px !important;
+	cursor:pointer;
+	font-size:16px !important;
+}
+.stars .star.gold{
+	color:#FDBF4C;
+}
+.stars .star.grey, .stars .star:hover ~ .star{
+	color:#94A1B3;
+}
+.stars .star:hover, .stars:hover .star{
+	color:#FFD700;
+}
+/* geochart */
+path {
+    stroke:#D9D8D7;
+}
+/* grid */
+.status{
+	font-weight:500;
+}
+.pending{
+	color:#E2574C;
+}
+.complete{
+	color:#41ad7c;
+}
+.open{
+	color:#1CA1C1;
+}
+/* notifications */
+.notifications .webix_list_item,
+.notifications .webix_list_item.webix_selected{
+	line-height:20px;
+	padding:10px;
+}
+.notifications .webix_list_item .m_title{
+	font-weight:500;
+	color:#313131;
+}
+.notifications .webix_list_item .message{
+	display:block;
+	color:#475466;
+}
+/* iframes */
+.webix_view.ifr_template .webix_template{
+	padding:0px;
+}
+.webix_view.ifr_template > .webix_disabled{
+	opacity:1 !important;
+}

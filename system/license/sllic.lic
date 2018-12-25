@@ -1,0 +1,120 @@
+<?php
+
+class Vendor {
+    private $free = false;
+    var $_modules = array ( "kazpost.php"  =>   array ( "ip" => array("127.0.0.1"),
+                                                "hosts" => array('radiocity.kz', 'www.radiocity.kz',
+                                                                'demo.radiocity.kz', 'www.demo.radiocity.kz',
+                                                                'hozmag',
+                                                                'malka.kz', 'www.malka.kz',
+                                                                'iphone.com.kz', 'www.iphone.com.kz',
+								'fable.kz', 'www.fable.kz',
+								'tescoma-shop.kz', 'www.tescoma-shop.kz',
+								'supershina.kz', 'www.supershina.kz',
+								'pavloposad.kz', 'www.pavloposad.kz',
+								'gold-dragon.kz', 'www.gold-dragon.kz'
+						)
+                                     ),
+                            "exline.php"   =>   array ( "ip" => array("127.0.0.1"),
+                                                "hosts" => array('radiocity.kz', 'www.radiocity.kz',
+                                                                'demo.radiocity.kz', 'www.demo.radiocity.kz',
+                                                                'hozmag',
+                                                                'scrapbook.kz', 'www.scrapbook.kz',
+								'fable.kz', 'www.fable.kz',
+								'supershina.kz', 'www.supershina.kz',
+								'pavloposad.kz', 'www.pavloposad.kz',
+								'demo.glasmanshop.kz', 'www.demo.glasmanshop.kz', 'glasmanshop.kz', 'www.glasmanshop.kz',
+								'gold-dragon.kz', 'www.gold-dragon.kz'
+                                                        )
+                                     ),
+                            "epay.php"   =>     array ( "ip" => array("127.0.0.1"),
+                                                "hosts" => array('radiocity.kz', 'www.radiocity.kz',
+                                                                'demo.radiocity.kz', 'www.demo.radiocity.kz',
+                                                                'hozmag',
+								'fable.kz', 'www.fable.kz',
+								'supershina.kz', 'www.supershina.kz'
+                                                        )
+                                     ),
+                            "processingkz.php"   =>     array ( "ip" => array("127.0.0.1"),
+                                                "hosts" => array('radiocity.kz', 'www.radiocity.kz',
+                                                                'demo.radiocity.kz', 'www.demo.radiocity.kz',
+                                                                'hozmag',
+								'fable.kz', 'www.fable.kz',
+								'supershina.kz', 'www.supershina.kz'
+                                                        )
+                                     ),
+                            "attributico.php"   =>     array ( "ip" => array("127.0.0.1", "176.9.138.125"),
+                                                "hosts" => array('radiocity.kz', 'www.radiocity.kz',
+                                                                'demo.radiocity.kz', 'www.demo.radiocity.kz',
+                                                                'hozmag',
+								'backcountry.com.ua', 'www.backcountry.com.ua',
+								'dompryazhi.ru', 'www.dompryazhi.ru',
+								'maxgru97.bget.ru', 'www.maxgru97.bget.ru',
+								'dselect.ru', 'www.dselect.ru','176.9.138.125',
+								'sanexpert.com.ua', 'www.sanexpert.com.ua',
+								'posuda-v-nn.ru', 'www.posuda-v-nn.ru',
+								'www.gizon.ru' , 'www.test.gizon.ru', 'gizon.ru' , 'test.gizon.ru',
+								'intensashop.ru', 'www.intensashop.ru',
+								'www.bezpecachop.com.ua', 'www.bezpecachop.com.ua',
+								'evkalipt.com.ua', 'www.evkalipt.com.ua',
+								'861066.evkalipt.web.hosting-test.net', 'www.861066.evkalipt.web.hosting-test.net',
+								'sweetlittle.ru', 'www.sweetlittle.ru',
+								'kuhni-tver.ru.ru', 'www.kuhni-tver.ru.ru', 'j293645.myjino.ru', 'www.j293645.myjino.ru',
+								'com36.ru', 'www.com36.ru',
+								'tservice23.ru', 'www.tservice23.ru',
+								'mobi-smarts.com.ua', 'www.mobi-smarts.com.ua',
+								'eolia-seads.com', 'www.eolia-seads.com', 'seeds.imailer.net', 'www.seeds.imailer.net',
+								'kindercity.by', 'www.kindercity.by',
+								'mobimarket.dn.ua', 'www.mobimarket.dn.ua',
+								'skiff.org.ua', 'www.skiff.org.ua', 'beta.skiff.org.ua', 'www.beta.skiff.org.ua',
+								'sportnabor.ru', 'www.sportnabor.ru',
+								'pixaero.pro', 'www.pixaero.pro',
+								'semechki.all-landing.com', 'www.semechki.all-landing.com',
+								'ooo-lider.ru', 'www.ooo-lider.ru', 'magazin.ooo-lider.ru', 'www.magazin.ooo-lider.ru',
+								'andtan.ru', 'www.andtan.ru',
+								'problade.ru', 'www.problade.ru',
+								'www.komplektacya.ru', 'komplektacya.ru', 'site.net', 'www.site.net',
+								'mastervar.ru', 'www.mastervar.ru',
+								'baymart.ru', 'www.baymart.ru ',
+								'technovenok.ru', 'www.technovenok.ru', 'technovenok',
+								'bilbin.ru', 'www.bilbin.ru',
+								'sistemy48.ru', 'www.sistemy48.ru',
+								'vhozyaistve.ru','www.vhozyaistve.ru',
+								'свадебныебукеты.бел','www.свадебныебукеты.бел',
+								'krugovorot.ru','www.krugovorot.ru',
+								'orlov-design.progresive.com.ua', 'www.orlov-design.progresive.com.ua', 'orlov-design.com', 'www.orlov-design.com',
+								'sanpride.mcdir.ru','www.sanpride.mcdir.ru','sanpride.ru','www.sanpride.ru',
+								'electrohulk.ru','www.electrohulk.ru',
+								'sportskid.ru', 'www.sportskid.ru',
+								'energytd.ru', 'www.energytd.ru', 'energytd.tw1.ru' ,'www.energytd.tw1.ru',
+								'shop.yadrone.ru', 'www.shop.yadrone.ru',
+								'detskiy.site','www.detskiy.site','oc21021',
+								'bazarion.ru', 'www.bazarion.ru',
+								'vo7shop.ru', 'www.vo7shop.ru',
+								'milaha27.ru', 'www.milaha27.ru',
+								'leds-max.km.ua', 'www.leds-max.km.ua',
+								'podshipnikru.com','www.podshipnikru.com','cat.podshipnikru.com','www.cat.podshipnikru.com'
+                                                        )
+                                     )
+                        );
+
+
+	public function franchise() {
+		$calling = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS,1);
+		$file = $calling[0]['file'];
+		$path = explode(DIRECTORY_SEPARATOR, $file);
+		$mod = array_pop($path);
+                if (!$this->free) {
+                    $this->validate($mod);
+                }
+                return $this->free;
+	}
+
+        private function validate($mod) {
+            if (!in_array($_SERVER['REMOTE_ADDR'], $this->_modules[$mod]['ip'])) {
+                if (!in_array($_SERVER['HTTP_HOST'], $this->_modules[$mod]['hosts'])) {
+                  exit('This is not licensed copy of '. $mod);
+                }
+            }
+	}
+}
