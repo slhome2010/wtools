@@ -43,7 +43,7 @@ const report_treetable_group = {
 				if (value == 1) 			
 					return "<span class='webix_icon fa-eye-slash wialon-group-off'></span>";
 				else
-					return "<span class='webix_icon fa-eye wialon-group-on'></span>";} // style='color:#ab6e11;' 
+					return "<span class='webix_icon fa-eye wialon-group-on'></span>";} 
 		},		
 		{id:"billing", header:"Сумма", sort:"int", minWidth:120},	
 	],	
