@@ -109,18 +109,12 @@ class ModelCatalogItem extends Model {
             $where = "AND";
         }
 
-        //  if (isset($data['filter_deleted'])) {
-        //       $sql .= " ".$where." (i.deleted = '" . (int) $data['filter_deleted'] . "' AND i.date_modified > '" . $date_start . "')";
-        //       $where = "AND";
-        //   }
-
         $sort_data = array(
             'i.itemname',
             'i.sort_order',
             'i.wialon_group_id',
             'wg.owner_id'
         );
-
 
         if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
             $sql .= " ORDER BY " . $data['sort'];
