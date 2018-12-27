@@ -225,7 +225,7 @@ const iform = {
 					{ cols:[
 						{ view:"datepicker", name:"date_start", label:"Начало", labelWidth:80, value:new Date(), format:"%d.%m.%Y" },
 						{ view:"datepicker", name:"date_end", label:"Конец", labelWidth:80, labelAlign:"right", value:new Date(), format:"%d.%m.%Y" },
-						//{ view:"datepicker", name:"date_changed", hidden: true },
+						//{ view:"datepicker", name:"date_changed", hidden: true }, // no create fild to add in pos form
 						{ view:"button", value:"Расчитать", width:120, click:function(){
 							let values = $$('item-form').getValues();
 							let tarif_id = Number(values.tarif_id) || Number(values.tarif_group_id);
