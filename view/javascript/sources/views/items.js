@@ -215,7 +215,7 @@ const iform = {
                         {cols: [
                                 {view: "select", name: "tarif_id", label: "Тариф объекта", labelWidth: 140, options: "index.php?route=catalog/item/getTarifs&token=" + token},
                                 {view: "select", name: "discount_id", label: "Скидка объекта", labelWidth: 140, labelAlign: "right", options: "index.php?route=catalog/item/getDiscounts&token=" + token},
-                            ]}},
+                            ]},
                         {view: "template", template: "Группа", type: "section"},
                         {cols: [
                                 {view: "select", name: "tarif_group_id", label: "Тариф группы", labelWidth: 140, options: "index.php?route=catalog/wialongroup/getTarifs&token=" + token, disabled: true, },
