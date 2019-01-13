@@ -293,7 +293,7 @@ const item_views = {
     view: "multiview",
     id: "item-views",
     cells: [grid, iform, ]
-}
+};
 
 const layout = {
     id: "layout",
