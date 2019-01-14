@@ -32,7 +32,7 @@ var mainWindow = null;
 /**
  * Check that all windows are closed before quiting app
  */
-app.on('window-all-closed', function() {
+app.on('window-all-closed', function () {
     // OS X apps are active before "Cmd + Q" command. Close app
     if (process.platform != 'darwin') {
         app.quit();
@@ -57,17 +57,17 @@ function createMainWindow() {
         // to open dev console: The first way
         //devTools: true
     });
- 
+
 
     // load entry point for desktop app
     //mainWindow.loadURL('npm//' + __dirname + '/index.html');
     mainWindow.loadURL('http://service.curator.kz/');
-    
+
     // to open dev console: The second way
     //mainWindow.webContents.openDevTools();
 
     // Close all windows when main window is closed
-    mainWindow.on('closed', function() {
+    mainWindow.on('closed', function () {
         mainWindow = null;
         newWindow = null;
     });
@@ -76,6 +76,6 @@ function createMainWindow() {
 /**
  * When Electron finish initialization and is ready to create browser window
  */
-app.on('ready', function() {
+app.on('ready', function () {
     createMainWindow();
 });

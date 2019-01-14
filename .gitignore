@@ -37,6 +37,7 @@ node_modules/
 jspm_packages/
 wtools-win32-ia32/
 nbproject/
+.vscode/
 
 # TypeScript v1 declaration files
 typings/
