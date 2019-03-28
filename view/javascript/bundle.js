@@ -2469,83 +2469,83 @@ webpackContext.id = "./sources/locales sync recursive ^\\.\\/.*$";
 /***/ (function(module, exports) {
 
 webix.i18n.locales["ru-RU"] = {
-		groupDelimiter: " ",
-		groupSize: 3,
-		decimalDelimiter: ",",
-		decimalSize: 2,
+	groupDelimiter: " ",
+	groupSize: 3,
+	decimalDelimiter: ",",
+	decimalSize: 2,
 
-		dateFormat: "%d.%m.%Y",
-		timeFormat: "%H:%i",
-		longDateFormat: "%d %F %Y",
-		fullDateFormat: "%d.%m.%Y %H:%i",
+	dateFormat: "%d.%m.%Y",
+	timeFormat: "%H:%i",
+	longDateFormat: "%d %F %Y",
+	fullDateFormat: "%d.%m.%Y %H:%i",
 
-		price: "{obj} руб.",
-		priceSettings: null, //use number defaults
+	price: "{obj} руб.",
+	priceSettings: null, //use number defaults
 
-		calendar: {
-				monthFull: ["Январь", "Февраль", "Март", "Апрель", "Maй", "Июнь", "Июль", "Август", "Сентябрь", "Oктябрь", "Ноябрь", "Декабрь"],
-				monthShort: ["Янв", "Фев", "Maр", "Aпр", "Maй", "Июн", "Июл", "Aвг", "Сен", "Окт", "Ноя", "Дек"],
-				dayFull: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
-				dayShort: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
-				hours: "Часы",
-				minutes: "Минуты",
-				done: "Гoтовo",
-				clear: "Очистить",
-				today: "Сегодня"
-		},
+	calendar: {
+		monthFull: ["Январь", "Февраль", "Март", "Апрель", "Maй", "Июнь", "Июль", "Август", "Сентябрь", "Oктябрь", "Ноябрь", "Декабрь"],
+		monthShort: ["Янв", "Фев", "Maр", "Aпр", "Maй", "Июн", "Июл", "Aвг", "Сен", "Окт", "Ноя", "Дек"],
+		dayFull: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
+		dayShort: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+		hours: "Часы",
+		minutes: "Минуты",
+		done: "Гoтовo",
+		clear: "Очистить",
+		today: "Сегодня"
+	},
 
-		dataExport: {
-				page: "Страница",
-				of: "из"
-		},
-		PDFviewer: {
-				of: "из",
-				automaticZoom: "Автоматический зум",
-				actualSize: "Настоящий размер",
-				pageFit: "Размер страницы",
-				pageWidth: "Ширина страницы",
-				pageHeight: "Высота страницы"
-		},
-		aria: {
-				calendar: "Календарь",
-				increaseValue: "Увеличить значение",
-				decreaseValue: "Уменьшить значение",
-				navMonth: ["Предыдущий месяц", "Следующий месяц"],
-				navYear: ["Предыдущий год", "Следующий год"],
-				navDecade: ["Предыдущие десять лет", "Следующие десять лет"],
-				dateFormat: "%d %F %Y",
-				monthFormat: "%F %Y",
-				yearFormat: "%Y",
-				hourFormat: "Часы: %H",
-				minuteFormat: "Минуты: %i",
-				removeItem: "Удалить элемент",
-				pages: ["Первая страница", "Предыдущая страница", "Следующая страница", "Последняя страница"],
-				page: "Страница",
-				headermenu: "Меню шапки таблицы",
-				openGroup: "Развернуть группу столбцов",
-				closeGroup: "Свернуть группу столбцов",
-				closeTab: "Закрыть вкладку",
-				showTabs: "Показать больше вкладок",
-				resetTreeMap: "Вернуться к первоначальному представлению",
-				navTreeMap: "Перейти на уровень выше",
-				nextTab: "Следующая вкладка",
-				prevTab: "Предыдущая вкладка",
-				multitextSection: "Добавить элемент",
-				multitextextraSection: "Удалить элемент",
-				showChart: "Показать чарт",
-				hideChart: "Спрятать чарт",
-				resizeChart: "Изменить размер чарта"
-		},
-		richtext: {
-				underline: "Подчеркивание",
-				bold: "Жирный",
-				italic: "Курсив"
-		},
-		combo: {
-				select: "Выбрать",
-				selectAll: "Выбрать все",
-				unselectAll: "Сброс выбора"
-		}
+	dataExport: {
+		page: "Страница",
+		of: "из"
+	},
+	PDFviewer: {
+		of: "из",
+		automaticZoom: "Автоматический зум",
+		actualSize: "Настоящий размер",
+		pageFit: "Размер страницы",
+		pageWidth: "Ширина страницы",
+		pageHeight: "Высота страницы"
+	},
+	aria: {
+		calendar: "Календарь",
+		increaseValue: "Увеличить значение",
+		decreaseValue: "Уменьшить значение",
+		navMonth: ["Предыдущий месяц", "Следующий месяц"],
+		navYear: ["Предыдущий год", "Следующий год"],
+		navDecade: ["Предыдущие десять лет", "Следующие десять лет"],
+		dateFormat: "%d %F %Y",
+		monthFormat: "%F %Y",
+		yearFormat: "%Y",
+		hourFormat: "Часы: %H",
+		minuteFormat: "Минуты: %i",
+		removeItem: "Удалить элемент",
+		pages: ["Первая страница", "Предыдущая страница", "Следующая страница", "Последняя страница"],
+		page: "Страница",
+		headermenu: "Меню шапки таблицы",
+		openGroup: "Развернуть группу столбцов",
+		closeGroup: "Свернуть группу столбцов",
+		closeTab: "Закрыть вкладку",
+		showTabs: "Показать больше вкладок",
+		resetTreeMap: "Вернуться к первоначальному представлению",
+		navTreeMap: "Перейти на уровень выше",
+		nextTab: "Следующая вкладка",
+		prevTab: "Предыдущая вкладка",
+		multitextSection: "Добавить элемент",
+		multitextextraSection: "Удалить элемент",
+		showChart: "Показать чарт",
+		hideChart: "Спрятать чарт",
+		resizeChart: "Изменить размер чарта"
+	},
+	richtext: {
+		underline: "Подчеркивание",
+		bold: "Жирный",
+		italic: "Курсив"
+	},
+	combo: {
+		select: "Выбрать",
+		selectAll: "Выбрать все",
+		unselectAll: "Сброс выбора"
+	}
 };
 
 /***/ }),
@@ -2965,6 +2965,8 @@ var map = {
 	"./templates/online.js": "./sources/views/templates/online.js",
 	"./templates/status": "./sources/views/templates/status.js",
 	"./templates/status.js": "./sources/views/templates/status.js",
+	"./test": "./sources/views/test.js",
+	"./test.js": "./sources/views/test.js",
 	"./trackers": "./sources/views/trackers.js",
 	"./trackers.js": "./sources/views/trackers.js",
 	"./user_api": "./sources/views/user_api.js",
@@ -3742,126 +3744,142 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var gsmView = function (_JetView) {
-	_inherits(gsmView, _JetView);
+    _inherits(gsmView, _JetView);
 
-	function gsmView() {
-		_classCallCheck(this, gsmView);
+    function gsmView() {
+        _classCallCheck(this, gsmView);
 
-		return _possibleConstructorReturn(this, _JetView.apply(this, arguments));
-	}
+        return _possibleConstructorReturn(this, _JetView.apply(this, arguments));
+    }
 
-	gsmView.prototype.config = function config() {
-		return layout;
-	};
+    gsmView.prototype.config = function config() {
+        return layout;
+    };
 
-	gsmView.prototype.init = function init(view) {
-		$$('gsm-form').bind($$('catalog-gsm'));
-		webix.dp.$$("catalog-gsm").config.updateFromResponse = true;
-	};
+    gsmView.prototype.init = function init(view) {
+        $$('gsm-form').bind($$('catalog-gsm'));
+        webix.dp.$$("catalog-gsm").config.updateFromResponse = true;
+    };
 
-	return gsmView;
+    return gsmView;
 }(webix_jet__WEBPACK_IMPORTED_MODULE_0__["JetView"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (gsmView);
 
 
 var grid = {
-	id: "catalog-gsm",
-	view: "datatable",
-	select: "row",
-	clipboard: "selection",
-	multiselect: true,
-	editable: true,
-	editaction: "dblclick",
-	checkboxRefresh: true,
-	columns: [{ id: "gsm_id", header: "#", sort: "int", width: 50 }, { id: "gsmname", header: ["Название", { content: "textFilter" }], sort: "string", minWidth: 120, fillspace: 2, editor: "text" }, { id: "sort_order", header: { text: "Порядок сортировки", height: 60, css: "multiline" }, sort: "int", minWidth: 80, fillspace: 1, editor: "text" }, { id: "status", header: ["Статус", { content: "staFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 100, fillspace: 2, editor: "inline-checkbox", template: views_templates_status__WEBPACK_IMPORTED_MODULE_6__["default"] }, { id: "edit", header: "<span class='webix_icon mdi mdi-pencil-box-outline'></span>", width: 35,
-		template: "<span style=' cursor:pointer;' class='webix_icon mdi mdi-pencil'></span>"
-	}],
-	pager: "pagerA",
-	"export": true,
-	url: "index.php?route=catalog/gsm/getList&token=" + token,
-	save: {
-		"insert": "index.php?route=catalog/gsm/add&token=" + token,
-		"update": "index.php?route=catalog/gsm/edit&token=" + token,
-		"delete": "index.php?route=catalog/gsm/delete&token=" + token
-	},
-	onClick: {
-		"mdi-pencil": function mdiPencil(e, id) {
-			this.select(id);
-			$$('gsm-form').show();
-			$$('edit-tools').hide();
-			$$('edit-form-icon').show();
-			$$('paging').hide();
-		}
-	},
-	on: {
-		"onAfterAdd": function onAfterAdd(obj, index) {
-			var lastid = this.getLastId();
-			this.select(lastid);
-			$$('gsm-form').show();
-			$$('edit-tools').hide();
-			$$('edit-form-icon').show();
-			$$('paging').hide();
-		}
-	},
-	ready: function ready() {
-		webix.extend(this, webix.ProgressBar);
-	}
+    id: "catalog-gsm",
+    view: "datatable",
+    select: "row",
+    clipboard: "selection",
+    multiselect: true,
+    editable: true,
+    editaction: "dblclick",
+    checkboxRefresh: true,
+    columns: [{ id: "gsm_id", header: "#", sort: "int", width: 50 }, { id: "gsmname", header: ["Название", { content: "textFilter" }], sort: "string", minWidth: 120, fillspace: 2, editor: "text" }, { id: "sort_order", header: { text: "Порядок сортировки", height: 60, css: "multiline" }, sort: "int", minWidth: 80, fillspace: 1, editor: "text" }, { id: "status", header: ["Статус", { content: "staFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 100, fillspace: 2, editor: "inline-checkbox", template: views_templates_status__WEBPACK_IMPORTED_MODULE_6__["default"] }, {
+        id: "edit",
+        header: "<span class='webix_icon mdi mdi-pencil-box-outline'></span>",
+        width: 35,
+        template: "<span style=' cursor:pointer;' class='webix_icon mdi mdi-pencil'></span>"
+    }],
+    pager: "pagerA",
+    "export": true,
+    url: "index.php?route=catalog/gsm/getList&token=" + token,
+    save: {
+        "insert": "index.php?route=catalog/gsm/add&token=" + token,
+        "update": "index.php?route=catalog/gsm/edit&token=" + token,
+        "delete": "index.php?route=catalog/gsm/delete&token=" + token
+    },
+    onClick: {
+        "mdi-pencil": function mdiPencil(e, id) {
+            this.select(id);
+            $$('gsm-form').show();
+            $$('edit-tools').hide();
+            $$('edit-form-icon').show();
+            $$('paging').hide();
+        }
+    },
+    on: {
+        "onAfterAdd": function onAfterAdd(obj, index) {
+            var lastid = this.getLastId();
+            this.select(lastid);
+            $$('gsm-form').show();
+            $$('edit-tools').hide();
+            $$('edit-form-icon').show();
+            $$('paging').hide();
+        }
+    },
+    ready: function ready() {
+        webix.extend(this, webix.ProgressBar);
+    }
 };
 
 var ui = {
-	view: "form",
-	id: "gsm-form",
-	multiview: { keepViews: true },
-	dataFeed: function dataFeed(id) {
-		var current_gsm_id = $$('catalog-gsm').getItem(id).gsm_id;
-		this.load("index.php?route=catalog/gsm/getForm&token=" + token + "&gsm_id=" + current_gsm_id);
-	},
-	elements: [{ view: "text", id: "gsm_id", name: "gsm_id", label: "ID оператора", labelWidth: 170, readonly: true }, { view: "text", name: "gsmname", label: "Название", placeholder: "Введите название", labelWidth: 170, required: true, invalidMessage: "название должно быть от 3 до 32 знаков" }, { cols: [{ view: "text", name: "sort_order", label: "Порядок сортировки", labelWidth: 170 }, { view: "select", name: "status", label: "Статус", labelWidth: 170, labelAlign: "right", options: [{ id: 0, value: "Отключено" }, { id: 1, value: "Включено" }] }] }, {
-		margin: 10,
-		cols: [{}, { view: "button", value: "Отменить", width: 120, click: function click() {
-				$$("gsm-views").back();
-				$$('paging').show();
-				$$('edit-form-icon').hide();
-				$$('edit-tools').show();
-			} }, { view: "button", value: "Сохранить", type: "form", width: 120, click: function click() {
-				var form = $$("gsm-form");
-				if (!form.validate()) return false;
+    view: "form",
+    id: "gsm-form",
+    multiview: { keepViews: true },
+    dataFeed: function dataFeed(id) {
+        var current_gsm_id = $$('catalog-gsm').getItem(id).gsm_id;
+        this.load("index.php?route=catalog/gsm/getForm&token=" + token + "&gsm_id=" + current_gsm_id);
+    },
+    elements: [{ view: "text", id: "gsm_id", name: "gsm_id", label: "ID оператора", labelWidth: 170, readonly: true }, { view: "text", name: "gsmname", label: "Название", placeholder: "Введите название", labelWidth: 170, required: true, invalidMessage: "название должно быть от 3 до 32 знаков" }, {
+        cols: [{ view: "text", name: "sort_order", label: "Порядок сортировки", labelWidth: 170 }, { view: "select", name: "status", label: "Статус", labelWidth: 170, labelAlign: "right", options: [{ id: 0, value: "Отключено" }, { id: 1, value: "Включено" }] }]
+    }, {
+        margin: 10,
+        cols: [{}, {
+            view: "button",
+            value: "Отменить",
+            width: 120,
+            click: function click() {
+                $$("gsm-views").back();
+                $$('paging').show();
+                $$('edit-form-icon').hide();
+                $$('edit-tools').show();
+            }
+        }, {
+            view: "button",
+            value: "Сохранить",
+            type: "form",
+            width: 120,
+            click: function click() {
+                var form = $$("gsm-form");
+                if (!form.validate()) return false;
 
-				webix.ajax().post("index.php?route=catalog/gsm/validateForm&token=" + token, $$("gsm-form").getValues(), function (text, data, XmlHttpRequest) {
-					if (text && text != "[]") {
-						webix.message({
-							text: JSON.parse(text).warning,
-							type: "error",
-							expire: 5000
-						}); //show gsm side response
-						return false;
-					} else {
-						form.save();
-						$$("gsm-views").back();
-						$$('paging').show();
-						$$('edit-form-icon').hide();
-						$$('edit-tools').show();
-					}
-				});
-			} }]
-	}],
-	rules: {
-		"gsmname": function gsmname(value) {
-			return value.length >= 3 && value.length <= 32;
-		}
-	}
+                webix.ajax().post("index.php?route=catalog/gsm/validateForm&token=" + token, $$("gsm-form").getValues(), function (text, data, XmlHttpRequest) {
+                    if (text && text != "[]") {
+                        webix.message({
+                            text: JSON.parse(text).warning,
+                            type: "error",
+                            expire: 5000
+                        }); //show gsm side response
+                        return false;
+                    } else {
+                        form.save();
+                        $$("gsm-views").back();
+                        $$('paging').show();
+                        $$('edit-form-icon').hide();
+                        $$('edit-tools').show();
+                    }
+                });
+            }
+        }]
+    }],
+    rules: {
+        "gsmname": function gsmname(value) {
+            return value.length >= 3 && value.length <= 32;
+        }
+    }
 };
 
 var gsm_views = {
-	view: "multiview",
-	id: "gsm-views",
-	cells: [grid, ui]
+    view: "multiview",
+    id: "gsm-views",
+    cells: [grid, ui]
 };
 
 var layout = {
-	type: "space",
-	rows: [{ height: 40, id: "edit-tools", cols: views_menus_export__WEBPACK_IMPORTED_MODULE_1__["default"].concat(views_menus_toolbar__WEBPACK_IMPORTED_MODULE_2__["default"]) }, { height: 40, id: "edit-form-icon", cols: views_menus_toolplug__WEBPACK_IMPORTED_MODULE_3__["default"], hidden: true }, { rows: [gsm_views, views_modules_paging__WEBPACK_IMPORTED_MODULE_4__["default"]] }]
+    type: "space",
+    rows: [{ height: 40, id: "edit-tools", cols: views_menus_export__WEBPACK_IMPORTED_MODULE_1__["default"].concat(views_menus_toolbar__WEBPACK_IMPORTED_MODULE_2__["default"]) }, { height: 40, id: "edit-form-icon", cols: views_menus_toolplug__WEBPACK_IMPORTED_MODULE_3__["default"], hidden: true }, { rows: [gsm_views, views_modules_paging__WEBPACK_IMPORTED_MODULE_4__["default"]] }]
 };
 
 /***/ }),
@@ -3905,192 +3923,192 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var ItemView = function (_JetView) {
-	_inherits(ItemView, _JetView);
+    _inherits(ItemView, _JetView);
 
-	function ItemView() {
-		_classCallCheck(this, ItemView);
+    function ItemView() {
+        _classCallCheck(this, ItemView);
 
-		return _possibleConstructorReturn(this, _JetView.apply(this, arguments));
-	}
+        return _possibleConstructorReturn(this, _JetView.apply(this, arguments));
+    }
 
-	ItemView.prototype.config = function config() {
-		return layout;
-	};
+    ItemView.prototype.config = function config() {
+        return layout;
+    };
 
-	ItemView.prototype.init = function init(view) {
-		$$('item-form').bind($$('catalog-item'));
-		webix.dp.$$("catalog-item").config.updateFromResponse = true;
-	};
+    ItemView.prototype.init = function init(view) {
+        $$('item-form').bind($$('catalog-item'));
+        webix.dp.$$("catalog-item").config.updateFromResponse = true;
+    };
 
-	return ItemView;
+    return ItemView;
 }(webix_jet__WEBPACK_IMPORTED_MODULE_0__["JetView"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (ItemView);
 
 
 var grid = {
-	id: "catalog-item",
-	view: "datatable",
-	select: "row",
-	clipboard: "selection",
-	multiselect: true,
-	editable: true,
-	editaction: "dblclick",
-	checkboxRefresh: true,
-	pager: "pagerA",
-	"export": true,
-	columns: [{ id: "item_id", header: "#", sort: "int", width: 60 }, { id: "deleted", header: " ", sort: "int", width: 40, css: { "text-align": "center" }, template: views_templates_deleted__WEBPACK_IMPORTED_MODULE_9__["default"] }, { id: "itemname", header: ["Название", { content: "textFilter" }], sort: "string", minWidth: 120, fillspace: 2, editor: "text" }, { id: "tracker_uid", header: ["Трекер UID", { content: "textFilter" }], sort: "int", minWidth: 140, fillspace: 1 }, { id: "ownername", header: ["Владелец", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "wialon_groupname", header: ["Группа", { content: "textFilter" }], sort: "string", minWidth: 120, fillspace: 2, editor: "text" }, { id: "wialon_group_off", header: ["Вид", { content: "eyeFilter", css: "webix_ss_filter" }], sort: "int", width: 80, css: { "text-align": "center" }, template: views_templates_eye__WEBPACK_IMPORTED_MODULE_8__["default"] }, { id: "servername", header: ["Сервер", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 1 }, { id: "status", header: ["Статус", { content: "staFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 100, fillspace: 1, editor: "inline-checkbox", template: views_templates_status__WEBPACK_IMPORTED_MODULE_7__["default"] }, { id: "edit", header: "<span class='webix_icon mdi mdi-pencil-box-outline'></span>", width: 35,
-		template: "<span  style=' cursor:pointer;' class='webix_icon mdi mdi-pencil'></span>"
-	}],
-	scheme: {
-		$init: function $init(obj) {
-			if (obj.deleted == 1) obj.$css = "deleted";
-		}
-	},
-	url: "index.php?route=catalog/item/getList&token=" + token,
-	save: {
-		"insert": "index.php?route=catalog/item/add&token=" + token,
-		"update": "index.php?route=catalog/item/edit&token=" + token,
-		"delete": "index.php?route=catalog/item/delete&token=" + token
-	},
-	onClick: {
-		"mdi-pencil": function mdiPencil(e, id) {
-			this.select(id);
-			$$('history-list').clearAll();
-			$$('history-list').load("index.php?route=catalog/item/getItemHistory&token=" + token + "&item_id=" + this.getItem(id).item_id);
-			$$('paging').hide();
-			$$('edit-tools').hide();
-			$$('edit-form-icon').show();
-			$$('item-form').show();
-		}
-	},
-	ready: function ready() {
-		webix.extend(this, webix.ProgressBar);
-	}
+    id: "catalog-item",
+    view: "datatable",
+    select: "row",
+    clipboard: "selection",
+    multiselect: true,
+    editable: true,
+    editaction: "dblclick",
+    checkboxRefresh: true,
+    pager: "pagerA",
+    "export": true,
+    columns: [{ id: "item_id", header: "#", sort: "int", width: 60 }, { id: "deleted", header: " ", sort: "int", width: 40, css: { "text-align": "center" }, template: views_templates_deleted__WEBPACK_IMPORTED_MODULE_9__["default"] }, { id: "itemname", header: ["Название", { content: "textFilter" }], sort: "string", minWidth: 120, fillspace: 2, editor: "text" }, { id: "tracker_uid", header: ["Трекер UID", { content: "textFilter" }], sort: "int", minWidth: 140, fillspace: 1 }, { id: "ownername", header: ["Владелец", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "wialon_groupname", header: ["Группа", { content: "textFilter" }], sort: "string", minWidth: 120, fillspace: 2, editor: "text" }, { id: "wialon_group_off", header: ["Вид", { content: "eyeFilter", css: "webix_ss_filter" }], sort: "int", width: 80, css: { "text-align": "center" }, template: views_templates_eye__WEBPACK_IMPORTED_MODULE_8__["default"] }, { id: "servername", header: ["Сервер", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 1 }, { id: "status", header: ["Статус", { content: "staFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 100, fillspace: 1, editor: "inline-checkbox", template: views_templates_status__WEBPACK_IMPORTED_MODULE_7__["default"] }, { id: "edit", header: "<span class='webix_icon mdi mdi-pencil-box-outline'></span>", width: 35,
+        template: "<span  style=' cursor:pointer;' class='webix_icon mdi mdi-pencil'></span>"
+    }],
+    scheme: {
+        $init: function $init(obj) {
+            if (obj.deleted == 1) obj.$css = "deleted";
+        }
+    },
+    url: "index.php?route=catalog/item/getList&token=" + token,
+    save: {
+        "insert": "index.php?route=catalog/item/add&token=" + token,
+        "update": "index.php?route=catalog/item/edit&token=" + token,
+        "delete": "index.php?route=catalog/item/delete&token=" + token
+    },
+    onClick: {
+        "mdi-pencil": function mdiPencil(e, id) {
+            this.select(id);
+            $$('history-list').clearAll();
+            $$('history-list').load("index.php?route=catalog/item/getItemHistory&token=" + token + "&item_id=" + this.getItem(id).item_id);
+            $$('paging').hide();
+            $$('edit-tools').hide();
+            $$('edit-form-icon').show();
+            $$('item-form').show();
+        }
+    },
+    ready: function ready() {
+        webix.extend(this, webix.ProgressBar);
+    }
 };
 
 var xml_format = webix.Date.strToDate("%Y-%m-%d");
 
 var history_grid = {
-	id: "history-list",
-	view: "datatable",
-	select: "row",
+    id: "history-list",
+    view: "datatable",
+    select: "row",
 
-	columns: [{ id: "item_history_id", header: "#", sort: "int", minWidth: 120 }, { map: "(date)#date_changed#", header: "Дата", sort: "date", minWidth: 120, format: webix.Date.dateToStr("%d.%m.%Y") }, { id: "deleted", header: " ", sort: "int", width: 40, css: { "text-align": "center" }, template: views_templates_deleted__WEBPACK_IMPORTED_MODULE_9__["default"] }, { id: "itemname", header: ["Название", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "tracker_uid", header: ["Трекер UID", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "trackername", header: ["Трекер", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "sim1", header: ["SIM-1", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "sim2", header: ["SIM-2", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "wialon_groupname", header: ["Группа", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "wialon_group_off", header: ["Вид", { content: "eyeFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 80, css: { "text-align": "center" }, template: views_templates_eye__WEBPACK_IMPORTED_MODULE_8__["default"] }, { id: "online", header: ["Состояние", { content: "onlFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 120, css: { "text-align": "center" }, template: views_templates_online__WEBPACK_IMPORTED_MODULE_10__["default"] }, { id: "history_tarif_id", header: ["Тариф", { content: "selectFilter" }], sort: "int", minWidth: 60, fillspace: 1 }, { id: "history_discount_id", header: ["Скидка", { content: "selectFilter" }], sort: "int", minWidth: 60, fillspace: 1 }],
-	scheme: {
-		$init: function $init(obj) {
-			if (obj.deleted == 1) obj.$css = "deleted";
-			obj.date_changed = xml_format(obj.start);
-		}
-	},
-	//	url:"index.php?route=catalog/item/getItemHistory&token="+token+"&item_id="+$$('item-form').getValues().item_id,	
-	ready: function ready() {
-		webix.extend(this, webix.ProgressBar);
-		this.sort({ by: "date_changed", dir: "desc" });
-	}
+    columns: [{ id: "item_history_id", header: "#", sort: "int", minWidth: 120 }, { map: "(date)#date_changed#", header: "Дата", sort: "date", minWidth: 120, format: webix.Date.dateToStr("%d.%m.%Y") }, { id: "deleted", header: " ", sort: "int", width: 40, css: { "text-align": "center" }, template: views_templates_deleted__WEBPACK_IMPORTED_MODULE_9__["default"] }, { id: "itemname", header: ["Название", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "tracker_uid", header: ["Трекер UID", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "trackername", header: ["Трекер", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "sim1", header: ["SIM-1", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "sim2", header: ["SIM-2", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "wialon_groupname", header: ["Группа", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "wialon_group_off", header: ["Вид", { content: "eyeFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 80, css: { "text-align": "center" }, template: views_templates_eye__WEBPACK_IMPORTED_MODULE_8__["default"] }, { id: "online", header: ["Состояние", { content: "onlFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 120, css: { "text-align": "center" }, template: views_templates_online__WEBPACK_IMPORTED_MODULE_10__["default"] }, { id: "history_tarif_id", header: ["Тариф", { content: "selectFilter" }], sort: "int", minWidth: 60, fillspace: 1 }, { id: "history_discount_id", header: ["Скидка", { content: "selectFilter" }], sort: "int", minWidth: 60, fillspace: 1 }],
+    scheme: {
+        $init: function $init(obj) {
+            if (obj.deleted == 1) obj.$css = "deleted";
+            obj.date_changed = xml_format(obj.start);
+        }
+    },
+    //	url:"index.php?route=catalog/item/getItemHistory&token="+token+"&item_id="+$$('item-form').getValues().item_id,
+    ready: function ready() {
+        webix.extend(this, webix.ProgressBar);
+        this.sort({ by: "date_changed", dir: "desc" });
+    }
 };
 
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 var billing_grid = {
-	id: "billing-list",
-	view: "datatable",
-	footer: true,
-	stringResult: true,
-	columns: [{ id: "event_name", header: "Событие", sort: "int", minWidth: 120, fillspace: true }, { id: "date_start", header: "Начало", sort: "int", minWidth: 120, footer: { text: "Итого:", colspan: 4 }, fillspace: true }, { id: "date_end", header: "Конец", sort: "int", minWidth: 120, fillspace: true }, { id: "tarif", header: "Тариф", sort: "int", minWidth: 120, fillspace: true }, { id: "discount", header: "Скидка", sort: "int", minWidth: 120, fillspace: true }, { id: "count", header: "Дней", sort: "int", minWidth: 120, footer: { content: "summColumn" } }, { id: "sum", header: "Сумма", sort: "int", minWidth: 120, footer: { content: "summColumn" } }],
-	ready: function ready() {
-		webix.extend(this, webix.ProgressBar);
-	}
+    id: "billing-list",
+    view: "datatable",
+    footer: true,
+    stringResult: true,
+    columns: [{ id: "event_name", header: "Событие", sort: "int", minWidth: 120, fillspace: true }, { id: "date_start", header: "Начало", sort: "int", minWidth: 120, footer: { text: "Итого:", colspan: 4 }, fillspace: true }, { id: "date_end", header: "Конец", sort: "int", minWidth: 120, fillspace: true }, { id: "tarif", header: "Тариф", sort: "int", minWidth: 120, fillspace: true }, { id: "discount", header: "Скидка", sort: "int", minWidth: 120, fillspace: true }, { id: "count", header: "Дней", sort: "int", minWidth: 120, footer: { content: "summColumn" } }, { id: "sum", header: "Сумма", sort: "int", minWidth: 120, footer: { content: "summColumn" } }],
+    ready: function ready() {
+        webix.extend(this, webix.ProgressBar);
+    }
 };
 
 var date_popup = webix.ui({
-	view: "window",
-	modal: true,
-	position: "center",
-	head: "Какой датой внести изменения?",
-	body: {
-		view: "form",
-		elements: [{ view: "datepicker", name: "set_date_changed", value: new Date(), format: "%d.%m.%Y" }, { view: "button", label: "Подтверждение", type: "form", click: function click() {
-				var date_changed = this.getParentView().getValues().set_date_changed;
-				$$("item-form").setValues({ date_changed: date_changed }, true);
-				$$("item-form").save();
-				this.getTopParentView().hide();
-			} }]
-	}
+    view: "window",
+    modal: true,
+    position: "center",
+    head: "Какой датой внести изменения?",
+    body: {
+        view: "form",
+        elements: [{ view: "datepicker", name: "set_date_changed", value: new Date(), format: "%d.%m.%Y" }, { view: "button", label: "Подтверждение", type: "form", click: function click() {
+                var date_changed = this.getParentView().getValues().set_date_changed;
+                $$("item-form").setValues({ date_changed: date_changed }, true);
+                $$("item-form").save();
+                this.getTopParentView().hide();
+            } }]
+    }
 });
 
 var iform = {
-	view: "form",
-	id: "item-form",
-	multiview: { keepViews: true },
-	dataFeed: function dataFeed(id) {
-		var current_item_id = $$('catalog-item').getItem(id).item_id;
-		this.load("index.php?route=catalog/item/getForm&token=" + token + "&item_id=" + current_item_id);
-	},
-	elements: [{
-		view: "tabview",
-		tabbar: { options: ["Общие", "Железо", "Биллинг", "История"] }, animate: false,
-		cells: [{ id: "Общие", rows: [{ cols: [{ view: "text", id: "item_id", name: "item_id", label: "ID объекта", labelWidth: 140, readonly: true }, { view: "text", id: "date_created", name: "date_created", label: "Дата создания", labelWidth: 140, labelAlign: "right", readonly: true }] }, { view: "text", name: "itemname", label: "Название", labelWidth: 140, readonly: true }, { cols: [{ view: "text", name: "wialon_id", label: "Wialon ID", labelWidth: 140, readonly: true }, { view: "text", name: "servername", label: "Сервер", labelWidth: 140, labelAlign: "right", readonly: true }] }, { view: "template", template: "Принадлежность", type: "section" }, { cols: [{ view: "text", name: "wialon_groupname", label: "Группа", labelWidth: 140, readonly: true }, { view: "radio", name: "wialon_group_off", label: "Видимость", labelWidth: 140, labelAlign: "right", disabled: true,
-					options: [{ id: 0, value: "<span class='webix_icon mdi mdi-eye wialon-group-on'></span>" }, { id: 1, value: "<span class='webix_icon mdi mdi-eye-off wialon-group-off'></span>" }]
-				}] }, { view: "text", name: "ownername", label: "Владелец", labelWidth: 140, readonly: true }, { view: "template", template: "Данные", type: "section" }, { cols: [{ view: "text", id: "date_last", name: "date_last", label: "Последнее сообщение", labelWidth: 170, readonly: true }, { view: "text", id: "date_modified", name: "date_modified", label: "Дата модификации", labelWidth: 170, labelAlign: "right", readonly: true }] }, { cols: [{ view: "text", name: "sort_order", label: "Порядок сортировки", labelWidth: 170 }, { view: "select", name: "status", label: "Статус", labelWidth: 170, labelAlign: "right", options: [{ id: 0, value: "Отключено" }, { id: 1, value: "Включено" }] }] }, {}] }, { id: "Железо", rows: [{ view: "template", template: "Трекер", type: "section" }, { cols: [{ view: "text", name: "tracker_uid", label: "Трекер UID", labelWidth: 140, gravity: 3, readonly: true }, { view: "text", name: "trackername", label: "Тип трекера", labelWidth: 120, labelAlign: "right", gravity: 2, readonly: true }, { view: "text", name: "tracker_hw", label: "HW", labelWidth: 60, width: 160, labelAlign: "right", gravity: 1, readonly: true }] }, { view: "text", name: "password", label: "Пароль", labelWidth: 140, readonly: true }, { cols: [{ view: "text", name: "sim1", label: "Сим-карта 1", labelWidth: 140, readonly: true }, { view: "text", name: "sim2", label: "Сим-карта 2", labelWidth: 120, labelAlign: "right", readonly: true }] }, { view: "template", template: "Датчики", type: "section" }, {}] }, { id: "Биллинг", rows: [{ view: "template", template: "Объект", type: "section" }, { cols: [{ view: "select", name: "tarif_id", label: "Тариф объекта", labelWidth: 140, options: "index.php?route=catalog/item/getTarifs&token=" + token }, { view: "select", name: "discount_id", label: "Скидка объекта", labelWidth: 140, labelAlign: "right", options: "index.php?route=catalog/item/getDiscounts&token=" + token }] }, { view: "template", template: "Группа", type: "section" }, { cols: [{ view: "select", name: "tarif_group_id", label: "Тариф группы", labelWidth: 140, options: "index.php?route=catalog/wialongroup/getTarifs&token=" + token, disabled: true }, { view: "select", name: "discount_group_id", label: "Скидка группы", labelWidth: 140, labelAlign: "right", options: "index.php?route=catalog/wialongroup/getDiscounts&token=" + token, disabled: true }] }, { view: "template", template: "Расчет за период", type: "section" }, { cols: [{ view: "datepicker", name: "date_start", label: "Начало", labelWidth: 80, value: new Date(), format: "%d.%m.%Y" }, { view: "datepicker", name: "date_end", label: "Конец", labelWidth: 80, labelAlign: "right", value: new Date(), format: "%d.%m.%Y" },
-				//{ view:"datepicker", name:"date_changed", hidden: true },
-				{ view: "button", value: "Расчитать", width: 120, click: function click() {
-						var values = $$('item-form').getValues();
-						var tarif_id = Number(values.tarif_id) || Number(values.tarif_group_id);
-						var discount_id = Number(values.discount_id) || Number(values.discount_group_id);
-						var date_start = months[values.date_start.getMonth()] + ' ' + values.date_start.getDate() + 'th, ' + values.date_start.getFullYear();
-						var date_end = months[values.date_end.getMonth()] + ' ' + values.date_end.getDate() + 'th, ' + values.date_end.getFullYear();
-						$$('billing-list').clearAll();
-						$$('billing-list').load("index.php?route=billing/billing/getItemBilling&token=" + token + "&item_id=" + values.item_id + "&date_start=" + date_start + "&date_end=" + date_end + "&tarif_id=" + tarif_id + "&discount_id=" + discount_id);
-					} }] }, billing_grid] }, { id: "История", rows: [history_grid] }]
-	}, {
-		margin: 10,
-		cols: [{}, { view: "button", value: "Отменить", width: 120, click: function click() {
-				$$("item-views").back();
-				$$('paging').show();
-				$$('edit-form-icon').hide();
-				$$('edit-tools').show();
-			} }, { view: "button", value: "Сохранить", type: "form", width: 120, click: function click() {
-				var iform = $$("item-form");
-				if (iform.isDirty()) {
-					if (!iform.validate()) return false;
+    view: "form",
+    id: "item-form",
+    multiview: { keepViews: true },
+    dataFeed: function dataFeed(id) {
+        var current_item_id = $$('catalog-item').getItem(id).item_id;
+        this.load("index.php?route=catalog/item/getForm&token=" + token + "&item_id=" + current_item_id);
+    },
+    elements: [{
+        view: "tabview",
+        tabbar: { options: ["Общие", "Железо", "Биллинг", "История"] }, animate: false,
+        cells: [{ id: "Общие", rows: [{ cols: [{ view: "text", id: "item_id", name: "item_id", label: "ID объекта", labelWidth: 140, readonly: true }, { view: "text", id: "date_created", name: "date_created", label: "Дата создания", labelWidth: 140, labelAlign: "right", readonly: true }] }, { view: "text", name: "itemname", label: "Название", labelWidth: 140, readonly: true }, { cols: [{ view: "text", name: "wialon_id", label: "Wialon ID", labelWidth: 140, readonly: true }, { view: "text", name: "servername", label: "Сервер", labelWidth: 140, labelAlign: "right", readonly: true }] }, { view: "template", template: "Принадлежность", type: "section" }, { cols: [{ view: "text", name: "wialon_groupname", label: "Группа", labelWidth: 140, readonly: true }, { view: "radio", name: "wialon_group_off", label: "Видимость", labelWidth: 140, labelAlign: "right", disabled: true,
+                    options: [{ id: 0, value: "<span class='webix_icon mdi mdi-eye wialon-group-on'></span>" }, { id: 1, value: "<span class='webix_icon mdi mdi-eye-off wialon-group-off'></span>" }]
+                }] }, { view: "text", name: "ownername", label: "Владелец", labelWidth: 140, readonly: true }, { view: "template", template: "Данные", type: "section" }, { cols: [{ view: "text", id: "date_last", name: "date_last", label: "Последнее сообщение", labelWidth: 170, readonly: true }, { view: "text", id: "date_modified", name: "date_modified", label: "Дата модификации", labelWidth: 170, labelAlign: "right", readonly: true }] }, { cols: [{ view: "text", name: "sort_order", label: "Порядок сортировки", labelWidth: 170 }, { view: "select", name: "status", label: "Статус", labelWidth: 170, labelAlign: "right", options: [{ id: 0, value: "Отключено" }, { id: 1, value: "Включено" }] }] }, {}] }, { id: "Железо", rows: [{ view: "template", template: "Трекер", type: "section" }, { cols: [{ view: "text", name: "tracker_uid", label: "Трекер UID", labelWidth: 140, gravity: 3, readonly: true }, { view: "text", name: "trackername", label: "Тип трекера", labelWidth: 120, labelAlign: "right", gravity: 2, readonly: true }, { view: "text", name: "tracker_hw", label: "HW", labelWidth: 60, width: 160, labelAlign: "right", gravity: 1, readonly: true }] }, { view: "text", name: "password", label: "Пароль", labelWidth: 140, readonly: true }, { cols: [{ view: "text", name: "sim1", label: "Сим-карта 1", labelWidth: 140, readonly: true }, { view: "text", name: "sim2", label: "Сим-карта 2", labelWidth: 120, labelAlign: "right", readonly: true }] }, { view: "template", template: "Датчики", type: "section" }, {}] }, { id: "Биллинг", rows: [{ view: "template", template: "Объект", type: "section" }, { cols: [{ view: "select", name: "tarif_id", label: "Тариф объекта", labelWidth: 140, options: "index.php?route=catalog/item/getTarifs&token=" + token }, { view: "select", name: "discount_id", label: "Скидка объекта", labelWidth: 140, labelAlign: "right", options: "index.php?route=catalog/item/getDiscounts&token=" + token }] }, { view: "template", template: "Группа", type: "section" }, { cols: [{ view: "select", name: "tarif_group_id", label: "Тариф группы", labelWidth: 140, options: "index.php?route=catalog/wialongroup/getTarifs&token=" + token, disabled: true }, { view: "select", name: "discount_group_id", label: "Скидка группы", labelWidth: 140, labelAlign: "right", options: "index.php?route=catalog/wialongroup/getDiscounts&token=" + token, disabled: true }] }, { view: "template", template: "Расчет за период", type: "section" }, { cols: [{ view: "datepicker", name: "date_start", label: "Начало", labelWidth: 80, value: new Date(), format: "%d.%m.%Y" }, { view: "datepicker", name: "date_end", label: "Конец", labelWidth: 80, labelAlign: "right", value: new Date(), format: "%d.%m.%Y" },
+                //{ view:"datepicker", name:"date_changed", hidden: true }, test notepad git
+                { view: "button", value: "Расчитать", width: 120, click: function click() {
+                        var values = $$('item-form').getValues();
+                        var tarif_id = Number(values.tarif_id) || Number(values.tarif_group_id);
+                        var discount_id = Number(values.discount_id) || Number(values.discount_group_id);
+                        var date_start = months[values.date_start.getMonth()] + ' ' + values.date_start.getDate() + 'th, ' + values.date_start.getFullYear();
+                        var date_end = months[values.date_end.getMonth()] + ' ' + values.date_end.getDate() + 'th, ' + values.date_end.getFullYear();
+                        $$('billing-list').clearAll();
+                        $$('billing-list').load("index.php?route=billing/billing/getItemBilling&token=" + token + "&item_id=" + values.item_id + "&date_start=" + date_start + "&date_end=" + date_end + "&tarif_id=" + tarif_id + "&discount_id=" + discount_id);
+                    } }] }, billing_grid] }, { id: "История", rows: [history_grid] }]
+    }, {
+        margin: 10,
+        cols: [{}, { view: "button", value: "Отменить", width: 120, click: function click() {
+                $$("item-views").back();
+                $$('paging').show();
+                $$('edit-form-icon').hide();
+                $$('edit-tools').show();
+            } }, { view: "button", value: "Сохранить", type: "form", width: 120, click: function click() {
+                var iform = $$("item-form");
+                if (iform.isDirty()) {
+                    if (!iform.validate()) return false;
 
-					webix.ajax().post("index.php?route=catalog/item/validateForm&token=" + token, $$("item-form").getValues(), function (text, data, XmlHttpRequest) {
-						if (text && text != "[]") {
-							webix.message({
-								text: JSON.parse(text).warning,
-								type: "error",
-								expire: 5000
-							}); //show server side response
-							return false;
-						} else {
-							date_popup.show();
-							//	iform.save();								
-						}
-					});
-				}
-				$$("item-views").back();
-				$$('paging').show();
-				$$('edit-form-icon').hide();
-				$$('edit-tools').show();
-			} }]
-	}]
-	//rules:{        
-	//	"date_end": function(value){ return value >= $$("date_start").getValue()},
-	//	"date_start": function(value){ return value <= $$("date_end").getValue()},
-	//}
+                    webix.ajax().post("index.php?route=catalog/item/validateForm&token=" + token, $$("item-form").getValues(), function (text, data, XmlHttpRequest) {
+                        if (text && text != "[]") {
+                            webix.message({
+                                text: JSON.parse(text).warning,
+                                type: "error",
+                                expire: 5000
+                            }); //show server side response
+                            return false;
+                        } else {
+                            date_popup.show();
+                            //	iform.save();
+                        }
+                    });
+                }
+                $$("item-views").back();
+                $$('paging').show();
+                $$('edit-form-icon').hide();
+                $$('edit-tools').show();
+            } }]
+    }]
+    //rules:{
+    //	"date_end": function(value){ return value >= $$("date_start").getValue()},
+    //	"date_start": function(value){ return value <= $$("date_end").getValue()},
+    //}
 };
 
 var item_views = {
-	view: "multiview",
-	id: "item-views",
-	cells: [grid, iform]
+    view: "multiview",
+    id: "item-views",
+    cells: [grid, iform]
 };
 
 var layout = {
-	id: "layout",
-	type: "space",
-	rows: [{ height: 40, id: "edit-tools", cols: views_menus_export__WEBPACK_IMPORTED_MODULE_1__["default"] }, { height: 40, id: "edit-form-icon", cols: views_menus_toolplug__WEBPACK_IMPORTED_MODULE_2__["default"], hidden: true }, { rows: [item_views, views_modules_paging__WEBPACK_IMPORTED_MODULE_3__["default"]] }]
+    id: "layout",
+    type: "space",
+    rows: [{ height: 40, id: "edit-tools", cols: views_menus_export__WEBPACK_IMPORTED_MODULE_1__["default"] }, { height: 40, id: "edit-form-icon", cols: views_menus_toolplug__WEBPACK_IMPORTED_MODULE_2__["default"], hidden: true }, { rows: [item_views, views_modules_paging__WEBPACK_IMPORTED_MODULE_3__["default"]] }]
 };
 
 /***/ }),
@@ -4275,7 +4293,11 @@ __webpack_require__.r(__webpack_exports__);
 var controls = [{ view: "icon", type: "icon", borderless: false, icon: "mdi mdi-file-excel", tooltip: "Export To Excel", click: function click() {
 		//var layout = $$("layout");
 		var layout = this.getParentView().getParentView();
-		webix.toExcel(layout.queryView({ view: "datatable" }));
+		var table = layout.queryView({ view: "datatable" });
+		var treetable = layout.queryView({ view: "treetable" });
+		var excellview = table !== null ? table : treetable;
+
+		webix.toExcel(excellview);
 	}
 }, { view: "icon", type: "icon", borderless: false, icon: "mdi mdi-file-pdf", tooltip: "Export To PDF", click: function click() {
 		//var layout = this.getParentView().getParentView();		
@@ -4467,7 +4489,13 @@ var layout = {
 		css: "menu",
 		padding: 2,
 		view: "form",
-		cols: [{ view: "button", type: "icon", icon: "mdi mdi-menu", inputWidth: 37, align: "left", css: "title",
+		cols: [{
+			view: "button",
+			type: "icon",
+			icon: "mdi mdi-menu",
+			inputWidth: 37,
+			align: "left",
+			css: "title",
 			click: function click() {
 				webix.$$("app:menu").toggle();
 			}
@@ -4485,7 +4513,10 @@ var layout = {
 			},
 			onAfterSelect: function onAfterSelect(id) {
 				var item = this.getItem(id);
-				webix.$$("title").parse({ title: item.value, details: item.details });
+				webix.$$("title").parse({
+					title: item.value,
+					details: item.details
+				});
 				this.$scope.app.show("/app/" + item.id);
 			},
 			onAfterLoad: function onAfterLoad() {
@@ -7040,168 +7071,168 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var ReportBillingView = function (_JetView) {
-	_inherits(ReportBillingView, _JetView);
+    _inherits(ReportBillingView, _JetView);
 
-	function ReportBillingView() {
-		_classCallCheck(this, ReportBillingView);
+    function ReportBillingView() {
+        _classCallCheck(this, ReportBillingView);
 
-		return _possibleConstructorReturn(this, _JetView.apply(this, arguments));
-	}
+        return _possibleConstructorReturn(this, _JetView.apply(this, arguments));
+    }
 
-	ReportBillingView.prototype.config = function config() {
-		return layout;
-	};
+    ReportBillingView.prototype.config = function config() {
+        return layout;
+    };
 
-	ReportBillingView.prototype.init = function init(view) {
-		webix.extend(view.queryView({ view: "treetable" }), webix.ProgressBar);
-		webix.extend($$("owner-tree"), webix.ProgressBar);
-		$$("owner-tree").showProgress({
-			type: "top",
-			delay: 1500,
-			hide: true
-		});
-	};
+    ReportBillingView.prototype.init = function init(view) {
+        webix.extend(view.queryView({ view: "treetable" }), webix.ProgressBar);
+        webix.extend($$("owner-tree"), webix.ProgressBar);
+        $$("owner-tree").showProgress({
+            type: "top",
+            delay: 1500,
+            hide: true
+        });
+    };
 
-	return ReportBillingView;
+    return ReportBillingView;
 }(webix_jet__WEBPACK_IMPORTED_MODULE_0__["JetView"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (ReportBillingView);
 
 
 var report_treetable_group = {
-	id: "report-treetable-group",
-	view: "treetable",
-	"export": true,
-	columns: [{ id: "item_id", header: "#", sort: "int", width: 60,
-		template: function template(obj, common) {
-			if (obj.$group) return common.treetable(obj, common) + obj.value + '  (' + obj.count + ' объектов)' + ' Сумма: ' + obj.total;
-			return obj.item_id;
-		}
-	}, { id: "deleted", header: " ", sort: "int", width: 40, css: { "text-align": "center" },
-		template: function template(obj, common, value) {
-			if (value != 0) return "<span class='webix_icon fa-times deleted'></span>";else return "";
-		}
-	}, { id: "itemname", header: ["Название"], minWidth: 120, fillspace: 2 }, { id: "tracker_uid", header: ["Трекер UID"], minWidth: 140, fillspace: 1 }, { id: "ownername", header: ["Владелец"], minWidth: 120, fillspace: 2, hidden: true }, { id: "wialon_groupname", header: ["Группа"], sort: "string", minWidth: 120, fillspace: 2 }, { id: "wialon_group_off", header: ["Вид"], width: 65, css: { "text-align": "center" },
-		template: function template(obj, common, value) {
-			if (value == 1) return "<span class='webix_icon fa-eye-slash wialon-group-off'></span>";else return "<span class='webix_icon fa-eye wialon-group-on'></span>";
-		} // style='color:#ab6e11;' 
-	}, { id: "billing", header: "Сумма", sort: "int", minWidth: 120 }],
-	scheme: {
-		$init: function $init(obj) {
-			if (obj.deleted == 1) obj.$css = "deleted";
-		},
-		$group: {
-			by: "ownername",
-			map: {
-				title: ["ownername"],
-				count: ["item_id", "count"],
-				total: ["billing", "sum"]
-			},
-			//row:function(obj){
-			//	return "Группа "+obj.item_id+", Начислено: "+webix.i18n.numberFormat(obj.item_id);
-			//},
-			row: "item_id",
-			footer: {
-				total: ["billing", "sum"],
-				row: function row(obj) {
-					return "<span style='float:right;'>Итого: " + webix.i18n.numberFormat(obj.total) + "</span>";
-				}
-			}
-		},
-		$sort: { by: "ownername", as: "string", dir: "desc" }
-	}
+    id: "report-treetable-group",
+    view: "treetable",
+    "export": true,
+    columns: [{ id: "item_id", header: "#", sort: "int", width: 60,
+        template: function template(obj, common) {
+            if (obj.$group) return common.treetable(obj, common) + obj.value + '  (' + obj.count + ' объектов)' + ' Сумма: ' + obj.total;
+            return obj.item_id;
+        }
+    }, { id: "deleted", header: " ", sort: "int", width: 40, css: { "text-align": "center" },
+        template: function template(obj, common, value) {
+            if (value != 0) return "<span class='webix_icon fa-times deleted'></span>";else return "";
+        }
+    }, { id: "itemname", header: ["Название"], minWidth: 120, fillspace: 2 }, { id: "tracker_uid", header: ["Трекер UID"], minWidth: 140, fillspace: 1 }, { id: "ownername", header: ["Владелец"], minWidth: 120, fillspace: 2, hidden: true }, { id: "wialon_groupname", header: ["Группа"], sort: "string", minWidth: 120, fillspace: 2 }, { id: "wialon_group_off", header: ["Вид"], width: 65, css: { "text-align": "center" },
+        template: function template(obj, common, value) {
+            if (value == 1) return "<span class='webix_icon fa-eye-slash wialon-group-off'></span>";else return "<span class='webix_icon fa-eye wialon-group-on'></span>";
+        }
+    }, { id: "billing", header: "Сумма", sort: "int", minWidth: 120 }],
+    scheme: {
+        $init: function $init(obj) {
+            if (obj.deleted == 1) obj.$css = "deleted";
+        },
+        $group: {
+            by: "ownername",
+            map: {
+                title: ["ownername"],
+                count: ["item_id", "count"],
+                total: ["billing", "sum"]
+            },
+            //row:function(obj){
+            //	return "Группа "+obj.item_id+", Начислено: "+webix.i18n.numberFormat(obj.item_id);
+            //},
+            row: "item_id",
+            footer: {
+                total: ["billing", "sum"],
+                row: function row(obj) {
+                    return "<span style='float:right;'>Итого: " + webix.i18n.numberFormat(obj.total) + "</span>";
+                }
+            }
+        },
+        $sort: { by: "ownername", as: "string", dir: "desc" }
+    }
 };
 
 var report_treetable_tree = {
-	id: "report-treetable-tree",
-	view: "treetable",
-	"export": true,
-	footer: true,
-	stringResult: true,
-	columns: [{ id: "event_name", header: "Событие", sort: "int", minWidth: 450, fillspace: true,
-		template: function template(obj, common) {
-			if (obj.$level == 2)
-				//return common.treetable(obj, common)+"<span>"+obj.value + '  ('+ obj.$count +' гр.)'+"</span>";		
-				return common.treetable(obj, common) + "<span>" + obj.value + "</span>";
-			if (obj.$level == 3) return common.treetable(obj, common) + "<span>" + "<i>" + obj.value + '  (' + obj.$count + ' объектов)' + "</i>" + "</span>";
-			if (obj.$level <= 4) return common.treetable(obj, common) + "<span>" + obj.value + "</span>";else return obj.event_name;
-		}
-	}, { id: "date_start", header: "Начало", sort: "int", minWidth: 120, footer: { text: "Итого:", colspan: 4 }, fillspace: true }, { id: "date_end", header: "Конец", sort: "int", minWidth: 120, fillspace: true }, { id: "tarif", header: "Тариф", sort: "int", minWidth: 120, fillspace: true }, { id: "discount", header: "Скидка", sort: "int", minWidth: 120, fillspace: true }, { id: "count", header: "Дней", sort: "int", minWidth: 120, footer: { content: "summColumn" } }, { id: "sum", header: "Сумма", sort: "int", minWidth: 120, footer: { content: "summColumn" } }],
-	scheme: {}
+    id: "report-treetable-tree",
+    view: "treetable",
+    "export": true,
+    footer: true,
+    stringResult: true,
+    columns: [{ id: "event_name", header: "Событие", sort: "int", minWidth: 450, fillspace: true,
+        template: function template(obj, common) {
+            if (obj.$level == 2)
+                //return common.treetable(obj, common)+"<span>"+obj.value + '  ('+ obj.$count +' гр.)'+"</span>";
+                return common.treetable(obj, common) + "<span>" + obj.value + "</span>";
+            if (obj.$level == 3) return common.treetable(obj, common) + "<span>" + "<i>" + obj.value + '  (' + obj.$count + ' объектов)' + "</i>" + "</span>";
+            if (obj.$level <= 4) return common.treetable(obj, common) + "<span>" + obj.value + "</span>";else return obj.event_name;
+        }
+    }, { id: "date_start", header: "Начало", sort: "int", minWidth: 120, footer: { text: "Итого:", colspan: 4 }, fillspace: true }, { id: "date_end", header: "Конец", sort: "int", minWidth: 120, fillspace: true }, { id: "tarif", header: "Тариф", sort: "int", minWidth: 120, fillspace: true }, { id: "discount", header: "Скидка", sort: "int", minWidth: 120, fillspace: true }, { id: "count", header: "Дней", sort: "int", minWidth: 120, footer: { content: "summColumn" } }, { id: "sum", header: "Сумма", sort: "int", minWidth: 120, footer: { content: "summColumn" } }],
+    scheme: {}
 };
 
 var myjson = webix.DataDriver.myjson = webix.copy(webix.DataDriver.json);
 myjson.child = function (obj) {
-	var _id = obj.id.split('.');
-	if (obj.$level == 1) return obj.data;
-	if (obj.$level == 2) {
-		obj.value = obj.value + " (id=" + obj.id + ")";
-		return obj.data;
-	}
-	if (obj.$level == 3) {
-		obj.value = "Группа " + obj.value + " (id=" + _id[1] + ")";
-		return obj.data;
-	}
-	if (obj.$level == 4) {
-		obj.value = obj.value + " (id=" + _id[2] + ")";
-		return obj.data;
-	}
+    var _id = obj.id.split('.');
+    if (obj.$level == 1) return obj.data;
+    if (obj.$level == 2) {
+        obj.value = obj.value + " (id=" + obj.id + ")";
+        return obj.data;
+    }
+    if (obj.$level == 3) {
+        obj.value = "Группа " + obj.value + " (id=" + _id[1] + ")";
+        return obj.data;
+    }
+    if (obj.$level == 4) {
+        obj.value = obj.value + " (id=" + _id[2] + ")";
+        return obj.data;
+    }
 };
 
 var owner_tree = {
-	view: "tree",
-	id: "owner-tree",
-	template: "{common.icon()} {common.checkbox()} {common.folder()} #value# ",
-	threeState: true,
-	datatype: "myjson",
-	url: "index.php?route=report/billing/getOwnersTree&token=" + token
+    view: "tree",
+    id: "owner-tree",
+    template: "{common.icon()} {common.checkbox()} {common.folder()} #value# ",
+    threeState: true,
+    datatype: "myjson",
+    url: "index.php?route=report/billing/getOwnersTree&token=" + token
 };
 
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 var checking_form = {
-	view: "form",
-	id: "checking-form",
-	elements: [{ cols: [{ view: "datepicker", name: "date_start", label: "Начало", labelWidth: 80, value: new Date(), format: "%d.%m.%Y" }, { view: "datepicker", name: "date_end", label: "Конец", labelWidth: 80, labelAlign: "right", value: new Date(), format: "%d.%m.%Y" }, { view: "button", value: "Расчитать", width: 120, click: function click() {
-				var values = $$('checking-form').getValues();
-				var date_start = months[values.date_start.getMonth()] + ' ' + values.date_start.getDate() + 'th, ' + values.date_start.getFullYear();
-				var date_end = months[values.date_end.getMonth()] + ' ' + values.date_end.getDate() + 'th, ' + values.date_end.getFullYear();
-				var billing_treetable = $$('billing-report').queryView({ view: "treetable" });
-				billing_treetable.clearAll();
-				$$('billing-report').show();
-				billing_treetable.showProgress({
-					type: "top",
-					delay: 20000,
-					hide: true
-				});
-				var checked = $$("owner-tree").getChecked();
-				//billing_treetable.load("index.php?route=report/billing/getOwnersBillingTree&token="+token+"&date_start="+date_start+"&date_end="+date_end+"&checked="+checked);
-				var query = webix.ajax().post("index.php?route=report/billing/getOwnersBillingTree&token=" + token, { date_start: date_start, date_end: date_end, checked: checked });
-				billing_treetable.load(function () {
-					return query;
-				});
-			} }] }, owner_tree]
+    view: "form",
+    id: "checking-form",
+    elements: [{ cols: [{ view: "datepicker", name: "date_start", label: "Начало", labelWidth: 80, value: new Date(), format: "%d.%m.%Y" }, { view: "datepicker", name: "date_end", label: "Конец", labelWidth: 80, labelAlign: "right", value: new Date(), format: "%d.%m.%Y" }, { view: "button", value: "Расчитать", width: 120, click: function click() {
+                var values = $$('checking-form').getValues();
+                var date_start = months[values.date_start.getMonth()] + ' ' + values.date_start.getDate() + 'th, ' + values.date_start.getFullYear();
+                var date_end = months[values.date_end.getMonth()] + ' ' + values.date_end.getDate() + 'th, ' + values.date_end.getFullYear();
+                var billing_treetable = $$('billing-report').queryView({ view: "treetable" });
+                billing_treetable.clearAll();
+                $$('billing-report').show();
+                billing_treetable.showProgress({
+                    type: "top",
+                    delay: 20000,
+                    hide: true
+                });
+                var checked = $$("owner-tree").getChecked();
+                //billing_treetable.load("index.php?route=report/billing/getOwnersBillingTree&token="+token+"&date_start="+date_start+"&date_end="+date_end+"&checked="+checked);
+                var query = webix.ajax().post("index.php?route=report/billing/getOwnersBillingTree&token=" + token, { date_start: date_start, date_end: date_end, checked: checked });
+                billing_treetable.load(function () {
+                    return query;
+                });
+            } }] }, owner_tree]
 };
 
 var controls = [{ view: "button", value: "Назад", width: 120, click: function click() {
-		$$("checking-form").show();
-	} }];
+        $$("checking-form").show();
+    } }];
 
 var billing_report = {
-	view: "form",
-	id: "billing-report",
-	elements: [{ height: 40, id: "edit-tools", cols: views_menus_export__WEBPACK_IMPORTED_MODULE_1__["default"].concat(controls) }, report_treetable_tree]
+    view: "form",
+    id: "billing-report",
+    elements: [{ height: 40, id: "edit-tools", cols: views_menus_export__WEBPACK_IMPORTED_MODULE_1__["default"].concat(controls) }, report_treetable_tree]
 };
 
 var billing_report_views = {
-	view: "multiview",
-	id: "billing-report-views",
-	cells: [checking_form, billing_report]
+    view: "multiview",
+    id: "billing-report-views",
+    cells: [checking_form, billing_report]
 };
 
 var layout = {
-	type: "space",
-	rows: [billing_report_views]
+    type: "space",
+    rows: [billing_report_views]
 };
 
 /***/ }),
@@ -8284,6 +8315,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function (obj, common, value) {
 	if (value != 0) return "<span class='webix_table_checkbox status status1'> Включено </span>";else return "<span class='webix_table_checkbox status status0'> Отключено </span>";
 });
+
+/***/ }),
+
+/***/ "./sources/views/test.js":
+/*!*******************************!*\
+  !*** ./sources/views/test.js ***!
+  \*******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var webix_jet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! webix-jet */ "./node_modules/webix-jet/dist/index.js");
+
+
+function test(arg) {
+    console.log('test for VS Code');
+    console.log(arg);
+}
 
 /***/ }),
 
