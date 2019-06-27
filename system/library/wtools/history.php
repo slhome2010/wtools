@@ -9,6 +9,7 @@ Class History {
     private $date_start, $date_end;          // начало и конец расчетного периода
     private $date_start_ymd, $date_end_ymd;  // начало и конец в строковом представлении
     private $date_created;                   // дата создания объекта
+    private $date_modified;                  // дата модификации ишется ежедневно пока существует объект
     private $history_date_start, $history_date_end;  // начало и конец истории
     private $months;
     private $db;
@@ -31,6 +32,9 @@ Class History {
         $this->date_created = new DateTime($this->history_data[0]['date_created']);
         $this->history_date_start = new DateTime($this->history_data[0]['date_changed']);
         $end_of_history = end($this->history_data);
+        // Дата последней модификации
+        $this->date_modified = new DateTime($end_of_history['date_modified']);
+        // Дата последней записи в истории
         $this->history_date_end = new DateTime($end_of_history['date_changed']);
         reset($this->history_data);
 
@@ -40,9 +44,10 @@ Class History {
     }
 
     private function getObjectHistory($order = "DESC") {
-        $sql = "SELECT ih.item_history_id, ih.item_id, ih.itemname, ih.date_changed, ih.item_status, ih.online, ih.wialon_group_off, ih.history_tarif_id, ih.history_discount_id,
+        $sql = "SELECT ih.item_history_id, ih.item_id, ih.itemname, ih.item_status, ih.online, ih.wialon_group_off, ih.history_tarif_id, ih.history_discount_id,
+                                i.date_created, i.date_modified, ih.date_changed,
                                 ih.wialon_group_id, wg.wialon_groupname, wg.owner_id, wg.tarif_id AS tarif_group_id, wg.discount_id AS discount_group_id,
-                                i.server_id, i.wialon_id, i.deleted, i.status, i.date_created, i.date_modified, i.tarif_id, i.discount_id,
+                                i.server_id, i.wialon_id, i.deleted, i.status, i.tarif_id, i.discount_id,
                                 ih.tracker_uid, ih.tracker_hw, ih.sim1, ih.sim2,
                                 (SELECT t.trackername FROM " . DB_PREFIX . "tracker t WHERE t.tracker_id = (SELECT tts.tracker_id FROM " . DB_PREFIX . "tracker_to_server tts WHERE i.server_id = tts.server_id AND ih.tracker_hw = tts.tracker_hw)) AS trackername,
                                 (SELECT s.servername FROM " . DB_PREFIX . "server s WHERE i.server_id = s.server_id) AS servername,
@@ -118,6 +123,19 @@ Class History {
                     }
                 } else {
                     // История закончилась раньше конца месяца, но период не закончен
+                    $end_of_history = $current;
+                    if ($this->history_date_end < $this->date_end) {
+                        if ($this->history_date_end != (new DateTime($current['date_changed']))) {
+                            // Событий в этот день не было - история закончилась естественным образом
+                            $end_of_history['event_name'] = 'Конец истории';
+                            $events[] = $end_of_history;
+                        } elseif ($end_of_history['deleted'] || $end_of_history['wialon_group_off']) {
+                            // Событие совпало с концом истории (Отключение или Удаление)
+                            $end_of_history['event_name'] = 'Удаление/Отключение';
+                            $events[] = $end_of_history;
+                        }
+                    }
+
                     $end_month_event = $current;
                     $end_month_event['date_changed'] = $end_of_month->format('Y-m-d');
                     $end_month_event['event_name'] = 'Начало месяца';
@@ -142,18 +160,20 @@ Class History {
             } else {
                 // конец истории - это последние событие если оно случилось до окончания периода
                 $end_of_history = end($this->history_data);
-                if ($this->history_date_end < $this->date_end && $this->history_date_end != (new DateTime($current['date_changed']))) {
-                    $end_of_history['event_name'] = 'Конец истории';
-                    $events[] = $end_of_history;
+                if ($this->history_date_end < $this->date_end) {
+                    if ($this->history_date_end != (new DateTime($current['date_changed']))) {
+                        // Событий в этот день не было - история закончилась естественным образом
+                        $end_of_history['event_name'] = 'Конец истории';
+                        $events[] = $end_of_history;
+                    } elseif ($end_of_history['deleted'] || $end_of_history['wialon_group_off']) {
+                        // Событие совпало с концом истории (Отключение или Удаление)
+                        $end_of_history['event_name'] = 'Удаление/Отключение';
+                        $events[] = $end_of_history;
+                    }
                 }
             }
         }
-        // возможно мы вышли без событий  в предыдущие и последний месяц, тогда будет единственное событие - начало истории - как проверить?
-        // $end_of_history = end($this->history_data);
-        // if ($this->history_date_end < $this->date_end) {
-        //      $end_of_history['event_name'] = 'Конец истории';
-        //     $events[] = $end_of_history;
-        // }
+        // Возможно мы вышли без событий, тогда будет единственное событие - начало истории или начало периода?
         // Sort events by date DESC
         usort($events, function($a, $b) {
             if ((new DateTime($a['date_changed'])) === (new DateTime($b['date_changed'])))
@@ -181,7 +201,7 @@ Class History {
                 'date_end' => $pred_history_date->format("Y-m-d"), // -1 day
                 'tarif_id' => $this->getTarifId($this->history_events[0]),
                 'discount_id' => $this->getDiscountId($this->history_events[0]),
-                'event_status' => $this->history_events[0]['wialon_group_off'], // || $this->history_events[0]['deleted'],
+                'event_status' => $pred_history_date > $this->date_modified ? $this->history_events[0]['wialon_group_off'] || $this->history_events[0]['deleted'] : false,
                 'event_name' => 'Начало периода',
             );
         }
@@ -190,7 +210,7 @@ Class History {
             $current = current($this->history_events);
             $next = next($this->history_events);
             $date_current = new DateTime($current['date_changed']);
-            $date_next = $next ? new DateTime($next['date_changed'] . '-1 day'):$date_current;
+            $date_next = $next ? new DateTime($next['date_changed'] . '-1 day') : $date_current;
 
             // if ($next) {
             $intervals[] = array(
@@ -198,7 +218,7 @@ Class History {
                 'date_end' => $date_next->format("Y-m-d"),
                 'tarif_id' => $this->getTarifId($current),
                 'discount_id' => $this->getDiscountId($current),
-                'event_status' => $current['wialon_group_off'], // || $current['deleted'],
+                'event_status' => $date_next >= $this->date_modified ? $current['wialon_group_off'] || $current['deleted'] : false,
                 'event_name' => $current['event_name'],
             );
             // }
@@ -218,7 +238,7 @@ Class History {
                 'date_end' => $this->date_end_ymd, // -1 day
                 'tarif_id' => $this->getTarifId($last_event),
                 'discount_id' => $this->getDiscountId($last_event),
-                'event_status' => $last_event['wialon_group_off'] || $last_event['deleted'],
+                'event_status' => $last_event_date > $this->date_modified ? $last_event['wialon_group_off'] || $last_event['deleted'] : false,
                 'event_name' => 'Конец периода',
                     // 'event_name' => $last_event['event_name'] ? $last_event['event_name'] : 'Конец периода',
             );

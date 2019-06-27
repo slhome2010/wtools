@@ -161,7 +161,7 @@ const checking_form = {
                         //billing_treetable.load("index.php?route=report/billing/getOwnersBillingTree&token="+token+"&date_start="+date_start+"&date_end="+date_end+"&checked="+checked);
                         var query = webix.ajax().post("index.php?route=report/billing/getOwnersBillingTree&token=" + token, {date_start: date_start, date_end: date_end, checked: checked});
                         billing_treetable.load(function () {
-                            return query
+                            return query;
                         });
                     }},
             ]},
