@@ -54,20 +54,20 @@ class ControllerCommonHeader extends Controller {
 
 
 			// Customers
-			$this->load->model('report/customer');
+			//$this->load->model('report/customer');
 
-			$data['online_total'] = $this->model_report_customer->getTotalCustomersOnline();
+			//$data['online_total'] = $this->model_report_customer->getTotalCustomersOnline();
 
-			$data['online'] = $this->url->link('report/customer_online', 'token=' . $this->session->data['token'], true);
+			//$data['online'] = $this->url->link('report/customer_online', 'token=' . $this->session->data['token'], true);
 
-			$this->load->model('customer/customer');
+			//$this->load->model('customer/customer');
 
-			$customer_total = $this->model_customer_customer->getTotalCustomers(array('filter_approved' => false));
+			//$customer_total = $this->model_customer_customer->getTotalCustomers(array('filter_approved' => false));
 
-			$data['customer_total'] = $customer_total;
-			$data['customer_approval'] = $this->url->link('customer/customer', 'token=' . $this->session->data['token'] . '&filter_approved=0', true);
+			//$data['customer_total'] = $customer_total;
+			//$data['customer_approval'] = $this->url->link('customer/customer', 'token=' . $this->session->data['token'] . '&filter_approved=0', true);
 
-		
+
 			// Online Stores
 			$data['stores'] = array();
 

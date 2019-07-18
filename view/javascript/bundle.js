@@ -2909,6 +2909,8 @@ var map = {
 	"./modules/messages.js": "./sources/views/modules/messages.js",
 	"./modules/onlinefilter": "./sources/views/modules/onlinefilter.js",
 	"./modules/onlinefilter.js": "./sources/views/modules/onlinefilter.js",
+	"./modules/order_statesfilter": "./sources/views/modules/order_statesfilter.js",
+	"./modules/order_statesfilter.js": "./sources/views/modules/order_statesfilter.js",
 	"./modules/orders": "./sources/views/modules/orders.js",
 	"./modules/orders.js": "./sources/views/modules/orders.js",
 	"./modules/paging": "./sources/views/modules/paging.js",
@@ -2963,6 +2965,8 @@ var map = {
 	"./templates/eye.js": "./sources/views/templates/eye.js",
 	"./templates/online": "./sources/views/templates/online.js",
 	"./templates/online.js": "./sources/views/templates/online.js",
+	"./templates/order_states": "./sources/views/templates/order_states.js",
+	"./templates/order_states.js": "./sources/views/templates/order_states.js",
 	"./templates/status": "./sources/views/templates/status.js",
 	"./templates/status.js": "./sources/views/templates/status.js",
 	"./test": "./sources/views/test.js",
@@ -5648,6 +5652,47 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./sources/views/modules/order_statesfilter.js":
+/*!*****************************************************!*\
+  !*** ./sources/views/modules/order_statesfilter.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/* harmony default export */ __webpack_exports__["default"] = (webix.ui.datafilter.staFilter = {
+    getInputNode: function getInputNode(node) {
+        return node.firstChild ? node.firstChild.firstChild : { value: null };
+    },
+    getValue: function getValue(node) {
+        return this.getInputNode(node).value;
+    },
+    setValue: function setValue(node, value) {
+        this.getInputNode(node).value = value.toString();
+    },
+    refresh: function refresh(master, node, column) {
+        master.registerFilter(node, column, this);
+        column.compare = column.compare || function (value, filter) {
+            if (filter === "") return true;else if (filter === "1") return value == 'open';else if (filter === "0") return value == 'closed';
+        };
+        node.onchange = function () {
+            master.filterByAll();
+        };
+        node.onclick = webix.html.preventEvent;
+    },
+    render: function render(a, b) {
+        return "<select id=" + b.columnId + ">" + "<option value=''></option>" + "<option value='1' class='order-status order-open'>Открыта</option>" + "<option value='0' class='order-status order-closed'>Закрыта</option>" + "</select>";
+    }
+});
+
+/***/ }),
+
 /***/ "./sources/views/modules/orders.js":
 /*!*****************************************!*\
   !*** ./sources/views/modules/orders.js ***!
@@ -6488,10 +6533,11 @@ var layout = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var webix_jet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! webix-jet */ "./node_modules/webix-jet/dist/index.js");
-/* harmony import */ var views_forms_order__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! views/forms/order */ "./sources/views/forms/order.js");
-/* harmony import */ var views_menus_export__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! views/menus/export */ "./sources/views/menus/export.js");
-/* harmony import */ var models_orders__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! models/orders */ "./sources/models/orders.js");
-/* harmony import */ var views_menus_contextmenu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! views/menus/contextmenu */ "./sources/views/menus/contextmenu.js");
+/* harmony import */ var views_menus_export__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! views/menus/export */ "./sources/views/menus/export.js");
+/* harmony import */ var views_menus_toolplug__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! views/menus/toolplug */ "./sources/views/menus/toolplug.js");
+/* harmony import */ var views_modules_paging__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! views/modules/paging */ "./sources/views/modules/paging.js");
+/* harmony import */ var views_modules_order_statesfilter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! views/modules/order_statesfilter */ "./sources/views/modules/order_statesfilter.js");
+/* harmony import */ var views_templates_order_states__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! views/templates/order_states */ "./sources/views/templates/order_states.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -6505,99 +6551,63 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var OrdersView = function (_JetView) {
-	_inherits(OrdersView, _JetView);
+var OrderView = function (_JetView) {
+    _inherits(OrderView, _JetView);
 
-	function OrdersView() {
-		_classCallCheck(this, OrdersView);
+    function OrderView() {
+        _classCallCheck(this, OrderView);
 
-		return _possibleConstructorReturn(this, _JetView.apply(this, arguments));
-	}
+        return _possibleConstructorReturn(this, _JetView.apply(this, arguments));
+    }
 
-	OrdersView.prototype.config = function config() {
-		return layout;
-	};
+    OrderView.prototype.config = function config() {
+        return layout;
+    };
 
-	OrdersView.prototype.init = function init(view) {
-		view.queryView({ view: "datatable" }).parse(models_orders__WEBPACK_IMPORTED_MODULE_3__["data"]);
-		this._form = this.ui(views_forms_order__WEBPACK_IMPORTED_MODULE_1__["default"]);
+    OrderView.prototype.init = function init(view) {
+        //$$('order-form').bind($$('catalog-order'));
+        // webix.dp.$$("orders").config.updateFromResponse = true;
+    };
 
-		var c = this.ui(views_menus_contextmenu__WEBPACK_IMPORTED_MODULE_4__["default"]);
-		c.attachTo(this.$$("orderData").getNode());
-
-		// backendController = wconfig.orders.backendController;
-		$$("orderData").attachEvent("onBeforeContextMenu", function (id, e, node) {
-			selRows = $$("orderData").getSelectedItem(true);
-		});
-	};
-
-	return OrdersView;
+    return OrderView;
 }(webix_jet__WEBPACK_IMPORTED_MODULE_0__["JetView"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (OrdersView);
+/* harmony default export */ __webpack_exports__["default"] = (OrderView);
 
-
-var controls = [{ view: "button", type: "iconButton", icon: "plus", label: "Add order", width: 130, click: function click() {
-		this.$scope._form.show(this.$view);
-	} }, { view: "button", type: "iconButton", icon: "external-link", label: "Export", width: 120, popup: views_menus_export__WEBPACK_IMPORTED_MODULE_2__["default"] }, {}, { view: "richselect", id: "order_filter", value: "all", maxWidth: 400, minWidth: 250, vertical: true, labelWidth: 100, options: [{ id: "all", value: "All" }, { id: "new", value: "Need Invoicing" }, { id: "ready", value: "Ready to Ship" }, { id: "completed", value: "Completed" }, { id: "cancelled", value: "Cancelled" }], label: "Filter orders", on: {
-		onChange: function onChange() {
-			var val = this.getValue();
-			if (val == "all") webix.$$("orderData").filter("#status#", "");else webix.$$("orderData").filter("#status#", val);
-		}
-	}
-}];
 
 var grid = {
-	margin: 10,
-	rows: [{
-		id: "orderData",
-		view: "datatable", select: true,
-		onContext: {},
-		columns: [{ id: "id", header: "#", width: 50 }, { id: "employee", header: ["Employee", { content: "selectFilter" }], sort: "string", minWidth: 150, fillspace: 1 }, { id: "customer", header: ["Customer", { content: "selectFilter" }], sort: "string", minWidth: 150, fillspace: 1 }, { id: "status", header: "Status", sort: "string", width: 90 }, { id: "fee", header: "Fee", width: 90, sort: "string", format: webix.i18n.priceFormat }, { id: "taxes", header: "Taxes", width: 90, sort: "string", format: webix.i18n.priceFormat }, { id: "total", header: "Total", width: 90, sort: "string", format: webix.i18n.priceFormat }, { id: "shipping_company", header: "Shipping Company", sort: "string" }, { id: "payment_method", header: "Payment method", width: 130, sort: "string" }, { id: "date", header: "Date", sort: "string", width: 100 }, { id: "trash", header: "&nbsp;", width: 35, template: "<span  style='color:#777777; cursor:pointer;' class='webix_icon fa-trash-o'></span>" }],
-		"export": true,
-		on: {
-			onAfterLoad: function onAfterLoad() {
-				this.select(4);
-			}
-		},
-		pager: "pagerA",
-		onClick: {
-			webix_icon: function webix_icon(e, id) {
-				webix.confirm({
-					text: "The order will be deleted.<br/> Are you sure?", ok: "Yes", cancel: "Cancel",
-					callback: function callback(res) {
-						if (res) {
-							webix.$$("orderData").remove(id);
-						}
-					}
-				});
-			}
-		}
-	}]
+    id: "orders",
+    view: "datatable",
+    select: "row",
+    clipboard: "selection",
+    editable: false,
+    checkboxRefresh: true,
+    pager: "pagerA",
+    "export": true,
+    columns: [{ id: "TicketID", header: "#", sort: "int", width: 50 }, { id: "TicketNumber", header: "Заявка", sort: "int", minWidth: 120, fillspace: 2 }, { id: "Title", header: ["Название", { content: "textFilter" }], sort: "string", minWidth: 120, fillspace: 2 },
+    // {id: "Owner", header: ["Владелец", {content: "selectFilter"}], sort: "string", minWidth: 120, fillspace: 2},
+    { id: "CustomerID", header: ["Заказчик", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "Queue", header: ["Очередь", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "Age", header: ["Возраст", { content: "textFilter" }], sort: "int", minWidth: 100, fillspace: 2 }, { id: "StateType", header: ["Статус", { content: "staFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 100, fillspace: 1, editor: "inline-checkbox", template: views_templates_order_states__WEBPACK_IMPORTED_MODULE_5__["default"] }],
+    scheme: {
+        $init: function $init(obj) {
+            if (obj.deleted == 1) obj.$css = "deleted";
+        }
+    },
+    url: "index.php?route=order/order/getTicketList&token=" + token,
+    ready: function ready() {
+        webix.extend(this, webix.ProgressBar);
+    }
+};
 
+var order_views = {
+    view: "multiview",
+    id: "order-views",
+    cells: [grid]
 };
 
 var layout = {
-	type: "space",
-	rows: [{
-		height: 40,
-		cols: controls
-	}, {
-		rows: [grid, {
-			view: "toolbar",
-			css: "highlighted_header header6",
-			paddingX: 5,
-			paddingY: 5,
-			height: 40,
-			cols: [{
-				view: "pager", id: "pagerA",
-				template: "{common.first()}{common.prev()}&nbsp; {common.pages()}&nbsp; {common.next()}{common.last()}",
-				autosize: true,
-				height: 35,
-				group: 5
-			}]
-		}]
-	}]
+    id: "layout",
+    type: "space",
+    rows: [{ height: 40, id: "edit-tools", cols: views_menus_export__WEBPACK_IMPORTED_MODULE_1__["default"] }, { height: 40, id: "edit-form-icon", cols: views_menus_toolplug__WEBPACK_IMPORTED_MODULE_2__["default"], hidden: true }, { rows: [order_views, views_modules_paging__WEBPACK_IMPORTED_MODULE_3__["default"]] }]
 };
 
 /***/ }),
@@ -8299,6 +8309,26 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function (obj, common, value) {
 	if (value == "1") return "<span class='tracker-online'> Online </span>";else return "<span class='tracker-offline'> Offline </span>";
+});
+
+/***/ }),
+
+/***/ "./sources/views/templates/order_states.js":
+/*!*************************************************!*\
+  !*** ./sources/views/templates/order_states.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/* harmony default export */ __webpack_exports__["default"] = (function (obj, common, value) {
+  if (value == 'closed') return "<span class='webix_table_checkbox order-status order-closed'> Закрыта </span>";else return "<span class='webix_table_checkbox order-status order-open'> Открыта </span>";
 });
 
 /***/ }),

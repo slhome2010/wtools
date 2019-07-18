@@ -59,7 +59,7 @@ img.photo {
     }
 }
 
-.webix_dtable .status {
+.webix_dtable .status, .webix_dtable .order-status {
 	padding: 2px 5px;
 	font-size: 12px;
 	border-radius: 3px;
@@ -80,6 +80,15 @@ option.status0 {
 }
 option.status1 {	
 	background-color: rgba(39, 174, 96, 0.7);
+}
+
+.order-open {	
+	/* background-color: rgba(255, 81, 18, 0.7); */
+	background-color: rgba(241, 155, 96,1);
+}
+.order-closed {	
+	/* background-color: rgba(39, 174, 96, 0.7); */
+	background-color: rgba(73, 205, 129,1);
 }
 
 .webix_dtable .deleted, .webix_dataview_item .deleted { 
