@@ -1,3 +1,16 @@
+import {JetView} from "webix-jet";
+import chartdata from "models/orders";
+
+export default class OrdersChartView extends JetView{
+	config(){
+		return ui;
+	}
+	init(view){		
+		var userinfo = this.app.getService("user").getUser();
+		view.queryView({ view:"chart" }).parse(chartdata(userinfo.token));
+	}
+}
+
 const ui = {
 	"type": "clean",
 	"rows":[
@@ -14,14 +27,13 @@ const ui = {
 			"xAxis":{
 				"template": "#month#"
 			},
-
-
 			"yAxis":{
-				
+				start:0,				
 			},
 			barWidth: 20,
 			alpha:0.7,
 			radius:0,
+			"offset":0,
 			"series":[
 				{ "value":"#total_open#","color":"#f19b60"  ,"item":{"borderColor":"#fff","color":"#f19b60","radius":2},"line":{"color":"#f19b60","width":2},"tooltip":{"template":"#total_open#"}},
 				{ "value":"#total_closed#","color":"#49cd81","item":{"borderColor":"#fff","color":"#49cd81","radius":2},"line":{"color":"#49cd81","width":2},"tooltip":{"template":"#total_closed#"}},								
@@ -45,15 +57,15 @@ const ui = {
 			"padding":{
 				"top": 25
 			},
-			"data":[
+			/* "data":[
 				{"id": 1, "month": "Jun", "total_closed": 100, "total_open": 100,},
 				{"id": 2, "month": "Jul", "total_closed": 150, "total_open": 200,},
 				{"id": 3, "month": "Aug", "total_closed": 160, "total_open": 220,},
 				{"id": 4, "month": "Sep", "total_closed": 200, "total_open": 250,},
 				{"id": 5, "month": "Oct", "total_closed": 100, "total_open": 80,},
-			]
+			] */
 		}
 	]
 };
 
-export default ui;
+//export default ui;

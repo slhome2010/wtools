@@ -1,7 +1,7 @@
 import {JetView} from "webix-jet";
 import chartdata from "models/totalchart";
 
-export default class VisitorsView extends JetView{
+export default class ItemsChartView extends JetView{
 	config(){
 		return layout;
 	}
@@ -10,6 +10,7 @@ export default class VisitorsView extends JetView{
 		view.queryView({ view:"chart" }).parse(chartdata(userinfo.token));
 	}
 }
+
 const layout = {
 	"type": "clean",
 	"rows":[

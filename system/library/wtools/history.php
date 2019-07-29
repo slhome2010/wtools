@@ -29,18 +29,20 @@ Class History {
             $this->history_data = $this->getObjectHistory($this->date_start < $this->date_end ? "ASC" : "DESC");
         }
 
-        $this->date_created = new DateTime($this->history_data[0]['date_created']);
-        $this->history_date_start = new DateTime($this->history_data[0]['date_changed']);
-        $end_of_history = end($this->history_data);
-        // Дата последней модификации
-        $this->date_modified = new DateTime($end_of_history['date_modified']);
-        // Дата последней записи в истории
-        $this->history_date_end = new DateTime($end_of_history['date_changed']);
-        reset($this->history_data);
+        if ($this->history_data) {
+            $this->date_created = new DateTime($this->history_data[0]['date_created']);
+            $this->history_date_start = new DateTime($this->history_data[0]['date_changed']);
+            $end_of_history = end($this->history_data);
+            // Дата последней модификации
+            $this->date_modified = new DateTime($end_of_history['date_modified']);
+            // Дата последней записи в истории
+            $this->history_date_end = new DateTime($end_of_history['date_changed']);
+            reset($this->history_data);
 
-        $this->history_events = $this->checkHistoryEvents();
+            $this->history_events = $this->checkHistoryEvents();
 
-        $this->history_intervals = $this->makeHistoryIntervals();
+            $this->history_intervals = $this->makeHistoryIntervals();
+        }
     }
 
     private function getObjectHistory($order = "DESC") {

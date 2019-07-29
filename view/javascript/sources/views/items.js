@@ -97,10 +97,11 @@ const history_grid = {
         {id: "history_discount_id", header: ["Скидка", {content: "selectFilter"}], sort: "int", minWidth: 60, fillspace: 1},
     ],
     scheme: {
+        // init не срабатывает в данной ситуации (возможно из-за внешней принудительной загрузки или из-за map)
         $init: function (obj) {
             if (obj.deleted == 1)
                 obj.$css = "deleted";
-            obj.date_changed = xml_format(obj.start);
+            obj.date_changed = xml_format(obj.date_start);
         }
     },
 //	url:"index.php?route=catalog/item/getItemHistory&token="+token+"&item_id="+$$('item-form').getValues().item_id,

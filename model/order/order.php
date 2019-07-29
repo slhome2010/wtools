@@ -49,7 +49,7 @@ class ModelOrderOrder extends Model
         return $result->SessionID;
     }
 
-    public function getTicketId($sessid, $timeRange = 4320)
+    public function getTicketId($sessid, $statetype = ['new', 'open', 'closed'])
     {
         $curl = curl_init();
 
@@ -58,12 +58,14 @@ class ModelOrderOrder extends Model
             return;
         }
 
+        $now = new DateTime();
+
         $param = json_encode(
             [
                 'SessionID' => $sessid,
-                'StateType' => ['new', 'open', 'closed'],
+                'StateType' => $statetype,
                // 'TicketCreateTimeNewerMinutes' => $timeRange, //Заявки за последние 3 дня
-                'TicketCreateTimeNewerDate' => '2019-01-01 00:00:01', //
+                'TicketCreateTimeNewerDate' => $now->format('Y') . '-01-01 00:00:01', 
                 'SortBy'  => 'Age',
             ]
         );
@@ -123,7 +125,106 @@ class ModelOrderOrder extends Model
         }
 
         return $result;
+    }
 
+    public function getTicketTotal($sessid, $month)
+    {
+        $curl = curl_init();
+
+        if (!$curl) {
+            echo 'Error';
+            return;
+        }
+
+        $now = new DateTime();
+        $number = cal_days_in_month(CAL_GREGORIAN, (int)$month, (int)$now->format('Y'));
+
+        $param = json_encode(
+            [
+                'SessionID' => $sessid,
+                'StateType' => ['new', 'open', 'closed'],                
+                'TicketCreateTimeNewerDate' => $now->format('Y') . '-' . (string)$month . '-01 00:00:01', 
+                'TicketCreateTimeOlderDate' => $now->format('Y') . '-' . (string)$month . '-' . $number . ' 23:59:59',
+                'SortBy'  => 'Age',
+            ]
+        );
+
+        curl_setopt($curl, CURLOPT_URL, BASEURL . '/ticket');
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $param);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        //curl_setopt($curl, CURLOPT_URL, $BaseURL.'/ticket?'. http_build_query($param));
+        //curl_setopt($curl, CURLOPT_POST, false);
+
+        $result = curl_exec($curl);
+
+        $result = json_decode($result);
+
+        if (!$result) {
+            echo 'Error decode json';
+            return;
+        }
+
+        if (isset($result->Error)) {
+            echo 'Error ' . $result->Error->ErrorMessage;
+            return;
+        }
+
+        if (isset($result->TicketID)) {
+            return $result->TicketID;
+        }
+
+
+        return [];
+    }
+
+    public function getTicketClosed($sessid, $month)
+    {
+        $curl = curl_init();
+
+        if (!$curl) {
+            echo 'Error';
+            return;
+        }
+
+        $now = new DateTime();
+        $number = cal_days_in_month(CAL_GREGORIAN, (int)$month, (int)$now->format('Y'));
+
+        $param = json_encode(
+            [
+                'SessionID' => $sessid,
+                'StateType' => ['closed'],                
+                'TicketLastChangeTimeNewerDate' => $now->format('Y') . '-' . (string)$month . '-01 00:00:01', 
+                'TicketLastChangeTimeOlderDate' => $now->format('Y') . '-' . (string)$month . '-' . $number . ' 23:59:59',
+                'SortBy'  => 'Age',
+            ]
+        );
+
+        curl_setopt($curl, CURLOPT_URL, BASEURL . '/ticket');
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $param);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        //curl_setopt($curl, CURLOPT_URL, $BaseURL.'/ticket?'. http_build_query($param));
+        //curl_setopt($curl, CURLOPT_POST, false);
+
+        $result = curl_exec($curl);
+
+        $result = json_decode($result);
+
+        if (!$result) {
+            echo 'Error decode json';
+            return;
+        }
+
+        if (isset($result->Error)) {
+            echo 'Error ' . $result->Error->ErrorMessage;
+            return;
+        }
+
+        if (isset($result->TicketID)) {
+            return $result->TicketID;
+        }
+
+
+        return [];
     }
 
 }

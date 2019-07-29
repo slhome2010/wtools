@@ -1,5 +1,5 @@
 import visitors 	from "views/modules/visitors";
-import orders 		from "views/modules/orders";
+import orders 		from "views/modules/orderschart";
 import chart_diff 	from "views/modules/chart_diff";
 import revenue 		from "views/modules/revenue";
 import tasks	 	from "views/modules/taskschart";

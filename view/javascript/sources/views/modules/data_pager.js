@@ -1,5 +1,5 @@
 import {JetView} from "webix-jet";
-import {data} from "models/orders";
+import data from "models/orders";
 
 export default class DataPagerView extends JetView{
 	config(){

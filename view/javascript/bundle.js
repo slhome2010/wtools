@@ -2711,13 +2711,15 @@ var data = [{ "value": "Files", "type": "folder", "size": 0, "date": 0, "id": "/
 /*!**********************************!*\
   !*** ./sources/models/orders.js ***!
   \**********************************/
-/*! exports provided: data */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "data", function() { return data; });
-var data = [{ "id": 1, "date": "2014-03-20", "employee": "Ray M. Parra", "customer": "Sabrina N. Hermann", "status": "new", "fee": 12.5, "taxes": 23.028, "total": 323.378, "shipping_company": "Shipping A", "payment_method": "Credit card" }, { "id": 2, "date": "2014-03-20", "employee": "Lane E. Dion", "customer": "Bradly N. Mauro", "status": "new", "fee": 12, "taxes": 6.528, "total": 100.128, "shipping_company": "Shipping C", "payment_method": "Wire transer" }, { "id": 3, "date": "2014-03-20", "employee": "Ray M. Parra", "customer": "Stepanie P. Lilley", "status": "ready", "fee": 25, "taxes": 54, "total": 1429, "shipping_company": "Shipping A", "payment_method": "Credit card" }, { "id": 4, "date": "2014-03-20", "employee": "Sudie V. Goldsmith", "customer": "Jettie P. Whelan", "status": "cancelled", "fee": 10, "taxes": 41.25, "total": 1082.5, "shipping_company": "Shipping A", "payment_method": "Credit card" }, { "id": 5, "date": "2014-03-20", "employee": "Romaine B. Alley", "customer": "Amee A. Marshall", "status": "new", "fee": 12, "taxes": 9.1257, "total": 203.6397, "shipping_company": "Shipping A", "payment_method": "Wire transer" }, { "id": 6, "date": "2014-03-20", "employee": "Jolie P. Sparks", "customer": "Roxanna C. Cass", "status": "completed", "fee": 10, "taxes": 2.671875, "total": 119.546875, "shipping_company": "Shipping B", "payment_method": "Wire transer" }, { "id": 7, "date": "2014-03-20", "employee": "Sherley D. Berryman", "customer": "Ashleigh G. Denham", "status": "completed", "fee": 26, "taxes": 149.2638, "total": 1419.1288, "shipping_company": "Shipping B", "payment_method": "Credit card" }, { "id": 8, "date": "2014-05-15", "employee": "Lane E. Dion", "customer": "Reba H. Casteel", "status": "new", "fee": 33, "taxes": 54.23, "total": 1522.63, "shipping_company": "Shipping B", "payment_method": "Cash" }, { "id": 9, "date": "2014-05-16", "employee": "Ray M. Parra", "customer": "Stepanie P. Lilley", "status": "ready", "fee": 56.2, "taxes": 22.1, "total": 854.3, "shipping_company": "Shipping D", "payment_method": "Cash" }, { "id": 10, "date": "2014-05-16", "employee": "Sudie V. Goldsmith", "customer": "Bradly N. Mauro", "status": "new", "fee": 10, "taxes": 12, "total": 454, "shipping_company": "Shipping E", "payment_method": "Credit Card" }, { "id": 11, "date": "2014-05-16", "employee": "Romaine B. Alley", "customer": "Sabrina N. Hermann", "status": "cancelled", "fee": 85, "taxes": 42, "total": 987, "shipping_company": "Shipping A", "payment_method": "Wire Transfer" }, { "id": 12, "date": "2014-05-16", "employee": "Ray M. Parra", "customer": "Roxanna C. Cass", "status": "completed", "fee": 20, "taxes": 8, "total": 456, "shipping_company": "Shipping G", "payment_method": "Credit Card" }, { "id": 13, "date": "2014-08-11", "employee": "Jolie P. Sparks", "customer": "Bradly N. Mauro", "status": "new", "fee": 13, "taxes": 1, "total": 255, "shipping_company": "Shipping A", "payment_method": "Cash" }, { "id": 14, "date": "2014-08-11", "employee": "Sudie V. Goldsmith", "customer": "Stephen H. Peachey", "status": "new", "fee": 63, "taxes": 12, "total": 1522, "shipping_company": "Shipping B", "payment_method": "Wire Transfer" }, { "id": 15, "date": "2014-08-11", "employee": "Sherley D. Berryman", "customer": "Sabrina N. Hermann", "status": "ready", "fee": 78, "taxes": 45, "total": 1788, "shipping_company": "Shipping A", "payment_method": "Wire Transfer" }, { "id": 16, "date": "2014-08-11", "employee": "Ray M. Parra", "customer": "Regine H.Field", "status": "ready", "fee": 14, "taxes": 4, "total": 988, "shipping_company": "Shipping A", "payment_method": "Cash" }, { "id": 17, "date": "2014-08-11", "employee": "Romaine B. Alley", "customer": "Stephane A. Chandler", "status": "completed", "fee": 0, "taxes": 0, "total": 0, "shipping_company": "Shipping C", "payment_method": "Credit Card" }, { "id": 18, "date": "2014-08-11", "employee": "Jamila N. Mccallister", "customer": "Olimpia C. Whelan", "status": "new", "fee": 55, "taxes": 13, "total": 2100, "shipping_company": "Shipping E", "payment_method": "Credit Card" }, { "id": 19, "date": "2014-08-11", "employee": "Romaine B. Alley", "customer": "Jettie P. Whelan", "status": "ready", "fee": 18, "taxes": 8, "total": 956, "shipping_company": "Shipping A", "payment_method": "Wire Transfer" }, { "id": 20, "date": "2014-08-11", "employee": "Lane E. Dion", "customer": "Stepanie P. Lilley", "status": "completed", "fee": 133, "taxes": 33, "total": 754, "shipping_company": "Shipping D", "payment_method": "Cash" }, { "id": 111, "date": "2014-03-20", "employee": "Ray M. Parra", "customer": "Sabrina N. Hermann", "status": "new", "fee": 12.5, "taxes": 23.028, "total": 323.378, "shipping_company": "Shipping A", "payment_method": "Credit card" }, { "id": 112, "date": "2014-03-20", "employee": "Lane E. Dion", "customer": "Bradly N. Mauro", "status": "new", "fee": 12, "taxes": 6.528, "total": 100.128, "shipping_company": "Shipping C", "payment_method": "Wire transer" }, { "id": 113, "date": "2014-03-20", "employee": "Ray M. Parra", "customer": "Stepanie P. Lilley", "status": "ready", "fee": 25, "taxes": 54, "total": 1429, "shipping_company": "Shipping A", "payment_method": "Credit card" }, { "id": 114, "date": "2014-03-20", "employee": "Sudie V. Goldsmith", "customer": "Jettie P. Whelan", "status": "cancelled", "fee": 10, "taxes": 41.25, "total": 1082.5, "shipping_company": "Shipping A", "payment_method": "Credit card" }, { "id": 115, "date": "2014-03-20", "employee": "Romaine B. Alley", "customer": "Amee A. Marshall", "status": "new", "fee": 12, "taxes": 9.1257, "total": 203.6397, "shipping_company": "Shipping A", "payment_method": "Wire transer" }, { "id": 116, "date": "2014-03-20", "employee": "Jolie P. Sparks", "customer": "Roxanna C. Cass", "status": "completed", "fee": 10, "taxes": 2.671875, "total": 119.546875, "shipping_company": "Shipping B", "payment_method": "Wire transer" }, { "id": 117, "date": "2014-03-20", "employee": "Sherley D. Berryman", "customer": "Ashleigh G. Denham", "status": "completed", "fee": 26, "taxes": 149.2638, "total": 1419.1288, "shipping_company": "Shipping B", "payment_method": "Credit card" }, { "id": 118, "date": "2014-05-15", "employee": "Lane E. Dion", "customer": "Reba H. Casteel", "status": "new", "fee": 33, "taxes": 54.23, "total": 1522.63, "shipping_company": "Shipping B", "payment_method": "Cash" }, { "id": 119, "date": "2014-05-16", "employee": "Ray M. Parra", "customer": "Stepanie P. Lilley", "status": "ready", "fee": 56.2, "taxes": 22.1, "total": 854.3, "shipping_company": "Shipping D", "payment_method": "Cash" }, { "id": 1110, "date": "2014-05-16", "employee": "Sudie V. Goldsmith", "customer": "Bradly N. Mauro", "status": "new", "fee": 10, "taxes": 12, "total": 454, "shipping_company": "Shipping E", "payment_method": "Credit Card" }, { "id": 1111, "date": "2014-05-16", "employee": "Romaine B. Alley", "customer": "Sabrina N. Hermann", "status": "cancelled", "fee": 85, "taxes": 42, "total": 987, "shipping_company": "Shipping A", "payment_method": "Wire Transfer" }, { "id": 1112, "date": "2014-05-16", "employee": "Ray M. Parra", "customer": "Roxanna C. Cass", "status": "completed", "fee": 20, "taxes": 8, "total": 456, "shipping_company": "Shipping G", "payment_method": "Credit Card" }, { "id": 1113, "date": "2014-08-11", "employee": "Jolie P. Sparks", "customer": "Bradly N. Mauro", "status": "new", "fee": 13, "taxes": 1, "total": 255, "shipping_company": "Shipping A", "payment_method": "Cash" }, { "id": 1114, "date": "2014-08-11", "employee": "Sudie V. Goldsmith", "customer": "Stephen H. Peachey", "status": "new", "fee": 63, "taxes": 12, "total": 1522, "shipping_company": "Shipping B", "payment_method": "Wire Transfer" }, { "id": 1115, "date": "2014-08-11", "employee": "Sherley D. Berryman", "customer": "Sabrina N. Hermann", "status": "ready", "fee": 78, "taxes": 45, "total": 1788, "shipping_company": "Shipping A", "payment_method": "Wire Transfer" }, { "id": 1116, "date": "2014-08-11", "employee": "Ray M. Parra", "customer": "Regine H.Field", "status": "ready", "fee": 14, "taxes": 4, "total": 988, "shipping_company": "Shipping A", "payment_method": "Cash" }, { "id": 1117, "date": "2014-08-11", "employee": "Romaine B. Alley", "customer": "Stephane A. Chandler", "status": "completed", "fee": 0, "taxes": 0, "total": 0, "shipping_company": "Shipping C", "payment_method": "Credit Card" }, { "id": 1118, "date": "2014-08-11", "employee": "Jamila N. Mccallister", "customer": "Olimpia C. Whelan", "status": "new", "fee": 55, "taxes": 13, "total": 2100, "shipping_company": "Shipping E", "payment_method": "Credit Card" }, { "id": 1119, "date": "2014-08-11", "employee": "Romaine B. Alley", "customer": "Jettie P. Whelan", "status": "ready", "fee": 18, "taxes": 8, "total": 956, "shipping_company": "Shipping A", "payment_method": "Wire Transfer" }, { "id": 1120, "date": "2014-08-11", "employee": "Lane E. Dion", "customer": "Stepanie P. Lilley", "status": "completed", "fee": 133, "taxes": 33, "total": 754, "shipping_company": "Shipping D", "payment_method": "Cash" }, { "id": 127, "date": "2014-03-20", "employee": "Sherley D. Berryman", "customer": "Ashleigh G. Denham", "status": "new", "fee": 26, "taxes": 149.2638, "total": 1419.1288, "shipping_company": "Shipping B", "payment_method": "Credit card" }, { "id": 128, "date": "2014-05-15", "employee": "Lane E. Dion", "customer": "Reba H. Casteel", "status": "new", "fee": 33, "taxes": 54.23, "total": 1522.63, "shipping_company": "Shipping B", "payment_method": "Cash" }, { "id": 129, "date": "2014-05-16", "employee": "Ray M. Parra", "customer": "Stepanie P. Lilley", "status": "new", "fee": 56.2, "taxes": 22.1, "total": 854.3, "shipping_company": "Shipping D", "payment_method": "Cash" }, { "id": 21, "date": "2014-03-21", "employee": "Ray M. Parra", "customer": "Sabrina N. Hermann", "status": "new", "fee": 12.5, "taxes": 23.028, "total": 323.378, "shipping_company": "Shipping A", "payment_method": "Credit card" }, { "id": 22, "date": "2014-03-21", "employee": "Lane E. Dion", "customer": "Bradly N. Mauro", "status": "new", "fee": 12, "taxes": 6.528, "total": 100.128, "shipping_company": "Shipping C", "payment_method": "Wire transer" }, { "id": 23, "date": "2014-03-21", "employee": "Ray M. Parra", "customer": "Stepanie P. Lilley", "status": "ready", "fee": 25, "taxes": 54, "total": 1429, "shipping_company": "Shipping A", "payment_method": "Credit card" }, { "id": 24, "date": "2014-03-21", "employee": "Sudie V. Goldsmith", "customer": "Jettie P. Whelan", "status": "cancelled", "fee": 10, "taxes": 41.25, "total": 1082.5, "shipping_company": "Shipping A", "payment_method": "Credit card" }, { "id": 25, "date": "2014-03-21", "employee": "Romaine B. Alley", "customer": "Amee A. Marshall", "status": "new", "fee": 12, "taxes": 9.1257, "total": 203.6397, "shipping_company": "Shipping A", "payment_method": "Wire transer" }, { "id": 26, "date": "2014-03-21", "employee": "Jolie P. Sparks", "customer": "Roxanna C. Cass", "status": "completed", "fee": 10, "taxes": 2.671875, "total": 119.546875, "shipping_company": "Shipping B", "payment_method": "Wire transer" }, { "id": 27, "date": "2014-03-21", "employee": "Sherley D. Berryman", "customer": "Ashleigh G. Denham", "status": "completed", "fee": 26, "taxes": 149.2638, "total": 1419.1288, "shipping_company": "Shipping B", "payment_method": "Credit card" }, { "id": 28, "date": "2014-05-22", "employee": "Lane E. Dion", "customer": "Reba H. Casteel", "status": "new", "fee": 33, "taxes": 54.23, "total": 1522.63, "shipping_company": "Shipping B", "payment_method": "Cash" }, { "id": 29, "date": "2014-05-22", "employee": "Ray M. Parra", "customer": "Stepanie P. Lilley", "status": "ready", "fee": 56.2, "taxes": 22.1, "total": 854.3, "shipping_company": "Shipping D", "payment_method": "Cash" }, { "id": 30, "date": "2014-05-22", "employee": "Sudie V. Goldsmith", "customer": "Bradly N. Mauro", "status": "new", "fee": 10, "taxes": 12, "total": 454, "shipping_company": "Shipping E", "payment_method": "Credit Card" }, { "id": 31, "date": "2014-05-22", "employee": "Romaine B. Alley", "customer": "Sabrina N. Hermann", "status": "cancelled", "fee": 85, "taxes": 42, "total": 987, "shipping_company": "Shipping A", "payment_method": "Wire Transfer" }, { "id": 32, "date": "2014-05-22", "employee": "Ray M. Parra", "customer": "Roxanna C. Cass", "status": "completed", "fee": 20, "taxes": 8, "total": 456, "shipping_company": "Shipping G", "payment_method": "Credit Card" }, { "id": 33, "date": "2014-08-26", "employee": "Jolie P. Sparks", "customer": "Bradly N. Mauro", "status": "new", "fee": 13, "taxes": 1, "total": 255, "shipping_company": "Shipping A", "payment_method": "Cash" }, { "id": 34, "date": "2014-08-26", "employee": "Sudie V. Goldsmith", "customer": "Stephen H. Peachey", "status": "new", "fee": 63, "taxes": 12, "total": 1522, "shipping_company": "Shipping B", "payment_method": "Wire Transfer" }, { "id": 35, "date": "2014-08-26", "employee": "Sherley D. Berryman", "customer": "Sabrina N. Hermann", "status": "ready", "fee": 78, "taxes": 45, "total": 1788, "shipping_company": "Shipping A", "payment_method": "Wire Transfer" }, { "id": 36, "date": "2014-08-26", "employee": "Ray M. Parra", "customer": "Regine H.Field", "status": "ready", "fee": 14, "taxes": 4, "total": 988, "shipping_company": "Shipping A", "payment_method": "Cash" }, { "id": 37, "date": "2014-08-26", "employee": "Romaine B. Alley", "customer": "Stephane A. Chandler", "status": "completed", "fee": 0, "taxes": 0, "total": 0, "shipping_company": "Shipping C", "payment_method": "Credit Card" }, { "id": 38, "date": "2014-08-26", "employee": "Jamila N. Mccallister", "customer": "Olimpia C. Whelan", "status": "new", "fee": 55, "taxes": 13, "total": 2100, "shipping_company": "Shipping E", "payment_method": "Credit Card" }, { "id": 39, "date": "2014-08-26", "employee": "Romaine B. Alley", "customer": "Jettie P. Whelan", "status": "ready", "fee": 18, "taxes": 8, "total": 956, "shipping_company": "Shipping A", "payment_method": "Wire Transfer" }, { "id": 40, "date": "2014-08-26", "employee": "Lane E. Dion", "customer": "Stepanie P. Lilley", "status": "completed", "fee": 133, "taxes": 33, "total": 754, "shipping_company": "Shipping D", "payment_method": "Cash" }];
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return chartdata; });
+function chartdata(token) {
+    return webix.ajax("index.php?route=order/order/getDataForChart&token=" + token);
+}
 
 /***/ }),
 
@@ -2857,6 +2859,8 @@ var map = {
 	"./menus/contextmenu.js": "./sources/views/menus/contextmenu.js",
 	"./menus/export": "./sources/views/menus/export.js",
 	"./menus/export.js": "./sources/views/menus/export.js",
+	"./menus/formview": "./sources/views/menus/formview.js",
+	"./menus/formview.js": "./sources/views/menus/formview.js",
 	"./menus/mail": "./sources/views/menus/mail.js",
 	"./menus/mail.js": "./sources/views/menus/mail.js",
 	"./menus/message": "./sources/views/menus/message.js",
@@ -2911,8 +2915,8 @@ var map = {
 	"./modules/onlinefilter.js": "./sources/views/modules/onlinefilter.js",
 	"./modules/order_statesfilter": "./sources/views/modules/order_statesfilter.js",
 	"./modules/order_statesfilter.js": "./sources/views/modules/order_statesfilter.js",
-	"./modules/orders": "./sources/views/modules/orders.js",
-	"./modules/orders.js": "./sources/views/modules/orders.js",
+	"./modules/orderschart": "./sources/views/modules/orderschart.js",
+	"./modules/orderschart.js": "./sources/views/modules/orderschart.js",
 	"./modules/paging": "./sources/views/modules/paging.js",
 	"./modules/paging.js": "./sources/views/modules/paging.js",
 	"./modules/product_meta": "./sources/views/modules/product_meta.js",
@@ -3171,7 +3175,7 @@ var ready = webix.require("//cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler.js").
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var views_modules_visitors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! views/modules/visitors */ "./sources/views/modules/visitors.js");
-/* harmony import */ var views_modules_orders__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! views/modules/orders */ "./sources/views/modules/orders.js");
+/* harmony import */ var views_modules_orderschart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! views/modules/orderschart */ "./sources/views/modules/orderschart.js");
 /* harmony import */ var views_modules_chart_diff__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! views/modules/chart_diff */ "./sources/views/modules/chart_diff.js");
 /* harmony import */ var views_modules_revenue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! views/modules/revenue */ "./sources/views/modules/revenue.js");
 /* harmony import */ var views_modules_taskschart__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! views/modules/taskschart */ "./sources/views/modules/taskschart.js");
@@ -3216,7 +3220,7 @@ var layout = {
 		}, {
 			height: 220,
 			type: "wide",
-			cols: [views_modules_orders__WEBPACK_IMPORTED_MODULE_1__["default"], views_modules_visitors__WEBPACK_IMPORTED_MODULE_0__["default"]]
+			cols: [views_modules_orderschart__WEBPACK_IMPORTED_MODULE_1__["default"], views_modules_visitors__WEBPACK_IMPORTED_MODULE_0__["default"]]
 		}]
 
 	}]
@@ -3238,7 +3242,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var webix_jet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! webix-jet */ "./node_modules/webix-jet/dist/index.js");
 /* harmony import */ var views_modules_dashline__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! views/modules/dashline */ "./sources/views/modules/dashline.js");
 /* harmony import */ var views_modules_totalchart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! views/modules/totalchart */ "./sources/views/modules/totalchart.js");
-/* harmony import */ var views_modules_orders__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! views/modules/orders */ "./sources/views/modules/orders.js");
+/* harmony import */ var views_modules_orderschart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! views/modules/orderschart */ "./sources/views/modules/orderschart.js");
 /* harmony import */ var views_modules_bestsellers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! views/modules/bestsellers */ "./sources/views/modules/bestsellers.js");
 /* harmony import */ var views_modules_lastobjects__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! views/modules/lastobjects */ "./sources/views/modules/lastobjects.js");
 
@@ -3255,7 +3259,7 @@ var layout = {
 		rows: [{
 			height: 240,
 			type: "wide",
-			cols: [views_modules_totalchart__WEBPACK_IMPORTED_MODULE_2__["default"], views_modules_orders__WEBPACK_IMPORTED_MODULE_3__["default"]]
+			cols: [views_modules_totalchart__WEBPACK_IMPORTED_MODULE_2__["default"], views_modules_orderschart__WEBPACK_IMPORTED_MODULE_3__["default"]]
 		}, {
 			type: "wide",
 			cols: [views_modules_lastobjects__WEBPACK_IMPORTED_MODULE_5__["default"], views_modules_bestsellers__WEBPACK_IMPORTED_MODULE_4__["default"]]
@@ -4000,9 +4004,10 @@ var history_grid = {
 
     columns: [{ id: "item_history_id", header: "#", sort: "int", minWidth: 120 }, { map: "(date)#date_changed#", header: "Дата", sort: "date", minWidth: 120, format: webix.Date.dateToStr("%d.%m.%Y") }, { id: "deleted", header: " ", sort: "int", width: 40, css: { "text-align": "center" }, template: views_templates_deleted__WEBPACK_IMPORTED_MODULE_9__["default"] }, { id: "itemname", header: ["Название", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "tracker_uid", header: ["Трекер UID", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "trackername", header: ["Трекер", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "sim1", header: ["SIM-1", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "sim2", header: ["SIM-2", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "wialon_groupname", header: ["Группа", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "wialon_group_off", header: ["Вид", { content: "eyeFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 80, css: { "text-align": "center" }, template: views_templates_eye__WEBPACK_IMPORTED_MODULE_8__["default"] }, { id: "online", header: ["Состояние", { content: "onlFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 120, css: { "text-align": "center" }, template: views_templates_online__WEBPACK_IMPORTED_MODULE_10__["default"] }, { id: "history_tarif_id", header: ["Тариф", { content: "selectFilter" }], sort: "int", minWidth: 60, fillspace: 1 }, { id: "history_discount_id", header: ["Скидка", { content: "selectFilter" }], sort: "int", minWidth: 60, fillspace: 1 }],
     scheme: {
+        // init не срабатывает в данной ситуации (возможно из-за внешней принудительной загрузки или из-за map)
         $init: function $init(obj) {
             if (obj.deleted == 1) obj.$css = "deleted";
-            obj.date_changed = xml_format(obj.start);
+            obj.date_changed = xml_format(obj.date_start);
         }
     },
     //	url:"index.php?route=catalog/item/getItemHistory&token="+token+"&item_id="+$$('item-form').getValues().item_id,
@@ -4312,6 +4317,24 @@ var controls = [{ view: "icon", type: "icon", borderless: false, icon: "mdi mdi-
 		webix.toPNG(layout.queryView({ view: "datatable" }));
 	}
 }, { view: "icon", type: "icon", borderless: false, icon: "mdi mdi-printer", tooltip: "Print", click: function click() {
+		//webix.toPNG(webix.grid);
+	}
+}, {}];
+
+/* harmony default export */ __webpack_exports__["default"] = (controls);
+
+/***/ }),
+
+/***/ "./sources/views/menus/formview.js":
+/*!*****************************************!*\
+  !*** ./sources/views/menus/formview.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var controls = [{ view: "icon", type: "icon", borderless: false, icon: "mdi mdi-file-document-box", tooltip: "Просмотр карточки", click: function click() {
 		//webix.toPNG(webix.grid);
 	}
 }, {}];
@@ -4840,7 +4863,7 @@ var DataPagerView = function (_JetView) {
 	};
 
 	DataPagerView.prototype.init = function init(view) {
-		view.queryView({ view: "datatable" }).parse(models_orders__WEBPACK_IMPORTED_MODULE_1__["data"]);
+		view.queryView({ view: "datatable" }).parse(models_orders__WEBPACK_IMPORTED_MODULE_1__["default"]);
 	};
 
 	return DataPagerView;
@@ -5693,15 +5716,50 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./sources/views/modules/orders.js":
-/*!*****************************************!*\
-  !*** ./sources/views/modules/orders.js ***!
-  \*****************************************/
+/***/ "./sources/views/modules/orderschart.js":
+/*!**********************************************!*\
+  !*** ./sources/views/modules/orderschart.js ***!
+  \**********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var webix_jet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! webix-jet */ "./node_modules/webix-jet/dist/index.js");
+/* harmony import */ var models_orders__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! models/orders */ "./sources/models/orders.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var OrdersChartView = function (_JetView) {
+	_inherits(OrdersChartView, _JetView);
+
+	function OrdersChartView() {
+		_classCallCheck(this, OrdersChartView);
+
+		return _possibleConstructorReturn(this, _JetView.apply(this, arguments));
+	}
+
+	OrdersChartView.prototype.config = function config() {
+		return ui;
+	};
+
+	OrdersChartView.prototype.init = function init(view) {
+		var userinfo = this.app.getService("user").getUser();
+		view.queryView({ view: "chart" }).parse(Object(models_orders__WEBPACK_IMPORTED_MODULE_1__["default"])(userinfo.token));
+	};
+
+	return OrdersChartView;
+}(webix_jet__WEBPACK_IMPORTED_MODULE_0__["JetView"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (OrdersChartView);
+
+
 var ui = {
 	"type": "clean",
 	"rows": [{
@@ -5716,11 +5774,13 @@ var ui = {
 		"xAxis": {
 			"template": "#month#"
 		},
-
-		"yAxis": {},
+		"yAxis": {
+			start: 0
+		},
 		barWidth: 20,
 		alpha: 0.7,
 		radius: 0,
+		"offset": 0,
 		"series": [{ "value": "#total_open#", "color": "#f19b60", "item": { "borderColor": "#fff", "color": "#f19b60", "radius": 2 }, "line": { "color": "#f19b60", "width": 2 }, "tooltip": { "template": "#total_open#" } }, { "value": "#total_closed#", "color": "#49cd81", "item": { "borderColor": "#fff", "color": "#49cd81", "radius": 2 }, "line": { "color": "#49cd81", "width": 2 }, "tooltip": { "template": "#total_closed#" } }],
 		//"series":[
 		//	{
@@ -5740,12 +5800,18 @@ var ui = {
 		//],
 		"padding": {
 			"top": 25
-		},
-		"data": [{ "id": 1, "month": "Jun", "total_closed": 100, "total_open": 100 }, { "id": 2, "month": "Jul", "total_closed": 150, "total_open": 200 }, { "id": 3, "month": "Aug", "total_closed": 160, "total_open": 220 }, { "id": 4, "month": "Sep", "total_closed": 200, "total_open": 250 }, { "id": 5, "month": "Oct", "total_closed": 100, "total_open": 80 }]
+		}
+		/* "data":[
+  	{"id": 1, "month": "Jun", "total_closed": 100, "total_open": 100,},
+  	{"id": 2, "month": "Jul", "total_closed": 150, "total_open": 200,},
+  	{"id": 3, "month": "Aug", "total_closed": 160, "total_open": 220,},
+  	{"id": 4, "month": "Sep", "total_closed": 200, "total_open": 250,},
+  	{"id": 5, "month": "Oct", "total_closed": 100, "total_open": 80,},
+  ] */
 	}]
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (ui);
+//export default ui;
 
 /***/ }),
 
@@ -6397,28 +6463,29 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var VisitorsView = function (_JetView) {
-	_inherits(VisitorsView, _JetView);
+var ItemsChartView = function (_JetView) {
+	_inherits(ItemsChartView, _JetView);
 
-	function VisitorsView() {
-		_classCallCheck(this, VisitorsView);
+	function ItemsChartView() {
+		_classCallCheck(this, ItemsChartView);
 
 		return _possibleConstructorReturn(this, _JetView.apply(this, arguments));
 	}
 
-	VisitorsView.prototype.config = function config() {
+	ItemsChartView.prototype.config = function config() {
 		return layout;
 	};
 
-	VisitorsView.prototype.init = function init(view) {
+	ItemsChartView.prototype.init = function init(view) {
 		var userinfo = this.app.getService("user").getUser();
 		view.queryView({ view: "chart" }).parse(Object(models_totalchart__WEBPACK_IMPORTED_MODULE_1__["default"])(userinfo.token));
 	};
 
-	return VisitorsView;
+	return ItemsChartView;
 }(webix_jet__WEBPACK_IMPORTED_MODULE_0__["JetView"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (VisitorsView);
+/* harmony default export */ __webpack_exports__["default"] = (ItemsChartView);
+
 
 var layout = {
 	"type": "clean",
@@ -6534,7 +6601,7 @@ var layout = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var webix_jet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! webix-jet */ "./node_modules/webix-jet/dist/index.js");
 /* harmony import */ var views_menus_export__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! views/menus/export */ "./sources/views/menus/export.js");
-/* harmony import */ var views_menus_toolplug__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! views/menus/toolplug */ "./sources/views/menus/toolplug.js");
+/* harmony import */ var views_menus_formview__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! views/menus/formview */ "./sources/views/menus/formview.js");
 /* harmony import */ var views_modules_paging__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! views/modules/paging */ "./sources/views/modules/paging.js");
 /* harmony import */ var views_modules_order_statesfilter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! views/modules/order_statesfilter */ "./sources/views/modules/order_statesfilter.js");
 /* harmony import */ var views_templates_order_states__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! views/templates/order_states */ "./sources/views/templates/order_states.js");
@@ -6565,8 +6632,7 @@ var OrderView = function (_JetView) {
     };
 
     OrderView.prototype.init = function init(view) {
-        //$$('order-form').bind($$('catalog-order'));
-        // webix.dp.$$("orders").config.updateFromResponse = true;
+        $$('order-form').bind($$('order-order'));
     };
 
     return OrderView;
@@ -6575,8 +6641,67 @@ var OrderView = function (_JetView) {
 /* harmony default export */ __webpack_exports__["default"] = (OrderView);
 
 
+function secondsToDhms(seconds) {
+    seconds = Number(seconds);
+    var d = Math.floor(seconds / (3600 * 24));
+    var h = Math.floor(seconds % (3600 * 24) / 3600);
+    var m = Math.floor(seconds % 3600 / 60);
+    var s = Math.floor(seconds % 3600 % 60);
+
+    var dDisplay = d > 0 ? d + (d == 1 ? " день " : d < 5 ? " дня " : " дней ") : "";
+    var hDisplay = h > 0 ? h + (h == 1 ? " час " : h < 5 ? " часа " : " часов ") : "";
+    var mDisplay = m > 0 ? m + (m == 1 ? " минута " : m < 5 ? " минуты " : "минут ") : "";
+    var sDisplay = s > 0 ? s + (s == 1 ? " секунда" : " секунд") : "";
+    return dDisplay + hDisplay + mDisplay;
+}
+
+function sortByAge(a, b) {
+    a = a._Age;
+    b = b._Age;
+    return a > b ? 1 : a < b ? -1 : 0;
+}
+
+webix.ui.datafilter.ageFilter = webix.extend({
+    render: function render(master, column) {
+        //console.log(column);
+        column.css = "webix_ss_filter";
+        var html = "<input " + (column.placeholder ? 'placeholder="' + column.placeholder + '" ' : "") + (column.tooltip ? 'title="' + column.tooltip + '" ' : "") + "type='text'>";
+        return html;
+    }
+}, webix.ui.datafilter.textFilter);
+
+function agePrepare(filterValue, filterObject) {
+
+    return filterValue;
+}
+
+function ageCompare(columnValue, filterValue) {
+    // дополним, чтоб все было в днях
+    var value = columnValue.indexOf('дн') === -1 ? '0дн ' + columnValue.toString().toLowerCase() : columnValue.toString().toLowerCase();
+    // оставим для сравнения только дни
+    value = value.slice(0, value.indexOf('дн'));
+    var filter = filterValue.toString().toLowerCase();
+    var compareMethod = filter.match(/[\=\<\>]/);
+
+    if (compareMethod !== null) {
+        filter = filter.substr(filter.indexOf(compareMethod[0]) + 1);
+        // filter = filter.match(/[0-9]/);
+        //console.log(value, compareMethod[0], filter);
+        switch (compareMethod[0]) {
+            case '=':
+                return (value + 'дн').indexOf(filter + 'дн') === 0;
+            case '>':
+                return Number(value) > Number(filter);
+            case '<':
+                return Number(value) < Number(filter);
+            default:
+                return value.indexOf(filter) !== -1;
+        }
+    } else return value.indexOf(filter) !== -1;
+}
+
 var grid = {
-    id: "orders",
+    id: "order-order",
     view: "datatable",
     select: "row",
     clipboard: "selection",
@@ -6584,30 +6709,65 @@ var grid = {
     checkboxRefresh: true,
     pager: "pagerA",
     "export": true,
-    columns: [{ id: "TicketID", header: "#", sort: "int", width: 50 }, { id: "TicketNumber", header: "Заявка", sort: "int", minWidth: 120, fillspace: 2 }, { id: "Title", header: ["Название", { content: "textFilter" }], sort: "string", minWidth: 120, fillspace: 2 },
-    // {id: "Owner", header: ["Владелец", {content: "selectFilter"}], sort: "string", minWidth: 120, fillspace: 2},
-    { id: "CustomerID", header: ["Заказчик", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "Queue", header: ["Очередь", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "Age", header: ["Возраст", { content: "textFilter" }], sort: "int", minWidth: 100, fillspace: 2 }, { id: "StateType", header: ["Статус", { content: "staFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 100, fillspace: 1, editor: "inline-checkbox", template: views_templates_order_states__WEBPACK_IMPORTED_MODULE_5__["default"] }],
+    tooltip: true,
+    columns: [{ id: "TicketID", header: "#", sort: "int", width: 50, tooltip: false }, { id: "TicketNumber", header: ["Заявка", { content: "textFilter" }], sort: "int", minWidth: 120, fillspace: 2, tooltip: false }, { id: "Queue", header: ["Очередь", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2, tooltip: false }, { id: "CustomerID", header: ["Заказчик", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2, tooltip: false }, { id: "Title", header: ["Название", { content: "textFilter" }], sort: "string", minWidth: 120, fillspace: 2, tooltip: false },
+    // Возраст приходит готовый с сервера, для сортировки используется возраст в секундах _Age
+    { id: "Age", header: ["Возраст", { content: "ageFilter", prepare: agePrepare, compare: ageCompare, tooltip: "Используйте < > = перед количеством дней" }],
+        sort: sortByAge, minWidth: 100, fillspace: 2, tooltip: false },
+    // При необходимости можно вычислять возраст непосредственно в скрипте в разделе $init
+    //{id: "_age", header: ["Возраст", {content: "textFilter"}], sort: sortByAge, minWidth: 100, fillspace: 2 },
+    { id: "StateType", header: ["Статус", { content: "staFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 100, fillspace: 1,
+        editor: "inline-checkbox", template: views_templates_order_states__WEBPACK_IMPORTED_MODULE_5__["default"], tooltip: false }, { id: "edit", header: "<span class='webix_icon mdi mdi-file-document-box'></span>", width: 35, tooltip: 'Просмотр заявки',
+        template: "<span  style=' cursor:pointer;' class='webix_icon mdi mdi-file-document-box'></span>"
+    }],
     scheme: {
         $init: function $init(obj) {
-            if (obj.deleted == 1) obj.$css = "deleted";
+            // Будет работать если раскомментировать поле _age
+            obj._age = secondsToDhms(obj._Age);
         }
     },
     url: "index.php?route=order/order/getTicketList&token=" + token,
+    onClick: {
+        "mdi-file-document-box": function mdiFileDocumentBox(e, id) {
+            this.select(id);
+            $$('paging').hide();
+            $$('edit-tools').hide();
+            $$('edit-form-icon').show();
+            $$('order-form').show();
+        }
+    },
     ready: function ready() {
         webix.extend(this, webix.ProgressBar);
     }
 };
 
+var iform = {
+    view: "form",
+    id: "order-form",
+    multiview: { keepViews: true },
+    elements: [{ cols: [{ view: "text", name: "TicketID", label: "ID заявки", labelWidth: 80, width: 160, readonly: true }, { view: "text", name: "TicketNumber", label: "Номер заявки", labelWidth: 120, labelAlign: "right", readonly: true }, { view: "text", name: "Created", label: "Создана", labelWidth: 80, labelAlign: "right", readonly: true }] }, { view: "text", name: "Queue", label: "Очередь", labelWidth: 170, readonly: true }, { cols: [{ view: "text", name: "CustomerID", label: "Заказчик", labelWidth: 170, readonly: true }, { view: "text", name: "Owner", label: "Агент", labelWidth: 170, labelAlign: "right", readonly: true }] }, { cols: [{ view: "text", name: "Title", label: "Название", labelWidth: 170, readonly: true }] }, { cols: [{ view: "textarea", name: "Request", height: 200, label: "Текст заявки", labelPosition: "top" }, { view: "textarea", name: "Response", height: 200, label: "Текст ответа", labelPosition: "top" }] }, { cols: [{ view: "text", name: "Age", label: "Возраст", labelWidth: 170, readonly: true }, { view: "select", name: "StateType", label: "Статус", labelWidth: 170, labelAlign: "right", disabled: true,
+            options: [{ id: 'closed', value: "<span class='webix_table_checkbox order-status order-closed'> Закрыта </span>" }, { id: 'open', value: "<span class='webix_table_checkbox order-status order-open'> Открыта </span>" }]
+        }] }, {
+        margin: 10,
+        cols: [{}, { view: "button", value: "Отменить", width: 120, click: function click() {
+                $$("order-views").back();
+                $$('paging').show();
+                $$('edit-form-icon').hide();
+                $$('edit-tools').show();
+            } }]
+    }]
+};
+
 var order_views = {
     view: "multiview",
     id: "order-views",
-    cells: [grid]
+    cells: [grid, iform]
 };
 
 var layout = {
     id: "layout",
     type: "space",
-    rows: [{ height: 40, id: "edit-tools", cols: views_menus_export__WEBPACK_IMPORTED_MODULE_1__["default"] }, { height: 40, id: "edit-form-icon", cols: views_menus_toolplug__WEBPACK_IMPORTED_MODULE_2__["default"], hidden: true }, { rows: [order_views, views_modules_paging__WEBPACK_IMPORTED_MODULE_3__["default"]] }]
+    rows: [{ height: 40, id: "edit-tools", cols: views_menus_export__WEBPACK_IMPORTED_MODULE_1__["default"] }, { height: 40, id: "edit-form-icon", cols: views_menus_formview__WEBPACK_IMPORTED_MODULE_2__["default"], hidden: true }, { rows: [order_views, views_modules_paging__WEBPACK_IMPORTED_MODULE_3__["default"]] }]
 };
 
 /***/ }),
@@ -8558,7 +8718,7 @@ var layout = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var views_modules_visitors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! views/modules/visitors */ "./sources/views/modules/visitors.js");
-/* harmony import */ var views_modules_orders__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! views/modules/orders */ "./sources/views/modules/orders.js");
+/* harmony import */ var views_modules_orderschart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! views/modules/orderschart */ "./sources/views/modules/orderschart.js");
 /* harmony import */ var views_modules_chart_diff__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! views/modules/chart_diff */ "./sources/views/modules/chart_diff.js");
 /* harmony import */ var views_modules_revenue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! views/modules/revenue */ "./sources/views/modules/revenue.js");
 /* harmony import */ var views_modules_taskschart__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! views/modules/taskschart */ "./sources/views/modules/taskschart.js");
@@ -8603,7 +8763,7 @@ var layout = {
 		}, {
 			height: 220,
 			type: "wide",
-			cols: [views_modules_orders__WEBPACK_IMPORTED_MODULE_1__["default"], views_modules_visitors__WEBPACK_IMPORTED_MODULE_0__["default"]]
+			cols: [views_modules_orderschart__WEBPACK_IMPORTED_MODULE_1__["default"], views_modules_visitors__WEBPACK_IMPORTED_MODULE_0__["default"]]
 		}]
 
 	}]
