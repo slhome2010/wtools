@@ -391,6 +391,7 @@ class ControllerCatalogItem extends Controller {
                     'server_id' => $result['server_id'],
                     'servername' => $result['servername'],
                     'date_changed' => $result['date_changed'],
+                    'date_modified' => $result['date_modified'],
                     'wialon_group_id' => $result['wialon_group_id'],
                     'wialon_groupname' => $result['wialon_groupname'],
                     'wialon_group_off' => $result['wialon_group_off'],

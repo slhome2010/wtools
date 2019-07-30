@@ -84,6 +84,7 @@ const history_grid = {
     columns: [
         {id: "item_history_id", header: "#", sort: "int", minWidth: 120},
         {map: "(date)#date_changed#", header: "Дата", sort: "date", minWidth: 120, format: webix.Date.dateToStr("%d.%m.%Y")},
+        //{map: "(date)#date_modified#", header: "Дата m", sort: "date", minWidth: 120, format: webix.Date.dateToStr("%d.%m.%Y")},
         {id: "deleted", header: " ", sort: "int", width: 40, css: {"text-align": "center"}, template: delTemplate},
         {id: "itemname", header: ["Название", {content: "selectFilter"}], sort: "string", minWidth: 120, fillspace: 2},
         {id: "tracker_uid", header: ["Трекер UID", {content: "selectFilter"}], sort: "int", minWidth: 120, fillspace: 1},

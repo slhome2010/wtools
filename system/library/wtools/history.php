@@ -167,9 +167,9 @@ Class History {
                         // Событий в этот день не было - история закончилась естественным образом
                         $end_of_history['event_name'] = 'Конец истории';
                         $events[] = $end_of_history;
-                    } elseif ($end_of_history['deleted'] || $end_of_history['wialon_group_off']) {
+                    } elseif ($end_of_history['deleted']) {
                         // Событие совпало с концом истории (Отключение или Удаление)
-                        $end_of_history['event_name'] = 'Удаление/Отключение';
+                        $end_of_history['event_name'] = 'Удаление';
                         $events[] = $end_of_history;
                     }
                 }
@@ -203,7 +203,7 @@ Class History {
                 'date_end' => $pred_history_date->format("Y-m-d"), // -1 day
                 'tarif_id' => $this->getTarifId($this->history_events[0]),
                 'discount_id' => $this->getDiscountId($this->history_events[0]),
-                'event_status' => $pred_history_date > $this->date_modified ? $this->history_events[0]['wialon_group_off'] || $this->history_events[0]['deleted'] : false,
+                'event_status' => $pred_history_date > $this->date_modified ? $this->history_events[0]['deleted'] : $this->history_events[0]['wialon_group_off'],
                 'event_name' => 'Начало периода',
             );
         }
@@ -220,7 +220,7 @@ Class History {
                 'date_end' => $date_next->format("Y-m-d"),
                 'tarif_id' => $this->getTarifId($current),
                 'discount_id' => $this->getDiscountId($current),
-                'event_status' => $date_next >= $this->date_modified ? $current['wialon_group_off'] || $current['deleted'] : false,
+                'event_status' => $date_next >= $this->date_modified ? $current['deleted'] : $current['wialon_group_off'],
                 'event_name' => $current['event_name'],
             );
             // }
@@ -240,7 +240,7 @@ Class History {
                 'date_end' => $this->date_end_ymd, // -1 day
                 'tarif_id' => $this->getTarifId($last_event),
                 'discount_id' => $this->getDiscountId($last_event),
-                'event_status' => $last_event_date > $this->date_modified ? $last_event['wialon_group_off'] || $last_event['deleted'] : false,
+                'event_status' => $last_event_date > $this->date_modified ? $last_event['deleted'] : $last_event['wialon_group_off'],
                 'event_name' => 'Конец периода',
                     // 'event_name' => $last_event['event_name'] ? $last_event['event_name'] : 'Конец периода',
             );
