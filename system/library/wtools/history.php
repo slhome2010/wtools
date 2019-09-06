@@ -3,6 +3,7 @@
 Class History {
 
     private $object_id;
+    private $owner_id;
     private $history_data = array();         // массив истории для объекта
     private $history_events;                 // исторические события
     private $history_intervals;              // интервалы между событиями
@@ -14,7 +15,7 @@ Class History {
     private $months;
     private $db;
 
-    public function __construct($_object_id, $_date_start, $_date_end, $_db = '', $_history_data = array()) {
+    public function __construct($_object_id, $_owner_id, $_date_start, $_date_end, $_db = '', $_history_data = array()) {
         //if ($_date_start)
         $this->date_start = new DateTime($_date_start);
         $this->date_end = new DateTime($_date_end);
@@ -23,6 +24,7 @@ Class History {
         $this->months = $this->checkMonthInRange('first');
         $this->db = $_db;
         $this->object_id = $_object_id;
+        $this->owner_id = $_owner_id;
         if ($_history_data) {
             $this->history_data = $_history_data;
         } else {
@@ -60,7 +62,7 @@ Class History {
 
         $sql .= " WHERE ih.item_id = '" . (int) $this->object_id . "'";
         $sql .= " AND i.date_modified >= '" . $this->date_start_ymd . "'";  // объект возможно удален раньш
-
+       // $sql .= " AND wg.owner_id = '" . $this->owner_id . "'";
         if ($this->date_start_ymd && $this->date_end_ymd) {
             $sql .= " AND ih.date_changed BETWEEN  '" . $this->date_start_ymd . "' AND  '" . $this->date_end_ymd . "'";
         }
@@ -203,7 +205,7 @@ Class History {
                 'date_end' => $pred_history_date->format("Y-m-d"), // -1 day
                 'tarif_id' => $this->getTarifId($this->history_events[0]),
                 'discount_id' => $this->getDiscountId($this->history_events[0]),
-                'event_status' => $pred_history_date > $this->date_modified ? $this->history_events[0]['deleted'] : $this->history_events[0]['wialon_group_off'],
+                'event_status' => $this->getEventStatus($pred_history_date, $this->history_events[0]),
                 'event_name' => 'Начало периода',
             );
         }
@@ -220,7 +222,7 @@ Class History {
                 'date_end' => $date_next->format("Y-m-d"),
                 'tarif_id' => $this->getTarifId($current),
                 'discount_id' => $this->getDiscountId($current),
-                'event_status' => $date_next >= $this->date_modified ? $current['deleted'] : $current['wialon_group_off'],
+                'event_status' => $this->getEventStatus($date_next, $current),
                 'event_name' => $current['event_name'],
             );
             // }
@@ -240,7 +242,7 @@ Class History {
                 'date_end' => $this->date_end_ymd, // -1 day
                 'tarif_id' => $this->getTarifId($last_event),
                 'discount_id' => $this->getDiscountId($last_event),
-                'event_status' => $last_event_date > $this->date_modified ? $last_event['deleted'] : $last_event['wialon_group_off'],
+                'event_status' => $this->getEventStatus($last_event_date,$last_event),
                 'event_name' => 'Конец периода',
                     // 'event_name' => $last_event['event_name'] ? $last_event['event_name'] : 'Конец периода',
             );
@@ -251,6 +253,9 @@ Class History {
 
     private function getEventName($diff) {
         $event_name = '';
+        If (array_key_exists('owner_id', $diff)) {
+            $event_name .= ' владельца,';
+        }
         If (array_key_exists('wialon_group_id', $diff)) {
             $event_name .= ' группы,';
         }
@@ -272,6 +277,18 @@ Class History {
         }
 
         return $event_name;
+    }
+
+    private function getEventStatus($event_date, $event) {
+        // Дата модификации пишется каждый день, если остановилась то объект возможно удален (проверяется статус deleted)
+        // Если объект не удален и дата пишется, то проверяется статус группы на отключенность
+        // >= или > надо уточнить
+        $delete_status = $event_date >= $this->date_modified ? $event['deleted'] : $event['wialon_group_off'];
+        $owner_status = $this->owner_id == $event['owner_id'] ? 0 : 1;
+
+        $event_status = $delete_status || $owner_status;
+
+        return $event_status ;
     }
 
     private function checkMonthInRange($direct = 'last', $type = 'DateTime') {

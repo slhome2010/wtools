@@ -196,6 +196,14 @@ class ControllerCatalogItem extends Controller {
             $data['ownername'] = '';
         }
 
+        if (isset($this->request->post['owner_id'])) {
+            $data['owner_id'] = $this->request->post['owner_id'];
+        } elseif (!empty($item_info)) {
+            $data['owner_id'] = $item_info['owner_id'];
+        } else {
+            $data['owner_id'] = '';
+        }
+
         if (isset($this->request->post['tracker_hw'])) {
             $data['tracker_hw'] = $this->request->post['tracker_hw'];
         } elseif (!empty($item_info)) {
@@ -374,7 +382,7 @@ class ControllerCatalogItem extends Controller {
             if ($this->config->get('config_history_autoperiod') && $this->config->get('config_history_period')) {
                 $date_start = (new DateTime('- ' . $this->config->get('config_history_period') . ' month'))->format('Y-m-d');
             }
-            $history = new History($this->request->get['item_id'], $date_start, $date_end, $this->db);
+            $history = new History($this->request->get['item_id'], $this->request->get['owner_id'], $date_start, $date_end, $this->db);
             $item_history = $history->history_data;
             // $item_history = $this->model_catalog_item->getItemHistory($this->request->get['item_id'],$date_start, $date_end);
         }

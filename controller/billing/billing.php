@@ -15,7 +15,7 @@ class ControllerBillingBilling extends Controller {
         if (isset($this->request->get['date_start']) && $this->request->get['date_start'] != 'null' && isset($this->request->get['date_end']) && $this->request->get['date_end'] != 'null') {
 
             if (isset($this->request->get['item_id']) && ($this->request->get['item_id'] != 'undefined')) {
-                $item_history = new History($this->request->get['item_id'], $this->request->get['date_start'], $this->request->get['date_end'], $this->db);
+                $item_history = new History($this->request->get['item_id'], $this->request->get['owner_id'], $this->request->get['date_start'], $this->request->get['date_end'], $this->db);
                 $history_intervals = $item_history->history_intervals;
             }
             if ($history_intervals) {

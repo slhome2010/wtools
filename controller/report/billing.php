@@ -45,7 +45,7 @@ class ControllerReportBilling extends Controller {
         $data['billings'] = array();
 
         foreach ($results as $result) {
-            $item_history = new History($result['item_id'], $this->request->get['date_start'], $this->request->get['date_end'], $this->db);
+            $item_history = new History($result['item_id'], $result['owner_id'], $this->request->get['date_start'], $this->request->get['date_end'], $this->db);
             $history_intervals = $item_history->history_intervals;
 
             if ($history_intervals) {
@@ -236,7 +236,7 @@ class ControllerReportBilling extends Controller {
                     if (isset($items_group[$group_id])) {
                         foreach ($items_group[$group_id] as $id => $item) {
                             $data['billings'] = array();
-                            $item_history = new History($id, $this->request->post['date_start'], $this->request->post['date_end'], $this->db);
+                            $item_history = new History($id, $owner_id, $this->request->post['date_start'], $this->request->post['date_end'], $this->db);
                             $history_intervals = $item_history->history_intervals;
                             if ($history_intervals) {
                                 $data['billings'] = $this->BillingFor($history_intervals);

@@ -26,9 +26,9 @@ define('DIR_CATALOG', DIR_DOCROOT . 'catalog/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
-define('DB_HOSTNAME', '127.0.0.1');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '9100');
+define('DB_HOSTNAME', '192.168.100.5');
+define('DB_USERNAME', 'wtools');
+define('DB_PASSWORD', 'wtools');
 define('DB_DATABASE', 'wtools');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');

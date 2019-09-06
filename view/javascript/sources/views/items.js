@@ -37,6 +37,7 @@ const grid = {
         {id: "itemname", header: ["Название", {content: "textFilter"}], sort: "string", minWidth: 120, fillspace: 2, editor: "text"},
         {id: "tracker_uid", header: ["Трекер UID", {content: "textFilter"}], sort: "int", minWidth: 140, fillspace: 1},
         {id: "ownername", header: ["Владелец", {content: "selectFilter"}], sort: "string", minWidth: 120, fillspace: 2},
+        {id: "owner_id", hidden: true},
         {id: "wialon_groupname", header: ["Группа", {content: "textFilter"}], sort: "string", minWidth: 120, fillspace: 2, editor: "text"},
         {id: "wialon_group_off", header: ["Вид", {content: "eyeFilter", css: "webix_ss_filter"}], sort: "int", width: 80, css: {"text-align": "center"}, template: eyeTemplate},
         {id: "servername", header: ["Сервер", {content: "selectFilter"}], sort: "string", minWidth: 120, fillspace: 1},
@@ -62,7 +63,7 @@ const grid = {
         "mdi-pencil": function (e, id) {
             this.select(id);
             $$('history-list').clearAll();
-            $$('history-list').load("index.php?route=catalog/item/getItemHistory&token=" + token + "&item_id=" + this.getItem(id).item_id);
+            $$('history-list').load("index.php?route=catalog/item/getItemHistory&token=" + token + "&item_id=" + this.getItem(id).item_id + "&owner_id=" + this.getItem(id).owner_id );
             $$('paging').hide();
             $$('edit-tools').hide();
             $$('edit-form-icon').show();
@@ -186,6 +187,7 @@ const iform = {
                                 },
                             ]},
                         {view: "text", name: "ownername", label: "Владелец", labelWidth: 140, readonly: true},
+                        {view: "text", name: "owner_id", hidden: true},
                         {view: "template", template: "Данные", type: "section"},
                         {cols: [
                                 {view: "text", id: "date_last", name: "date_last", label: "Последнее сообщение", labelWidth: 170, readonly: true},
@@ -235,8 +237,9 @@ const iform = {
                                         let date_start = months[values.date_start.getMonth()] + ' ' + values.date_start.getDate() + 'th, ' + values.date_start.getFullYear();
                                         let date_end = months[values.date_end.getMonth()] + ' ' + values.date_end.getDate() + 'th, ' + values.date_end.getFullYear();
                                         $$('billing-list').clearAll();
-                                        $$('billing-list').load("index.php?route=billing/billing/getItemBilling&token=" + token + "&item_id=" + values.item_id + "&date_start=" + date_start + "&date_end=" + date_end
-                                                + "&tarif_id=" + tarif_id + "&discount_id=" + discount_id);
+                                        debugger;
+                                        $$('billing-list').load("index.php?route=billing/billing/getItemBilling&token=" + token + "&item_id=" + values.item_id  + "&owner_id=" + values.owner_id
+                                            + "&date_start=" + date_start + "&date_end=" + date_end + "&tarif_id=" + tarif_id + "&discount_id=" + discount_id);
                                     }},
                             ]},
                         billing_grid,
