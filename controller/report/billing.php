@@ -38,13 +38,13 @@ class ControllerReportBilling extends Controller {
             'limit' => 0
         );
 
-        $results = $this->model_catalog_item->getItems($filter_data);
+        $items = $this->model_catalog_item->getItems($filter_data);
 
         $data['items'] = array();
         $total = 0;
         $data['billings'] = array();
 
-        foreach ($results as $result) {
+        foreach ($items as $result) {
             $item_history = new History($result['item_id'], $result['owner_id'], $this->request->get['date_start'], $this->request->get['date_end'], $this->db);
             $history_intervals = $item_history->history_intervals;
 
@@ -116,7 +116,7 @@ class ControllerReportBilling extends Controller {
             'limit' => 0
         );
 
-        $results = $this->model_catalog_item->getItems($filter_data);
+        $items = $this->model_catalog_item->getItems($filter_data);
 
         $filter_data = array(
             'filter_status' => '1',
@@ -125,7 +125,7 @@ class ControllerReportBilling extends Controller {
         $wialon_groups = $this->model_catalog_wialongroup->getWialongroups($filter_data);
 
         $wialon_groups_by_owner_id = $this->GroupBy($wialon_groups, 'owner_id');
-        $items_group_by_group = $this->GroupBy($results, 'wialon_group_id');
+        $items_group_by_group = $this->GroupBy($items, 'wialon_group_id');
 
         $ownerNode = new Node();
         foreach ($owners as $owner) {
@@ -201,12 +201,12 @@ class ControllerReportBilling extends Controller {
             'limit' => 0
         );
 
-        $results = $this->model_catalog_item->getItems($filter_data);
+        $items = $this->model_catalog_item->getItemsFromHistory($filter_data);
         $data['items'] = array();
         $total = 0;
         $data['billings'] = array();
 
-        $owners_group = $this->GroupBy($results, 'owner_id');
+        $owners_group = $this->GroupBy($items, 'owner_id');
 
         $wialon_group = [];
         foreach ($owners_group as $key => $owner_data) {
@@ -221,8 +221,8 @@ class ControllerReportBilling extends Controller {
 
         // $owners = $this->model_catalog_owner->getOwners();
         // $wialon_groups = $this->model_catalog_wialongroup->getWialongroups();
-        $owners = array_column($results, 'ownername', 'owner_id');
-        $wialon_groups_ready = array_column($results, 'wialon_groupname', 'wialon_group_id');
+        $owners = array_column($items, 'ownername', 'owner_id');
+        $wialon_groups_ready = array_column($items, 'wialon_groupname', 'wialon_group_id');
         //  $wialon_groups_ready = $this->StructureBy($wialon_groups, 'wialon_group_id', 'wialon_groupname');
         $ownerNode = new Node();
         foreach ($owners as $owner_id => $ownername) {

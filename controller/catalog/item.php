@@ -2,12 +2,14 @@
 
 require_once(DIR_SYSTEM . 'library/wtools/history.php');
 
-class ControllerCatalogItem extends Controller {
+class ControllerCatalogItem extends Controller
+{
 
     private $error = array();
     private static $new_item_id = 0;
 
-    public function index() {
+    public function index()
+    {
         //$this->load->language('catalog/item');
         //$this->document->setTitle($this->language->get('heading_title'));
 
@@ -16,7 +18,8 @@ class ControllerCatalogItem extends Controller {
         $this->getList();
     }
 
-    public function edit() {
+    public function edit()
+    {
         $this->load->model('catalog/item');
 
         if (($this->request->server['REQUEST_METHOD'] == 'POST')) {
@@ -31,7 +34,8 @@ class ControllerCatalogItem extends Controller {
         }
     }
 
-    public function getList() {
+    public function getList()
+    {
         $this->load->model('catalog/item');
         if (isset($this->request->get['sort'])) {
             $sort = $this->request->get['sort'];
@@ -50,15 +54,15 @@ class ControllerCatalogItem extends Controller {
             $page = 1;
         }
         $data['items'] = array();
-
+        
         $filter_data = array(
             'sort' => $sort,
             'order' => $order,
             'start' => ($page - 1) * $this->config->get('config_limit_admin'),
-            'limit' => 0
+            'limit' => 0           
         );
 
-        $results = $this->model_catalog_item->getItems($filter_data);
+        $results = $this->model_catalog_item->getItems($filter_data);       
 
         foreach ($results as $result) {
             $data['items'][] = array(
@@ -95,7 +99,8 @@ class ControllerCatalogItem extends Controller {
         $this->response->setOutput(json_encode($data['items'], JSON_UNESCAPED_UNICODE));
     }
 
-    public function getForm() {
+    public function getForm()
+    {
         //CKEditor
         //  $this->document->addScript('view/javascript/ckeditor/ckeditor.js');
         //  $this->document->addScript('view/javascript/ckeditor/ckeditor_init.js');
@@ -305,7 +310,8 @@ class ControllerCatalogItem extends Controller {
         $this->response->setOutput(json_encode($data, JSON_UNESCAPED_UNICODE));
     }
 
-    public function validateForm() {
+    public function validateForm()
+    {
         if (!$this->user->hasPermission('modify', 'catalog/item')) {
             $this->error['warning'] = $this->language->get('error_permission');
         }
@@ -315,7 +321,8 @@ class ControllerCatalogItem extends Controller {
         //return !$this->error;
     }
 
-    public function validateDelete() {
+    public function validateDelete()
+    {
         if (!$this->user->hasPermission('modify', 'catalog/item')) {
             $this->error['warning'] = $this->language->get('error_permission');
         }
@@ -334,7 +341,8 @@ class ControllerCatalogItem extends Controller {
         $this->response->setOutput(json_encode($this->error, JSON_UNESCAPED_UNICODE));
     }
 
-    public function getServers() {
+    public function getServers()
+    {
         $this->load->model('setting/server');
         $arrayselect = [];
         $data['servers'] = $this->model_setting_server->getServers();
@@ -346,7 +354,8 @@ class ControllerCatalogItem extends Controller {
         $this->response->setOutput(json_encode($arrayselect));
     }
 
-    public function getDiscounts() {
+    public function getDiscounts()
+    {
         $this->load->model('billing/discount');
         $arrayselect = [];
         $data['discounts'] = $this->model_billing_discount->getDiscounts();
@@ -358,7 +367,8 @@ class ControllerCatalogItem extends Controller {
         $this->response->setOutput(json_encode($arrayselect));
     }
 
-    public function getTarifs() {
+    public function getTarifs()
+    {
         $this->load->model('billing/tarif');
         $arrayselect = [];
         $data['tarifs'] = $this->model_billing_tarif->getTarifs();
@@ -370,7 +380,8 @@ class ControllerCatalogItem extends Controller {
         $this->response->setOutput(json_encode($arrayselect));
     }
 
-    public function getItemHistory() {
+    public function getItemHistory()
+    {
         $this->load->model('catalog/item');
 
         if (isset($this->request->get['item_id']) && ($this->request->get['item_id'] != 'undefined')) {
@@ -425,5 +436,4 @@ class ControllerCatalogItem extends Controller {
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($data['items'], JSON_UNESCAPED_UNICODE));
     }
-
 }

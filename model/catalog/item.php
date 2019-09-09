@@ -1,27 +1,31 @@
 <?php
 
-class ModelCatalogItem extends Model {
+class ModelCatalogItem extends Model
+{
 
-    public function editItem($item_id, $data) {
+    public function editItem($item_id, $data)
+    {
         $this->db->query("UPDATE " . DB_PREFIX . "item SET  tarif_id = '" . (int) $data['tarif_id'] . "', discount_id = '" . (int) $data['discount_id'] . "', status = '"
-                . (int) $data['status'] . "', sort_order = '" . (int) $data['sort_order'] . "' WHERE item_id = '" . (int) $item_id . "'");
+            . (int) $data['status'] . "', sort_order = '" . (int) $data['sort_order'] . "' WHERE item_id = '" . (int) $item_id . "'");
 
         $this->cache->delete('item');
     }
 
-    public function addItemHistory($data) {
+    public function addItemHistory($data)
+    {
         $sql = "UPDATE " . DB_PREFIX . "item_history SET  history_tarif_id = '" . (int) $data['history_tarif_id'] . "', history_discount_id = '" . (int) $data['history_discount_id'] . "'"
-                . " WHERE item_id = '" . (int) $data['item_id'] . "' AND  date_changed >= '" . $data['date_changed'] . "'";
+            . " WHERE item_id = '" . (int) $data['item_id'] . "' AND  date_changed >= '" . $data['date_changed'] . "'";
 
         $this->db->query($sql);
 
         $this->cache->delete('item');
     }
 
-     public function addGroupHistory($data) {
+    public function addGroupHistory($data)
+    {
         $sql = "UPDATE " . DB_PREFIX . "item_history SET  history_tarif_id = '" . (int) $data['history_tarif_id'] . "', history_discount_id = '" . (int) $data['history_discount_id'] . "'"
-                . ", wialon_group_off = '" . (int) $data['wialon_group_off'] . "'"
-                . " WHERE wialon_group_id = '" . (int) $data['wialon_group_id'] . "' AND  date_changed >= '" . $data['date_changed'] . "'";
+            . ", wialon_group_off = '" . (int) $data['wialon_group_off'] . "'"
+            . " WHERE wialon_group_id = '" . (int) $data['wialon_group_id'] . "' AND  date_changed >= '" . $data['date_changed'] . "'";
 
         // If group tarif or group discount has been changed
         if (isset($data['old_discount_id']))
@@ -34,7 +38,8 @@ class ModelCatalogItem extends Model {
         $this->cache->delete('item');
     }
 
-    public function getItem($item_id) {
+    public function getItem($item_id)
+    {
         $sql = "SELECT i.item_id, i.itemname, i.wialon_id, i.date_created, i.date_last, i.date_modified, i.server_id,
                                 i.wialon_group_id, wg.wialon_groupname, wg.owner_id, wg.wialon_group_off, wg.tarif_id AS tarif_group_id, wg.discount_id AS discount_group_id,
                                 i.deleted,
@@ -50,7 +55,8 @@ class ModelCatalogItem extends Model {
         return $query->row;
     }
 
-    public function getItems($data = array()) {
+    public function getItems($data = array())
+    {
         $sql_filter = '';
         $where = "WHERE";
 
@@ -145,7 +151,42 @@ class ModelCatalogItem extends Model {
         return $query->rows;
     }
 
-    public function getItemHistory($item_id, $date_start = "", $date_end = "", $order = "DESC") {
+    public function getItemsFromHistory($data = array())
+    {
+
+        if (isset($data['date_start']) && !is_null($data['date_start'])) {
+            $date_start = $data['date_start'];
+        }
+        if (isset($data['date_end']) && !is_null($data['date_end'])) {
+            $date_end = $data['date_end'];
+        }
+
+        $sql = "SELECT ih.item_history_id, ih.item_id, i.itemname, ih.date_changed, ih.item_status, ih.wialon_group_off, ih.history_tarif_id, ih.history_discount_id,
+                ih.wialon_group_id, wg.wialon_groupname,
+                o.owner_id, o.ownername,
+                wg.tarif_id AS tarif_group_id, wg.discount_id AS discount_group_id,
+                i.server_id, i.wialon_id, i.deleted, i.status, i.date_created, i.date_modified, i.date_last, i.tarif_id, i.discount_id, i.sort_order, 
+                ih.tracker_uid, ih.tracker_hw, ih.sim1, ih.sim2,                                
+                (SELECT t.trackername FROM " . DB_PREFIX . "tracker t WHERE t.tracker_id = 
+                (SELECT tts.tracker_id FROM " . DB_PREFIX . "tracker_to_server tts WHERE i.server_id = tts.server_id AND ih.tracker_hw = tts.tracker_hw)) AS trackername,
+                (SELECT s.servername FROM " . DB_PREFIX . "server s WHERE i.server_id = s.server_id) AS servername                                
+                FROM " . DB_PREFIX . "item_history ih, " . DB_PREFIX . "item i, " . DB_PREFIX . "wialongroups wg , " . DB_PREFIX . "owner o 
+                WHERE ih.date_changed BETWEEN  '" . $date_start . "' AND  '" . $date_end . "' AND i.item_id = ih.item_id AND wg.wialon_group_id = ih.wialon_group_id AND o.owner_id = wg.owner_id"; 
+
+                if (isset($data['filter_items']) && $data['filter_items']) {
+                    $sql .= " AND i.item_id IN (" . implode(',', $data['filter_items']) . ")";                    
+                } 
+
+                $sql .= " GROUP BY ih.item_id, o.owner_id ORDER BY o.owner_id, ih.item_id";
+
+
+        $query = $this->db->query($sql);
+
+        return $query->rows;
+    }
+
+    public function getItemHistory($item_id, $date_start = "", $date_end = "", $order = "DESC")
+    {
         $sql = "SELECT ih.item_history_id, ih.item_id, ih.itemname, ih.date_changed, ih.item_status, ih.wialon_group_off, ih.history_tarif_id, ih.history_discount_id,
                                 ih.wialon_group_id, wg.wialon_groupname, wg.owner_id, wg.tarif_id AS tarif_group_id, wg.discount_id AS discount_group_id,
                                 i.server_id, i.wialon_id, i.deleted,i.status, i.date_created, i.date_modified, i.tarif_id, i.discount_id,
@@ -166,5 +207,4 @@ class ModelCatalogItem extends Model {
 
         return $query->rows;
     }
-
 }
