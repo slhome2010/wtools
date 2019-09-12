@@ -153,14 +153,7 @@ class ModelCatalogItem extends Model
 
     public function getItemsFromHistory($data = array())
     {
-
-        if (isset($data['date_start']) && !is_null($data['date_start'])) {
-            $date_start = $data['date_start'];
-        }
-        if (isset($data['date_end']) && !is_null($data['date_end'])) {
-            $date_end = $data['date_end'];
-        }
-
+       
         $sql = "SELECT ih.item_history_id, ih.item_id, i.itemname, ih.date_changed, ih.item_status, ih.wialon_group_off, ih.history_tarif_id, ih.history_discount_id,
                 ih.wialon_group_id, wg.wialon_groupname,
                 o.owner_id, o.ownername,
@@ -171,7 +164,7 @@ class ModelCatalogItem extends Model
                 (SELECT tts.tracker_id FROM " . DB_PREFIX . "tracker_to_server tts WHERE i.server_id = tts.server_id AND ih.tracker_hw = tts.tracker_hw)) AS trackername,
                 (SELECT s.servername FROM " . DB_PREFIX . "server s WHERE i.server_id = s.server_id) AS servername                                
                 FROM " . DB_PREFIX . "item_history ih, " . DB_PREFIX . "item i, " . DB_PREFIX . "wialongroups wg , " . DB_PREFIX . "owner o 
-                WHERE ih.date_changed BETWEEN  '" . $date_start . "' AND  '" . $date_end . "' AND i.item_id = ih.item_id AND wg.wialon_group_id = ih.wialon_group_id AND o.owner_id = wg.owner_id"; 
+                WHERE ih.date_changed BETWEEN  '" . $data['date_start'] . "' AND  '" . $data['date_end'] . "' AND i.item_id = ih.item_id AND wg.wialon_group_id = ih.wialon_group_id AND o.owner_id = wg.owner_id"; 
 
                 if (isset($data['filter_items']) && $data['filter_items']) {
                     $sql .= " AND i.item_id IN (" . implode(',', $data['filter_items']) . ")";                    
