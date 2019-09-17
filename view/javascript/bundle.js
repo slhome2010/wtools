@@ -2849,6 +2849,8 @@ var map = {
 	"./forms/user_group_win.js": "./sources/views/forms/user_group_win.js",
 	"./gsms": "./sources/views/gsms.js",
 	"./gsms.js": "./sources/views/gsms.js",
+	"./history": "./sources/views/history.js",
+	"./history.js": "./sources/views/history.js",
 	"./items": "./sources/views/items.js",
 	"./items.js": "./sources/views/items.js",
 	"./login": "./sources/views/login.js",
@@ -2857,6 +2859,8 @@ var map = {
 	"./login2.js": "./sources/views/login2.js",
 	"./menus/contextmenu": "./sources/views/menus/contextmenu.js",
 	"./menus/contextmenu.js": "./sources/views/menus/contextmenu.js",
+	"./menus/datebar": "./sources/views/menus/datebar.js",
+	"./menus/datebar.js": "./sources/views/menus/datebar.js",
 	"./menus/export": "./sources/views/menus/export.js",
 	"./menus/export.js": "./sources/views/menus/export.js",
 	"./menus/formview": "./sources/views/menus/formview.js",
@@ -3892,6 +3896,126 @@ var layout = {
 
 /***/ }),
 
+/***/ "./sources/views/history.js":
+/*!**********************************!*\
+  !*** ./sources/views/history.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var webix_jet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! webix-jet */ "./node_modules/webix-jet/dist/index.js");
+/* harmony import */ var views_menus_export__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! views/menus/export */ "./sources/views/menus/export.js");
+/* harmony import */ var views_menus_datebar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! views/menus/datebar */ "./sources/views/menus/datebar.js");
+/* harmony import */ var views_modules_paging__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! views/modules/paging */ "./sources/views/modules/paging.js");
+/* harmony import */ var views_modules_groupfilter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! views/modules/groupfilter */ "./sources/views/modules/groupfilter.js");
+/* harmony import */ var views_modules_statusfilter__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! views/modules/statusfilter */ "./sources/views/modules/statusfilter.js");
+/* harmony import */ var views_modules_onlinefilter__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! views/modules/onlinefilter */ "./sources/views/modules/onlinefilter.js");
+/* harmony import */ var views_templates_status__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! views/templates/status */ "./sources/views/templates/status.js");
+/* harmony import */ var views_templates_eye__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! views/templates/eye */ "./sources/views/templates/eye.js");
+/* harmony import */ var views_templates_deleted__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! views/templates/deleted */ "./sources/views/templates/deleted.js");
+/* harmony import */ var views_templates_online__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! views/templates/online */ "./sources/views/templates/online.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+var ItemView = function (_JetView) {
+    _inherits(ItemView, _JetView);
+
+    function ItemView() {
+        _classCallCheck(this, ItemView);
+
+        return _possibleConstructorReturn(this, _JetView.apply(this, arguments));
+    }
+
+    ItemView.prototype.config = function config() {
+        return layout;
+    };
+
+    ItemView.prototype.init = function init(view) {
+        webix.extend(view.queryView({ view: "datatable" }), webix.ProgressBar);
+        $$('history-form').bind($$('history-list'));
+        //  webix.dp.$$("history-list").config.updateFromResponse = true;
+    };
+
+    return ItemView;
+}(webix_jet__WEBPACK_IMPORTED_MODULE_0__["JetView"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (ItemView);
+
+
+var xml_format = webix.Date.strToDate("%Y-%m-%d");
+
+var hgrid = {
+    id: "history-list",
+    view: "datatable",
+    select: "row",
+    pager: "pagerA",
+    "export": true,
+
+    columns: [{ id: "item_id", header: "Id", sort: "int", minWidth: 120 }, { map: "(date)#date_changed#", header: "Дата", sort: "date", minWidth: 120, format: webix.Date.dateToStr("%d.%m.%Y") },
+    //{map: "(date)#date_modified#", header: "Дата m", sort: "date", minWidth: 120, format: webix.Date.dateToStr("%d.%m.%Y")},
+    { id: "deleted", header: "<span class='webix_icon mdi mdi-window-close deleted'></span>", width: 40, css: { "text-align": "center" }, template: views_templates_deleted__WEBPACK_IMPORTED_MODULE_9__["default"] }, { id: "ownername", header: ["Владелец", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "wialon_groupname", header: ["Группа", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "itemname", header: ["Объект", { content: "textFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "tracker_uid", header: ["Трекер UID", { content: "textFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "trackername", header: ["Трекер", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "sim1", header: ["SIM-1", { content: "textFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "sim2", header: ["SIM-2", { content: "textFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "wialon_group_off", header: ["Вид", { content: "eyeFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 80, css: { "text-align": "center" }, template: views_templates_eye__WEBPACK_IMPORTED_MODULE_8__["default"] }, { id: "online", header: ["Состояние", { content: "onlFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 120, css: { "text-align": "center" }, template: views_templates_online__WEBPACK_IMPORTED_MODULE_10__["default"] }, { id: "history_tarif_id", header: ["Тариф", { content: "selectFilter" }], sort: "int", minWidth: 60, fillspace: 1 }, { id: "history_discount_id", header: ["Скидка", { content: "selectFilter" }], sort: "int", minWidth: 60, fillspace: 1 }],
+    scheme: {
+        // init не срабатывает в данной ситуации (возможно из-за внешней принудительной загрузки или из-за map)
+        $init: function $init(obj) {
+            if (obj.deleted == 1) obj.$css = "deleted";
+            obj.date_changed = xml_format(obj.date_start);
+        }
+    },
+    url: "index.php?route=history/history&token=" + token,
+    ready: function ready() {
+        webix.extend(this, webix.ProgressBar);
+        this.sort({ by: "date_changed", dir: "desc" });
+    }
+};
+
+var hform = {
+    view: "form",
+    id: "history-form",
+    multiview: { keepViews: true },
+    dataFeed: function dataFeed(id) {
+        var current_item_id = $$('history').getItem(id).item_id;
+        this.load("index.php?route=catalog/item/getForm&token=" + token + "&item_id=" + current_item_id);
+    },
+    elements: [{}]
+    //rules:{
+    //	"date_end": function(value){ return value >= $$("date_start").getValue()},
+    //	"date_start": function(value){ return value <= $$("date_end").getValue()},
+    //}
+};
+
+var item_views = {
+    view: "multiview",
+    id: "history-views",
+    cells: [hgrid, hform]
+};
+
+var layout = {
+    id: "layout",
+    type: "space",
+    rows: [{ height: 40, id: "edit-tools", cols: views_menus_export__WEBPACK_IMPORTED_MODULE_1__["default"].concat(views_menus_datebar__WEBPACK_IMPORTED_MODULE_2__["default"]) },
+    //{height: 40, id: "edit-form-icon", cols: toolplug, hidden: true},
+    { rows: [item_views, views_modules_paging__WEBPACK_IMPORTED_MODULE_3__["default"]] }]
+};
+
+/***/ }),
+
 /***/ "./sources/views/items.js":
 /*!********************************!*\
   !*** ./sources/views/items.js ***!
@@ -3965,7 +4089,7 @@ var grid = {
     checkboxRefresh: true,
     pager: "pagerA",
     "export": true,
-    columns: [{ id: "item_id", header: "#", sort: "int", width: 60 }, { id: "deleted", header: " ", sort: "int", width: 40, css: { "text-align": "center" }, template: views_templates_deleted__WEBPACK_IMPORTED_MODULE_9__["default"] }, { id: "itemname", header: ["Название", { content: "textFilter" }], sort: "string", minWidth: 120, fillspace: 2, editor: "text" }, { id: "tracker_uid", header: ["Трекер UID", { content: "textFilter" }], sort: "int", minWidth: 140, fillspace: 1 }, { id: "ownername", header: ["Владелец", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "owner_id", hidden: true }, { id: "wialon_groupname", header: ["Группа", { content: "textFilter" }], sort: "string", minWidth: 120, fillspace: 2, editor: "text" }, { id: "wialon_group_off", header: ["Вид", { content: "eyeFilter", css: "webix_ss_filter" }], sort: "int", width: 80, css: { "text-align": "center" }, template: views_templates_eye__WEBPACK_IMPORTED_MODULE_8__["default"] }, { id: "servername", header: ["Сервер", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 1 }, { id: "status", header: ["Статус", { content: "staFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 100, fillspace: 1, editor: "inline-checkbox", template: views_templates_status__WEBPACK_IMPORTED_MODULE_7__["default"] }, { id: "edit", header: "<span class='webix_icon mdi mdi-pencil-box-outline'></span>", width: 35,
+    columns: [{ id: "item_id", header: "Id", sort: "int", width: 60 }, { id: "deleted", header: "<span class='webix_icon mdi mdi-window-close deleted'></span>", width: 40, css: { "text-align": "center" }, template: views_templates_deleted__WEBPACK_IMPORTED_MODULE_9__["default"] }, { id: "itemname", header: ["Название", { content: "textFilter" }], sort: "string", minWidth: 120, fillspace: 2, editor: "text" }, { id: "tracker_uid", header: ["Трекер UID", { content: "textFilter" }], sort: "int", minWidth: 140, fillspace: 1 }, { id: "ownername", header: ["Владелец", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "owner_id", hidden: true }, { id: "wialon_groupname", header: ["Группа", { content: "textFilter" }], sort: "string", minWidth: 120, fillspace: 2, editor: "text" }, { id: "wialon_group_off", header: ["Вид", { content: "eyeFilter", css: "webix_ss_filter" }], sort: "int", width: 80, css: { "text-align": "center" }, template: views_templates_eye__WEBPACK_IMPORTED_MODULE_8__["default"] }, { id: "servername", header: ["Сервер", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 1 }, { id: "status", header: ["Статус", { content: "staFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 100, fillspace: 1, editor: "inline-checkbox", template: views_templates_status__WEBPACK_IMPORTED_MODULE_7__["default"] }, { id: "edit", header: "<span class='webix_icon mdi mdi-pencil-box-outline'></span>", width: 35,
         template: "<span  style=' cursor:pointer;' class='webix_icon mdi mdi-pencil'></span>"
     }],
     scheme: {
@@ -3982,8 +4106,8 @@ var grid = {
     onClick: {
         "mdi-pencil": function mdiPencil(e, id) {
             this.select(id);
-            $$('history-list').clearAll();
-            $$('history-list').load("index.php?route=catalog/item/getItemHistory&token=" + token + "&item_id=" + this.getItem(id).item_id + "&owner_id=" + this.getItem(id).owner_id);
+            $$('history-grid').clearAll();
+            $$('history-grid').load("index.php?route=catalog/item/getItemHistory&token=" + token + "&item_id=" + this.getItem(id).item_id + "&owner_id=" + this.getItem(id).owner_id);
             $$('paging').hide();
             $$('edit-tools').hide();
             $$('edit-form-icon').show();
@@ -3998,13 +4122,13 @@ var grid = {
 var xml_format = webix.Date.strToDate("%Y-%m-%d");
 
 var history_grid = {
-    id: "history-list",
+    id: "history-grid",
     view: "datatable",
     select: "row",
 
     columns: [{ id: "item_history_id", header: "#", sort: "int", minWidth: 120 }, { map: "(date)#date_changed#", header: "Дата", sort: "date", minWidth: 120, format: webix.Date.dateToStr("%d.%m.%Y") },
     //{map: "(date)#date_modified#", header: "Дата m", sort: "date", minWidth: 120, format: webix.Date.dateToStr("%d.%m.%Y")},
-    { id: "deleted", header: " ", sort: "int", width: 40, css: { "text-align": "center" }, template: views_templates_deleted__WEBPACK_IMPORTED_MODULE_9__["default"] }, { id: "itemname", header: ["Название", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "tracker_uid", header: ["Трекер UID", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "trackername", header: ["Трекер", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "sim1", header: ["SIM-1", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "sim2", header: ["SIM-2", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "wialon_groupname", header: ["Группа", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "wialon_group_off", header: ["Вид", { content: "eyeFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 80, css: { "text-align": "center" }, template: views_templates_eye__WEBPACK_IMPORTED_MODULE_8__["default"] }, { id: "online", header: ["Состояние", { content: "onlFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 120, css: { "text-align": "center" }, template: views_templates_online__WEBPACK_IMPORTED_MODULE_10__["default"] }, { id: "history_tarif_id", header: ["Тариф", { content: "selectFilter" }], sort: "int", minWidth: 60, fillspace: 1 }, { id: "history_discount_id", header: ["Скидка", { content: "selectFilter" }], sort: "int", minWidth: 60, fillspace: 1 }],
+    { id: "deleted", header: " ", sort: "int", width: 40, css: { "text-align": "center" }, template: views_templates_deleted__WEBPACK_IMPORTED_MODULE_9__["default"] }, { id: "itemname", header: ["Объект", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "tracker_uid", header: ["Трекер UID", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "trackername", header: ["Трекер", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "sim1", header: ["SIM-1", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "sim2", header: ["SIM-2", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "wialon_groupname", header: ["Группа", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "wialon_group_off", header: ["Вид", { content: "eyeFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 80, css: { "text-align": "center" }, template: views_templates_eye__WEBPACK_IMPORTED_MODULE_8__["default"] }, { id: "online", header: ["Состояние", { content: "onlFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 120, css: { "text-align": "center" }, template: views_templates_online__WEBPACK_IMPORTED_MODULE_10__["default"] }, { id: "history_tarif_id", header: ["Тариф", { content: "selectFilter" }], sort: "int", minWidth: 60, fillspace: 1 }, { id: "history_discount_id", header: ["Скидка", { content: "selectFilter" }], sort: "int", minWidth: 60, fillspace: 1 }],
     scheme: {
         // init не срабатывает в данной ситуации (возможно из-за внешней принудительной загрузки или из-за map)
         $init: function $init(obj) {
@@ -4293,6 +4417,75 @@ var context = {
 
 /***/ }),
 
+/***/ "./sources/views/menus/datebar.js":
+/*!****************************************!*\
+  !*** ./sources/views/menus/datebar.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var daterange = {
+    view: "form",
+    id: "daterange",
+    borderless: true,
+    paddingY: 0,
+    elements: [{
+        cols: [{
+            view: "datepicker", name: "date_start", label: "Начало", labelWidth: 80, value: new Date(), format: "%d.%m.%Y",
+            on: {
+                "onChange": onChange
+            }
+        }, {
+            view: "datepicker", name: "date_end", label: "Конец", labelWidth: 80, labelAlign: "right", value: new Date(), format: "%d.%m.%Y",
+            on: {
+                "onChange": onChange
+            }
+        }]
+    }]
+};
+
+function onChange(newVal, oldVal) {
+    var picker_form = this.getParentView().getParentView();
+    var grid = picker_form.getParentView().getParentView().queryView({ view: "datatable" });
+    var values = picker_form.getValues();
+
+    if (values.date_start > values.date_end) {
+        this.setValue(oldVal);
+        return;
+    }
+
+    var dayMilliseconds = 24 * 60 * 60 * 1000;
+    var validInterval = 60; // days
+    var new_date = new Date(newVal);
+    var diff1 = Math.abs(parseInt((new_date - new Date(values.date_start)) / dayMilliseconds)) - validInterval;
+    var diff2 = Math.abs(parseInt((new_date - new Date(values.date_end)) / dayMilliseconds)) - validInterval;
+
+    if (diff2 > 0) {
+        // date_start has been changed
+        new_date.setDate(new_date.getDate() + validInterval);
+        picker_form.setValues({ date_end: new_date }, true);
+    }
+    if (diff1 > 0) {
+        // date_end has been changed
+        new_date.setDate(new_date.getDate() - validInterval);
+        picker_form.setValues({ date_start: new_date }, true);
+    }
+
+    values = picker_form.getValues(); // take new values
+    var date_start = months[values.date_start.getMonth()] + ' ' + values.date_start.getDate() + 'th, ' + values.date_start.getFullYear();
+    var date_end = months[values.date_end.getMonth()] + ' ' + values.date_end.getDate() + 'th, ' + values.date_end.getFullYear();
+
+    grid.clearAll();
+    grid.load(grid.config.url + "&date_start=" + date_start + "&date_end=" + date_end);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (daterange);
+
+/***/ }),
+
 /***/ "./sources/views/menus/export.js":
 /*!***************************************!*\
   !*** ./sources/views/menus/export.js ***!
@@ -4542,12 +4735,12 @@ var layout = {
 				}
 			},
 			onAfterSelect: function onAfterSelect(id) {
-				var item = this.getItem(id);
+				var menu_item = this.getItem(id);
 				webix.$$("title").parse({
-					title: item.value,
-					details: item.details
+					title: menu_item.value,
+					details: menu_item.details
 				});
-				this.$scope.app.show("/app/" + item.id);
+				this.$scope.app.show("/app/" + menu_item.id);
 			},
 			onAfterLoad: function onAfterLoad() {
 				var firstid = this.getFirstId();

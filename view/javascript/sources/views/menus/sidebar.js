@@ -33,12 +33,12 @@ const layout = {
 					}
 				},
 				onAfterSelect: function (id) {
-					var item = this.getItem(id);
+					var menu_item = this.getItem(id);
 					webix.$$("title").parse({
-						title: item.value,
-						details: item.details
+						title: menu_item.value,
+						details: menu_item.details
 					});
-					this.$scope.app.show("/app/" + item.id);
+					this.$scope.app.show("/app/" + menu_item.id);
 				},
 				onAfterLoad: function () {
 					var firstid = this.getFirstId();

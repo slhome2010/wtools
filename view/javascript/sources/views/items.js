@@ -32,8 +32,8 @@ const grid = {
     pager: "pagerA",
     "export": true,
     columns: [
-        {id: "item_id", header: "#", sort: "int", width: 60},
-        {id: "deleted", header: " ", sort: "int", width: 40, css: {"text-align": "center"}, template: delTemplate},
+        {id: "item_id", header: "Id", sort: "int", width: 60},
+        {id: "deleted", header: "<span class='webix_icon mdi mdi-window-close deleted'></span>", width: 40, css: {"text-align": "center"}, template: delTemplate},
         {id: "itemname", header: ["Название", {content: "textFilter"}], sort: "string", minWidth: 120, fillspace: 2, editor: "text"},
         {id: "tracker_uid", header: ["Трекер UID", {content: "textFilter"}], sort: "int", minWidth: 140, fillspace: 1},
         {id: "ownername", header: ["Владелец", {content: "selectFilter"}], sort: "string", minWidth: 120, fillspace: 2},
@@ -62,8 +62,8 @@ const grid = {
     onClick: {
         "mdi-pencil": function (e, id) {
             this.select(id);
-            $$('history-list').clearAll();
-            $$('history-list').load("index.php?route=catalog/item/getItemHistory&token=" + token + "&item_id=" + this.getItem(id).item_id + "&owner_id=" + this.getItem(id).owner_id );
+            $$('history-grid').clearAll();
+            $$('history-grid').load("index.php?route=catalog/item/getItemHistory&token=" + token + "&item_id=" + this.getItem(id).item_id + "&owner_id=" + this.getItem(id).owner_id );
             $$('paging').hide();
             $$('edit-tools').hide();
             $$('edit-form-icon').show();
@@ -78,7 +78,7 @@ const grid = {
 var xml_format = webix.Date.strToDate("%Y-%m-%d");
 
 const history_grid = {
-    id: "history-list",
+    id: "history-grid",
     view: "datatable",
     select: "row",
 
@@ -87,7 +87,7 @@ const history_grid = {
         {map: "(date)#date_changed#", header: "Дата", sort: "date", minWidth: 120, format: webix.Date.dateToStr("%d.%m.%Y")},
         //{map: "(date)#date_modified#", header: "Дата m", sort: "date", minWidth: 120, format: webix.Date.dateToStr("%d.%m.%Y")},
         {id: "deleted", header: " ", sort: "int", width: 40, css: {"text-align": "center"}, template: delTemplate},
-        {id: "itemname", header: ["Название", {content: "selectFilter"}], sort: "string", minWidth: 120, fillspace: 2},
+        {id: "itemname", header: ["Объект", {content: "selectFilter"}], sort: "string", minWidth: 120, fillspace: 2},
         {id: "tracker_uid", header: ["Трекер UID", {content: "selectFilter"}], sort: "int", minWidth: 120, fillspace: 1},
         {id: "trackername", header: ["Трекер", {content: "selectFilter"}], sort: "int", minWidth: 120, fillspace: 1},
         {id: "sim1", header: ["SIM-1", {content: "selectFilter"}], sort: "int", minWidth: 120, fillspace: 1},

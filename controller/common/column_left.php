@@ -59,6 +59,14 @@ class ControllerCommonColumnLeft extends Controller {
                 'details' => 'заявки в техподдержку'
             );
 
+            $data['menus'][] = array(
+                'id' => 'history',
+                'value' => 'История',
+                'icon' => 'mdi mdi-calendar-search',
+                '$css' => 'history',
+                'details' => 'история жизни объектов'
+            );
+
             // Catalog
             $catalog = array();
 
