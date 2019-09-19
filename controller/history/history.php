@@ -1,5 +1,7 @@
 <?php
 
+use Cart\Length;
+
 require_once(DIR_SYSTEM . 'library/wtools/history.php');
 
 class ControllerHistoryHistory extends Controller
@@ -84,7 +86,7 @@ class ControllerHistoryHistory extends Controller
         }
 
         $this->response->addHeader('Content-Type: application/json');
-        $this->response->setOutput(json_encode($data['items'], JSON_UNESCAPED_UNICODE));
+        $this->response->setOutput(json_encode(['pos' => '0', 'total_count' => count($results), 'data' => $data['items']], JSON_UNESCAPED_UNICODE));
     }
 
     public function getForm()

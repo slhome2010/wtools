@@ -58,7 +58,7 @@ const hgrid = {
 	url:"index.php?route=history/history&token="+token,
     ready: function () {
         webix.extend(this, webix.ProgressBar);
-        this.sort({by: "date_changed", dir: "desc"});
+       // this.sort({by: "date_changed", dir: "desc"});
     }
 };
 

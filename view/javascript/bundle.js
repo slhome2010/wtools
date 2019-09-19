@@ -3981,7 +3981,7 @@ var hgrid = {
     url: "index.php?route=history/history&token=" + token,
     ready: function ready() {
         webix.extend(this, webix.ProgressBar);
-        this.sort({ by: "date_changed", dir: "desc" });
+        // this.sort({by: "date_changed", dir: "desc"});
     }
 };
 
@@ -6028,8 +6028,10 @@ var paging = {
 	cols: [{
 		view: "pager", id: "pagerA",
 		template: "{common.first()}{common.prev()}&nbsp; {common.pages()}&nbsp; {common.next()}{common.last()}",
-		autosize: true,
-		height: 35, group: 5
+		//autosize:true, 
+		size: 35,
+		height: 35,
+		group: 5
 	}]
 };
 
