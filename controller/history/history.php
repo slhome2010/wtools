@@ -53,38 +53,11 @@ class ControllerHistoryHistory extends Controller
         $results = $this->model_history_history->getHistory($filter_data);
 
         foreach ($results as $result) {
-            $data['items'][] = array(
-                'item_history_id' => $result['item_history_id'],
-                'item_id' => $result['item_id'],
-                'itemname' => $result['itemname'],
-                'wialon_id' => $result['wialon_id'],
-                'server_id' => $result['server_id'],
-                'servername' => $result['servername'],
-                'date_changed' => $result['date_changed'],
-                'date_modified' => $result['date_modified'],
-                'wialon_group_id' => $result['wialon_group_id'],
-                'wialon_groupname' => $result['wialon_groupname'],
-                'wialon_group_off' => $result['wialon_group_off'],
-                // 'tarif_group_id' => $result['tarif_group_id'],
-                // 'discount_group_id' => $result['discount_group_id'],
-                'owner_id' => $result['owner_id'],
-                'ownername' => $result['ownername'],
-                'tracker_uid' => $result['tracker_uid'],
-                'tracker_hw' => $result['tracker_hw'],
-                'trackername' => $result['trackername'],
-                'sim1' => $result['sim1'],
-                'sim2' => $result['sim2'],
-                'history_tarif_id' => $result['history_tarif_id'],
-                'history_discount_id' => $result['history_discount_id'],
-                //  'sort_order' => $result['sort_order'],
-                'deleted' => $result['deleted'] && ($result['date_changed'] >= $result['date_modified']) ? $result['deleted'] : 0,
-                'status' => $result['status'],
-                'online' => $result['online'],
-            );
+            $result['deleted'] = $result['deleted'] && ($result['date_changed'] >= $result['date_modified']) ? $result['deleted'] : 0;
         }
 
         $this->response->addHeader('Content-Type: application/json');
-        $this->response->setOutput(json_encode($data['items'], JSON_UNESCAPED_UNICODE));
+        $this->response->setOutput(json_encode($results, JSON_UNESCAPED_UNICODE));
     }
 
     public function getForm()
