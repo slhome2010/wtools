@@ -15,14 +15,39 @@ class ModelHistoryHistory extends Model
                 (SELECT tts.tracker_id FROM " . DB_PREFIX . "tracker_to_server tts WHERE i.server_id = tts.server_id AND ih.tracker_hw = tts.tracker_hw)) AS trackername,
                 (SELECT s.servername FROM " . DB_PREFIX . "server s WHERE i.server_id = s.server_id) AS servername                                
                 FROM " . DB_PREFIX . "item_history ih, " . DB_PREFIX . "item i, " . DB_PREFIX . "wialongroups wg , " . DB_PREFIX . "owner o 
-                WHERE ih.date_changed BETWEEN  '" . $data['date_start'] . "' AND  '" . $data['date_end'] . "' AND i.item_id = ih.item_id AND wg.wialon_group_id = ih.wialon_group_id AND o.owner_id = wg.owner_id"; 
+                WHERE ih.date_changed BETWEEN  '" . $data['date_start'] . "' AND  '" . $data['date_end'] . "' 
+                AND i.item_id = ih.item_id AND wg.wialon_group_id = ih.wialon_group_id AND o.owner_id = wg.owner_id"; 
                
                 $sql .= "  ORDER BY o.owner_id, ih.wialon_group_id, ih.date_changed DESC";
 
+                if (isset($data['start']) || isset($data['limit'])) {
+                    if ($data['start'] < 0) {
+                        $data['start'] = 0;
+                    }
+        
+                    if ($data['limit'] < 1) {
+                        $data['limit'] = 50;
+                    }
+        
+                    $sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+                }
 
         $query = $this->db->query($sql);
 
         return $query->rows;
+    }
+
+    public function getTotalHistory($data = array())
+    {       
+        $sql = "SELECT count(*)                           
+                FROM " . DB_PREFIX . "item_history ih, " . DB_PREFIX . "item i, " . DB_PREFIX . "wialongroups wg , " . DB_PREFIX . "owner o 
+                WHERE ih.date_changed BETWEEN  '" . $data['date_start'] . "' AND  '" . $data['date_end'] . "' 
+                AND i.item_id = ih.item_id AND wg.wialon_group_id = ih.wialon_group_id AND o.owner_id = wg.owner_id"; 
+                      
+
+        $query = $this->db->query($sql);
+
+        return $query->row['count(*)'];
     }
    
     public function addItemHistory($data)

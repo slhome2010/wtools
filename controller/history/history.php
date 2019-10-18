@@ -37,7 +37,7 @@ class ControllerHistoryHistory extends Controller
     {
         $this->load->model('history/history');
 
-        $data['items'] = array();
+       // $data['items'] = array();
         $date_start = (new DateTime())->format('Y-m-d');
         $date_end = (new DateTime())->format('Y-m-d');
        // if ($this->config->get('config_history_date_start')) {
@@ -46,55 +46,28 @@ class ControllerHistoryHistory extends Controller
        // if ($this->config->get('config_history_autoperiod') && $this->config->get('config_history_period')) {
        //     $date_start = (new DateTime('- ' . $this->config->get('config_history_period') . ' month'))->format('Y-m-d');
        // }
-
+      
         $filter_data = array(            
             'date_start' => isset($this->request->get['date_start']) ? (new DateTime($this->request->get['date_start']))->format("Y-m-d") : $date_start,
-            'date_end' => isset($this->request->get['date_end']) ? (new DateTime($this->request->get['date_end']))->format("Y-m-d") : $date_end,            
+            'date_end'   => isset($this->request->get['date_end']) ? (new DateTime($this->request->get['date_end']))->format("Y-m-d") : $date_end, 
+            'start'      => isset($this->request->get['start']) ? $this->request->get['start'] : 0,
+            'limit'      => isset($this->request->get['limit']) ? $this->request->get['limit'] : 2000           
         );
 
+        $total = $this->model_history_history->getTotalHistory($filter_data);
         $results = $this->model_history_history->getHistory($filter_data);
 
-        foreach ($results as $result) {
-            $data['items'][] = array(
-                'item_history_id' => $result['item_history_id'],
-                'item_id' => $result['item_id'],
-                'itemname' => $result['itemname'],
-                'wialon_id' => $result['wialon_id'],
-                'server_id' => $result['server_id'],
-                'servername' => $result['servername'],
-                'date_changed' => $result['date_changed'],
-                'date_modified' => $result['date_modified'],
-                'wialon_group_id' => $result['wialon_group_id'],
-                'wialon_groupname' => $result['wialon_groupname'],
-                'wialon_group_off' => $result['wialon_group_off'],
-                // 'tarif_group_id' => $result['tarif_group_id'],
-                // 'discount_group_id' => $result['discount_group_id'],
-                'owner_id' => $result['owner_id'],
-                'ownername' => $result['ownername'],
-                'tracker_uid' => $result['tracker_uid'],
-                'tracker_hw' => $result['tracker_hw'],
-                'trackername' => $result['trackername'],
-                'sim1' => $result['sim1'],
-                'sim2' => $result['sim2'],
-                'history_tarif_id' => $result['history_tarif_id'],
-                'history_discount_id' => $result['history_discount_id'],
-                //  'sort_order' => $result['sort_order'],
-                'deleted' => $result['deleted'] && ($result['date_changed'] >= $result['date_modified']) ? $result['deleted'] : 0,
-                'status' => $result['status'],
-                'online' => $result['online'],
-            );
+        foreach ($results as $result) {           
+            $result['deleted'] = $result['deleted'] && ($result['date_changed'] >= $result['date_modified']) ? $result['deleted'] : 0;               
         }
 
         $this->response->addHeader('Content-Type: application/json');
-        $this->response->setOutput(json_encode(['pos' => '0', 'total_count' => count($results), 'data' => $data['items']], JSON_UNESCAPED_UNICODE));
+        $this->response->setOutput(json_encode(['pos' => $filter_data['start'], 'total_count' => $total, 'data' => $results], JSON_UNESCAPED_UNICODE));
     }
 
     public function getForm()
     {
-        //CKEditor
-        //  $this->document->addScript('view/javascript/ckeditor/ckeditor.js');
-        //  $this->document->addScript('view/javascript/ckeditor/ckeditor_init.js');
-
+       
         $this->load->model('catalog/item');
         $data['heading_title'] = $this->language->get('heading_title');
 

@@ -6,8 +6,8 @@ const paging = {
 	cols: [{
 		view: "pager", id: "pagerA",
 		template: "{common.first()}{common.prev()}&nbsp; {common.pages()}&nbsp; {common.next()}{common.last()}",
-		//autosize:true, 
-		size: 35,
+		autosize:true, 
+		//size: 50,
 		height: 35,
 		group: 5
 	}]

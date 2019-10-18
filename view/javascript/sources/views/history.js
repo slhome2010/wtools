@@ -27,7 +27,7 @@ const hgrid = {
     id: "history-list",
     view: "datatable",
     select: "row",    
-    pager: "pagerA",
+    pager: "pagerA",   
     "export": true,
 
     columns: [
@@ -84,7 +84,7 @@ const hform = {
     //}
 };
 
-const item_views = {
+const views = {
     view: "multiview",
     id: "history-views",
     cells: [hgrid, hform, ]
@@ -96,6 +96,6 @@ const layout = {
     rows: [
         {height:40, id:"edit-tools", cols: outplugins.concat(daterange) },
         //{height: 40, id: "edit-form-icon", cols: toolplug, hidden: true},
-        {rows: [item_views, paging]}
+        {rows: [views, paging]}
     ]
 };

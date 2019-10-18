@@ -4000,7 +4000,7 @@ var hform = {
     //}
 };
 
-var item_views = {
+var views = {
     view: "multiview",
     id: "history-views",
     cells: [hgrid, hform]
@@ -4011,7 +4011,7 @@ var layout = {
     type: "space",
     rows: [{ height: 40, id: "edit-tools", cols: views_menus_export__WEBPACK_IMPORTED_MODULE_1__["default"].concat(views_menus_datebar__WEBPACK_IMPORTED_MODULE_2__["default"]) },
     //{height: 40, id: "edit-form-icon", cols: toolplug, hidden: true},
-    { rows: [item_views, views_modules_paging__WEBPACK_IMPORTED_MODULE_3__["default"]] }]
+    { rows: [views, views_modules_paging__WEBPACK_IMPORTED_MODULE_3__["default"]] }]
 };
 
 /***/ }),
@@ -4436,12 +4436,12 @@ var daterange = {
         cols: [{
             view: "datepicker", name: "date_start", label: "Начало", labelWidth: 80, value: new Date(), format: "%d.%m.%Y",
             on: {
-                "onChange": onChange
+                "onChange": onChange2
             }
         }, {
             view: "datepicker", name: "date_end", label: "Конец", labelWidth: 80, labelAlign: "right", value: new Date(), format: "%d.%m.%Y",
             on: {
-                "onChange": onChange
+                "onChange": onChange2
             }
         }]
     }]
@@ -4475,6 +4475,23 @@ function onChange(newVal, oldVal) {
     }
 
     values = picker_form.getValues(); // take new values
+    var date_start = months[values.date_start.getMonth()] + ' ' + values.date_start.getDate() + 'th, ' + values.date_start.getFullYear();
+    var date_end = months[values.date_end.getMonth()] + ' ' + values.date_end.getDate() + 'th, ' + values.date_end.getFullYear();
+
+    grid.clearAll();
+    grid.load(grid.config.url + "&date_start=" + date_start + "&date_end=" + date_end);
+}
+
+function onChange2(newVal, oldVal) {
+    var picker_form = this.getParentView().getParentView();
+    var grid = picker_form.getParentView().getParentView().queryView({ view: "datatable" });
+    var values = picker_form.getValues();
+
+    if (values.date_start > values.date_end) {
+        this.setValue(oldVal);
+        return;
+    }
+
     var date_start = months[values.date_start.getMonth()] + ' ' + values.date_start.getDate() + 'th, ' + values.date_start.getFullYear();
     var date_end = months[values.date_end.getMonth()] + ' ' + values.date_end.getDate() + 'th, ' + values.date_end.getFullYear();
 
@@ -6028,8 +6045,8 @@ var paging = {
 	cols: [{
 		view: "pager", id: "pagerA",
 		template: "{common.first()}{common.prev()}&nbsp; {common.pages()}&nbsp; {common.next()}{common.last()}",
-		//autosize:true, 
-		size: 35,
+		autosize: true,
+		//size: 50,
 		height: 35,
 		group: 5
 	}]
