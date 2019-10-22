@@ -73,7 +73,8 @@ function onChange2(newVal, oldVal) {
     
     grid.clearAll();
     grid.load(grid.config.url + "&date_start=" + date_start + "&date_end=" + date_end);
-    
+    grid.filterByAll();
+    //grid.sort();
 }
 
 export default daterange;

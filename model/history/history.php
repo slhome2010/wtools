@@ -28,16 +28,16 @@ class ModelHistoryHistory extends Model
             $sql .= " AND t.tracker_id = '" . $data['trackername'] . "'";
         }
         if (isset($data['itemname']) && $data['itemname']) {
-            $sql .= " AND i.itemname LIKE '%" . $data['itemname'] . "%'";
+            $sql .= " AND i.itemname LIKE '%" . $this->db->escape($data['itemname']) . "%'";
         }
         if (isset($data['tracker_uid']) && $data['tracker_uid']) {
-            $sql .= " AND ih.tracker_uid LIKE '%" . $data['tracker_uid'] . "%'";
+            $sql .= " AND ih.tracker_uid LIKE '%" . $this->db->escape($data['tracker_uid']) . "%'";
         }
         if (isset($data['sim1']) && $data['sim1']) {
-            $sql .= " AND ih.sim1 LIKE '%" . $data['sim1'] . "%'";
+            $sql .= " AND ih.sim1 LIKE '%" . $this->db->escape($data['sim1']) . "%'";
         }
         if (isset($data['sim2']) && $data['sim2']) {
-            $sql .= " AND ih.sim2 LIKE '%" . $data['sim2'] . "%'";
+            $sql .= " AND ih.sim2 LIKE '%" . $this->db->escape($data['sim2']) . "%'";
         }
         if (isset($data['wialon_group_off']) && $data['wialon_group_off'] != '') {
             $sql .= " AND ih.wialon_group_off = '" . $data['wialon_group_off'] . "'";
@@ -103,16 +103,16 @@ class ModelHistoryHistory extends Model
             $sql .= " AND t.tracker_id = '" . $data['trackername'] . "'";
         }
         if (isset($data['itemname']) && $data['itemname']) {
-            $sql .= " AND i.itemname LIKE '%" . $data['itemname'] . "%'";
+            $sql .= " AND i.itemname LIKE '%" . $this->db->escape($data['itemname']) . "%'";
         }
         if (isset($data['tracker_uid']) && $data['tracker_uid']) {
-            $sql .= " AND ih.tracker_uid LIKE '%" . $data['tracker_uid'] . "%'";
+            $sql .= " AND ih.tracker_uid LIKE '%" . $this->db->escape($data['tracker_uid']) . "%'";
         }
         if (isset($data['sim1']) && $data['sim1']) {
-            $sql .= " AND ih.sim1 LIKE '%" . $data['sim1'] . "%'";
+            $sql .= " AND ih.sim1 LIKE '%" . $this->db->escape($data['sim1']) . "%'";
         }
         if (isset($data['sim2']) && $data['sim2']) {
-            $sql .= " AND ih.sim2 LIKE '%" . $data['sim2'] . "%'";
+            $sql .= " AND ih.sim2 LIKE '%" . $this->db->escape($data['sim2']) . "%'";
         }
         if (isset($data['wialon_group_off']) && $data['wialon_group_off'] != '') {
             $sql .= " AND ih.wialon_group_off = '" . $data['wialon_group_off'] . "'";
