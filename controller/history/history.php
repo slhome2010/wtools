@@ -1,7 +1,5 @@
 <?php
 
-use Cart\Length;
-
 require_once(DIR_SYSTEM . 'library/wtools/history.php');
 
 class ControllerHistoryHistory extends Controller
@@ -37,21 +35,26 @@ class ControllerHistoryHistory extends Controller
     {
         $this->load->model('history/history');
 
-       // $data['items'] = array();
         $date_start = (new DateTime())->format('Y-m-d');
         $date_end = (new DateTime())->format('Y-m-d');
-       // if ($this->config->get('config_history_date_start')) {
-       //     $date_start = (new DateTime($this->config->get('config_history_date_start')))->format('Y-m-d');
-       // }
-       // if ($this->config->get('config_history_autoperiod') && $this->config->get('config_history_period')) {
-       //     $date_start = (new DateTime('- ' . $this->config->get('config_history_period') . ' month'))->format('Y-m-d');
-       // }
-      
+       
         $filter_data = array(            
             'date_start' => isset($this->request->get['date_start']) ? (new DateTime($this->request->get['date_start']))->format("Y-m-d") : $date_start,
             'date_end'   => isset($this->request->get['date_end']) ? (new DateTime($this->request->get['date_end']))->format("Y-m-d") : $date_end, 
             'start'      => isset($this->request->get['start']) ? $this->request->get['start'] : 0,
-            'limit'      => isset($this->request->get['limit']) ? $this->request->get['limit'] : 2000           
+            'limit'      => isset($this->request->get['limit']) ? $this->request->get['limit'] : 2000,
+            'ownername'  => isset($this->request->get['filter']['ownername']) ? $this->request->get['filter']["ownername"] : '',  
+            'wialon_groupname'  => isset($this->request->get['filter']['wialon_groupname']) ? $this->request->get['filter']["wialon_groupname"] : '',  
+            'trackername'=> isset($this->request->get['filter']['trackername']) ? $this->request->get['filter']["trackername"] : '',
+            'itemname'   => isset($this->request->get['filter']['itemname']) ? $this->request->get['filter']["itemname"] : '',
+            'tracker_uid'=> isset($this->request->get['filter']['tracker_uid']) ? $this->request->get['filter']["tracker_uid"] : '',
+            'sim1'       => isset($this->request->get['filter']['sim1']) ? $this->request->get['filter']["sim1"] : '', 
+            'sim2'       => isset($this->request->get['filter']['sim2']) ? $this->request->get['filter']["sim2"] : '', 
+            'wialon_group_off' => isset($this->request->get['filter']['wialon_group_off']) ? $this->request->get['filter']["wialon_group_off"] : '',
+            'online'     => isset($this->request->get['filter']['online']) ? $this->request->get['filter']["online"] : '',
+            'tarif'      => isset($this->request->get['filter']['price']) ? $this->request->get['filter']["price"] : '',
+            'discount'   => isset($this->request->get['filter']['history_discount_id']) ? $this->request->get['filter']["history_discount_id"] : '',  
+            'sort'       => isset($this->request->get['sort']) ? $this->request->get['sort'] : [],    
         );
 
         $total = $this->model_history_history->getTotalHistory($filter_data);
@@ -322,7 +325,7 @@ class ControllerHistoryHistory extends Controller
         $this->load->model('billing/discount');
         $arrayselect = [];
         $data['discounts'] = $this->model_billing_discount->getDiscounts();
-        $arrayselect[] = array('id' => '0', 'value' => '- Не выбрано -');
+        $arrayselect[] = array('id' => '0', 'value' => '');
         foreach ($data['discounts'] as $discount) {
             $arrayselect[] = array('id' => $discount['discount_id'], 'value' => $discount['discountname']);
         }
@@ -335,13 +338,55 @@ class ControllerHistoryHistory extends Controller
         $this->load->model('billing/tarif');
         $arrayselect = [];
         $data['tarifs'] = $this->model_billing_tarif->getTarifs();
-        $arrayselect[] = array('id' => '0', 'value' => '- Не выбрано -');
+        $arrayselect[] = array('id' => '0', 'value' => '');
+       // $arrayselect[] = array('id' => '0', 'value' => '- Не выбрано -');
         foreach ($data['tarifs'] as $tarif) {
             $arrayselect[] = array('id' => $tarif['tarif_id'], 'value' => $tarif['tarifname']);
         }
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($arrayselect));
     }
+
+    public function getOwners()
+    {
+        $this->load->model('catalog/owner');
+        $arrayselect = [];
+        $owners = $this->model_catalog_owner->getOwners();
+        $arrayselect[] = array('id' => '0', 'value' => '');
+        foreach ($owners as $owner) {
+           // $arrayselect[] =  $owner['ownername'];
+           $arrayselect[] = array('id' => $owner['owner_id'], 'value' => $owner['ownername']);
+        }
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($arrayselect));
+    }
+
+    public function getGroups()
+    {
+        $this->load->model('catalog/wialongroup');
+        $arrayselect = [];
+        $results = $this->model_catalog_wialongroup->getWialongroups();
+        $arrayselect[] = array('id' => '0', 'value' => '');
+        foreach ($results as $result) {           
+            $arrayselect[] = array('id' => $result['wialon_group_id'], 'value' => $result['wialon_groupname']);
+        }
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($arrayselect));
+    }
+
+    public function getTrackers()
+    {
+        $this->load->model('catalog/tracker');
+        $arrayselect = [];
+        $results = $this->model_catalog_tracker->getTrackers();
+        $arrayselect[] = array('id' => '0', 'value' => '');
+        foreach ($results as $result) {            
+            $arrayselect[] = array('id' => $result['tracker_id'], 'value' => $result['trackername']);
+        }
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($arrayselect));
+    }
+
 
     public function getItemHistory()
     {

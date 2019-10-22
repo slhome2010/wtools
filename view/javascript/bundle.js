@@ -3968,20 +3968,20 @@ var hgrid = {
     pager: "pagerA",
     "export": true,
 
-    columns: [{ id: "item_id", header: "Id", sort: "int", minWidth: 120 }, { map: "(date)#date_changed#", header: "Дата", sort: "date", minWidth: 120, format: webix.Date.dateToStr("%d.%m.%Y") },
-    //{map: "(date)#date_modified#", header: "Дата m", sort: "date", minWidth: 120, format: webix.Date.dateToStr("%d.%m.%Y")},
-    { id: "deleted", header: "<span class='webix_icon mdi mdi-window-close deleted'></span>", width: 40, css: { "text-align": "center" }, template: views_templates_deleted__WEBPACK_IMPORTED_MODULE_9__["default"] }, { id: "ownername", header: ["Владелец", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "wialon_groupname", header: ["Группа", { content: "selectFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "itemname", header: ["Объект", { content: "textFilter" }], sort: "string", minWidth: 120, fillspace: 2 }, { id: "tracker_uid", header: ["Трекер UID", { content: "textFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "trackername", header: ["Трекер", { content: "selectFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "sim1", header: ["SIM-1", { content: "textFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "sim2", header: ["SIM-2", { content: "textFilter" }], sort: "int", minWidth: 120, fillspace: 1 }, { id: "wialon_group_off", header: ["Вид", { content: "eyeFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 80, css: { "text-align": "center" }, template: views_templates_eye__WEBPACK_IMPORTED_MODULE_8__["default"] }, { id: "online", header: ["Состояние", { content: "onlFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 120, css: { "text-align": "center" }, template: views_templates_online__WEBPACK_IMPORTED_MODULE_10__["default"] }, { id: "history_tarif_id", header: ["Тариф", { content: "selectFilter" }], sort: "int", minWidth: 60, fillspace: 1 }, { id: "history_discount_id", header: ["Скидка", { content: "selectFilter" }], sort: "int", minWidth: 60, fillspace: 1 }],
+    columns: [{ id: "item_id", header: "Id", sort: "server", minWidth: 120 }, { map: "(date)#date_changed#", header: "Дата", sort: "server", minWidth: 120, format: webix.Date.dateToStr("%d.%m.%Y") }, { id: "deleted", header: "<span class='webix_icon mdi mdi-window-close deleted'></span>", width: 40, css: { "text-align": "center" }, template: views_templates_deleted__WEBPACK_IMPORTED_MODULE_9__["default"] }, { id: "ownername", header: ["Владелец", { content: "serverSelectFilter", options: "index.php?route=history/history/getOwners&token=" + token }], sort: "server", minWidth: 120, fillspace: 2 }, { id: "wialon_groupname", header: ["Группа", { content: "serverSelectFilter", options: "index.php?route=history/history/getGroups&token=" + token }], sort: "server", minWidth: 120, fillspace: 2 }, { id: "itemname", header: ["Объект", { content: "serverFilter" }], sort: "server", minWidth: 120, fillspace: 2 }, { id: "tracker_uid", header: ["Трекер UID", { content: "serverFilter" }], sort: "server", minWidth: 120, fillspace: 1 }, { id: "trackername", header: ["Трекер", { content: "serverSelectFilter", options: "index.php?route=history/history/getTrackers&token=" + token }], sort: "server", minWidth: 120, fillspace: 1 }, { id: "sim1", header: ["SIM-1", { content: "serverFilter" }], sort: "server", minWidth: 120, fillspace: 1 }, { id: "sim2", header: ["SIM-2", { content: "serverFilter" }], sort: "server", minWidth: 120, fillspace: 1 }, { id: "wialon_group_off", header: ["Вид", { content: "eyeFilter", css: "webix_ss_filter" }], sort: "server", minWidth: 80, css: { "text-align": "center" }, template: views_templates_eye__WEBPACK_IMPORTED_MODULE_8__["default"] }, { id: "online", header: ["Состояние", { content: "onlFilter", css: "webix_ss_filter" }], sort: "server", minWidth: 120, css: { "text-align": "center" }, template: views_templates_online__WEBPACK_IMPORTED_MODULE_10__["default"] }, { id: "price", header: ["Тариф", { content: "selectFilter", options: "index.php?route=history/history/getTarifs&token=" + token }], sort: "server", minWidth: 60, fillspace: 1 }, { id: "history_discount_id", header: ["Скидка", { content: "selectFilter", options: "index.php?route=history/history/getDiscounts&token=" + token }], sort: "server", minWidth: 60, fillspace: 1 }],
     scheme: {
         // init не срабатывает в данной ситуации (возможно из-за внешней принудительной загрузки или из-за map)
         $init: function $init(obj) {
-            if (obj.deleted == 1) obj.$css = "deleted";
-            obj.date_changed = xml_format(obj.date_start);
+            //   if (obj.deleted == 1)
+            //      obj.$css = "deleted";
+            //  obj.date_changed = xml_format(obj.date_start);
         }
     },
     url: "index.php?route=history/history&token=" + token,
     ready: function ready() {
         webix.extend(this, webix.ProgressBar);
-        // this.sort({by: "date_changed", dir: "desc"});
+        // Client sorting can't be used with dynamic loading
+        // this.sort({by: "date_changed", dir: "desc"}); 
     }
 };
 
