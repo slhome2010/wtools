@@ -20,24 +20,7 @@ class ModelCatalogItem extends Model
 
         $this->cache->delete('item');
     }
-
-    public function addGroupHistory($data)
-    {
-        $sql = "UPDATE " . DB_PREFIX . "item_history SET  history_tarif_id = '" . (int) $data['history_tarif_id'] . "', history_discount_id = '" . (int) $data['history_discount_id'] . "'"
-            . ", wialon_group_off = '" . (int) $data['wialon_group_off'] . "'"
-            . " WHERE wialon_group_id = '" . (int) $data['wialon_group_id'] . "' AND  date_changed >= '" . $data['date_changed'] . "'";
-
-        // If group tarif or group discount has been changed
-        if (isset($data['old_discount_id']))
-            $sql .= " AND (history_discount_id = '" . (int) $data['old_discount_id'] . "' OR history_discount_id = '0')";
-        if (isset($data['old_tarif_id']))
-            $sql .= " AND (history_tarif_id = '" . (int) $data['old_tarif_id'] . "' OR history_tarif_id = '0')";
-
-        $this->db->query($sql);
-
-        $this->cache->delete('item');
-    }
-
+   
     public function getItem($item_id)
     {
         $sql = "SELECT i.item_id, i.itemname, i.wialon_id, i.date_created, i.date_last, i.date_modified, i.server_id,

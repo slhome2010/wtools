@@ -168,6 +168,7 @@ class ControllerReportBilling extends Controller {
         $this->load->model('catalog/owner');
         $this->load->model('catalog/wialongroup');
         $this->load->model('billing/tarif');
+        $this->load->model('history/history');
 
         $checked = explode(',', trim($this->request->post['checked'],'[]'));
         $checked_obj = [];
@@ -201,7 +202,7 @@ class ControllerReportBilling extends Controller {
             'limit' => 0
         );
 
-        $items = $this->model_catalog_item->getItemsFromHistory($filter_data);
+        $items = $this->model_history_history->getItemsFromHistory($filter_data);
         $data['items'] = array();
         $total = 0;
         $data['billings'] = array();

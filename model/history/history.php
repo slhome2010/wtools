@@ -12,7 +12,8 @@ class ModelHistoryHistory extends Model
                 i.server_id, i.wialon_id, i.deleted, i.status, i.date_created, i.date_modified, i.date_last, i.tarif_id, i.discount_id, i.sort_order,
                 ih.tracker_uid, ih.tracker_hw, t.trackername, ih.sim1, ih.sim2,
                 (SELECT s.servername FROM " . DB_PREFIX . "server s WHERE i.server_id = s.server_id) AS servername
-                FROM " . DB_PREFIX . "item_history ih LEFT JOIN " . DB_PREFIX . "tarif tr ON (ih.history_tarif_id = tr.tarif_id), " . DB_PREFIX . "item i, " . DB_PREFIX . "wialongroups wg , " . DB_PREFIX . "owner o, " . DB_PREFIX . "tracker t
+                FROM " . DB_PREFIX . "item_history ih LEFT JOIN " . DB_PREFIX . "tarif tr ON (ih.history_tarif_id = tr.tarif_id), 
+                " . DB_PREFIX . "item i, " . DB_PREFIX . "wialongroups wg , " . DB_PREFIX . "owner o, " . DB_PREFIX . "tracker t
                 WHERE ih.date_changed BETWEEN  '" . $data['date_start'] . "' AND  '" . $data['date_end'] . "'
                 AND i.item_id = ih.item_id AND wg.wialon_group_id = ih.wialon_group_id AND o.owner_id = wg.owner_id
                 AND t.tracker_id = (SELECT tts.tracker_id FROM " . DB_PREFIX . "tracker_to_server tts WHERE i.server_id = tts.server_id AND ih.tracker_hw = tts.tracker_hw)";

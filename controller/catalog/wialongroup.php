@@ -26,6 +26,7 @@ class ControllerCatalogWialongroup extends Controller {
     public function edit() {
         $this->load->model('catalog/wialongroup');
         $this->load->model('catalog/item');
+        $this->load->model('history/history');
 
         if (($this->request->server['REQUEST_METHOD'] == 'POST')) {
             $this->model_catalog_wialongroup->editWialongroup($this->request->post['wialon_group_id'], $this->request->post);
@@ -44,7 +45,7 @@ class ControllerCatalogWialongroup extends Controller {
                 $history_data['old_discount_id'] = $this->request->post['old_discount_id'];
             }
 
-            $this->model_catalog_item->addGroupHistory($history_data);
+            $this->model_history_history->addGroupHistory($history_data);
         }
     }
 
