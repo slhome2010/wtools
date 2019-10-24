@@ -67,6 +67,7 @@ class ModelOrderOrder extends Model
                // 'TicketCreateTimeNewerMinutes' => $timeRange, //Заявки за последние 3 дня
                 'TicketCreateTimeNewerDate' => $now->format('Y') . '-01-01 00:00:01', 
                 'SortBy'  => 'Age',
+                'Limit'   => '10000',
             ]
         );
 
