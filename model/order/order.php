@@ -65,8 +65,9 @@ class ModelOrderOrder extends Model
                 'SessionID' => $sessid,
                 'StateType' => $statetype,
                // 'TicketCreateTimeNewerMinutes' => $timeRange, //Заявки за последние 3 дня
-                'TicketCreateTimeNewerDate' => $now->format('Y') . '-01-01 00:00:01', 
+                'TicketCreateTimeNewerDate' => $now->format('Y') . '-01-01 00:00:01',
                 'SortBy'  => 'Age',
+                'Limit'   => '10000',
             ]
         );
 
@@ -142,8 +143,8 @@ class ModelOrderOrder extends Model
         $param = json_encode(
             [
                 'SessionID' => $sessid,
-                'StateType' => ['new', 'open', 'closed'],                
-                'TicketCreateTimeNewerDate' => $now->format('Y') . '-' . (string)$month . '-01 00:00:01', 
+                'StateType' => ['new', 'open', 'closed'],
+                'TicketCreateTimeNewerDate' => $now->format('Y') . '-' . (string)$month . '-01 00:00:01',
                 'TicketCreateTimeOlderDate' => $now->format('Y') . '-' . (string)$month . '-' . $number . ' 23:59:59',
                 'SortBy'  => 'Age',
             ]
@@ -192,8 +193,8 @@ class ModelOrderOrder extends Model
         $param = json_encode(
             [
                 'SessionID' => $sessid,
-                'StateType' => ['closed'],                
-                'TicketLastChangeTimeNewerDate' => $now->format('Y') . '-' . (string)$month . '-01 00:00:01', 
+                'StateType' => ['closed'],
+                'TicketLastChangeTimeNewerDate' => $now->format('Y') . '-' . (string)$month . '-01 00:00:01',
                 'TicketLastChangeTimeOlderDate' => $now->format('Y') . '-' . (string)$month . '-' . $number . ' 23:59:59',
                 'SortBy'  => 'Age',
             ]
