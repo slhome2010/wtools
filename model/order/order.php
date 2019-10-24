@@ -58,7 +58,8 @@ class ModelOrderOrder extends Model
             return;
         }
 
-        $now = new DateTime();
+        $now = new DateTime();         
+        $now->modify( '-14 month' );
 
         $param = json_encode(
             [
