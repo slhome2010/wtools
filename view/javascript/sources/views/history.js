@@ -15,8 +15,7 @@ export default class ItemView extends JetView {
         return layout;
     }
     init(view) {
-        webix.extend(view.queryView({view: "datatable"}), webix.ProgressBar);
-        $$('history-form').bind($$('history-list'));     
+        webix.extend(view.queryView({view: "datatable"}), webix.ProgressBar);         
     }
 }
 
@@ -51,17 +50,11 @@ const hgrid = {
     }
 };
 
-const views = {
-    view: "multiview",
-    id: "history-views",
-    cells: [hgrid, hform, ]
-};
-
 const layout = {
     id: "layout",
     type: "space",
     rows: [
         {height:40, id:"edit-tools", cols: outplugins.concat(daterange) },        
-        {rows: [views, paging]}
+        {rows: [grid, paging]}
     ]
 };

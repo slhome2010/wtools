@@ -3949,7 +3949,6 @@ var ItemView = function (_JetView) {
 
     ItemView.prototype.init = function init(view) {
         webix.extend(view.queryView({ view: "datatable" }), webix.ProgressBar);
-        $$('history-form').bind($$('history-list'));
     };
 
     return ItemView;
@@ -3974,16 +3973,10 @@ var hgrid = {
     }
 };
 
-var views = {
-    view: "multiview",
-    id: "history-views",
-    cells: [hgrid, hform]
-};
-
 var layout = {
     id: "layout",
     type: "space",
-    rows: [{ height: 40, id: "edit-tools", cols: views_menus_export__WEBPACK_IMPORTED_MODULE_1__["default"].concat(views_menus_datebar__WEBPACK_IMPORTED_MODULE_2__["default"]) }, { rows: [views, views_modules_paging__WEBPACK_IMPORTED_MODULE_3__["default"]] }]
+    rows: [{ height: 40, id: "edit-tools", cols: views_menus_export__WEBPACK_IMPORTED_MODULE_1__["default"].concat(views_menus_datebar__WEBPACK_IMPORTED_MODULE_2__["default"]) }, { rows: [grid, views_modules_paging__WEBPACK_IMPORTED_MODULE_3__["default"]] }]
 };
 
 /***/ }),
