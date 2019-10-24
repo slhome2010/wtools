@@ -55,6 +55,6 @@ const layout = {
     type: "space",
     rows: [
         {height:40, id:"edit-tools", cols: outplugins.concat(daterange) },        
-        {rows: [grid, paging]}
+        {rows: [hgrid, paging]}
     ]
 };

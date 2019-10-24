@@ -3976,7 +3976,7 @@ var hgrid = {
 var layout = {
     id: "layout",
     type: "space",
-    rows: [{ height: 40, id: "edit-tools", cols: views_menus_export__WEBPACK_IMPORTED_MODULE_1__["default"].concat(views_menus_datebar__WEBPACK_IMPORTED_MODULE_2__["default"]) }, { rows: [grid, views_modules_paging__WEBPACK_IMPORTED_MODULE_3__["default"]] }]
+    rows: [{ height: 40, id: "edit-tools", cols: views_menus_export__WEBPACK_IMPORTED_MODULE_1__["default"].concat(views_menus_datebar__WEBPACK_IMPORTED_MODULE_2__["default"]) }, { rows: [hgrid, views_modules_paging__WEBPACK_IMPORTED_MODULE_3__["default"]] }]
 };
 
 /***/ }),
