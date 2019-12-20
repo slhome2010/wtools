@@ -283,7 +283,7 @@ Class History {
         // Дата модификации пишется каждый день, если остановилась то объект возможно удален (проверяется статус deleted)
         // Если объект не удален и дата пишется, то проверяется статус группы на отключенность
         // >= или > надо уточнить
-        $delete_status = $event_date >= $this->date_modified ? $event['deleted'] : $event['wialon_group_off'];
+        $delete_status = $event_date > $this->date_modified ? $event['deleted'] : $event['wialon_group_off'];
         $owner_status = $this->owner_id == $event['owner_id'] ? 0 : 1;
 
         $event_status = $delete_status || $owner_status;

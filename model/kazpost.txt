@@ -1,0 +1,46 @@
+FAULT 1
+FAULT 1
+FAULT 2
+FAULT 1
+FAULT 1
+FAULT 2
+FAULT 1
+FAULT 1
+FAULT 2
+FAULT 1
+FAULT 2
+FAULT 1
+FAULT 1
+FAULT 1
+FAULT 1
+FAULT 2
+FAULT Данные недоступны
+FAULT 1
+FAULT 2
+FAULT Данные недоступны
+FAULT 1
+FAULT 2
+FAULT Данные недоступны
+FAULT 1
+FAULT 2
+FAULT Данные недоступны
+stdClass Object
+(
+    [MailInfo] => MailInfo Object
+        (
+            [Product] => 7
+            [MailCat] => 0
+            [SendMethod] => 2
+            [Weight] => 1000
+            [From] => 11
+            [To] => 8
+            [SpecMarks] => 
+            [InCity] => 
+            [ExpressDlv] => 
+            [Size] => 
+            [DeclaredValue] => 
+            [Client] => 
+        )
+
+)
+

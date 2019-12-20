@@ -206,7 +206,7 @@ class ControllerCatalogOwner extends Controller {
         } elseif (!empty($owner_info)) {
             $data['status'] = $owner_info['status'];
         } else {
-            $data['status'] = 0;
+            $data['status'] = 1;
         }
 
         $this->response->addHeader('Content-Type: application/json');

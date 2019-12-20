@@ -1,7 +1,7 @@
 <?php echo $header; ?>
 
 <style>
-    #areaA{
+    #areaA {
         margin: 0px;
     }
 </style>
