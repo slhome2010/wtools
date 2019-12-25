@@ -9,8 +9,9 @@ Class History {
     private $history_intervals;              // интервалы между событиями
     private $date_start, $date_end;          // начало и конец расчетного периода
     private $date_start_ymd, $date_end_ymd;  // начало и конец в строковом представлении
-    private $date_created;                   // дата создания объекта
-    private $date_modified;                  // дата модификации ишется ежедневно пока существует объект
+    private $date_created;                   // дата создания объекта создается однажды i.date_created
+    private $date_modified;                  // дата модификации создается ежедневно пока существует объект i.date_modified
+                                             // дата изменения создается ежедневно в истории ih.date_changed
     private $history_date_start, $history_date_end;  // начало и конец истории
     private $months;
     private $db;
@@ -214,7 +215,7 @@ Class History {
             $current = current($this->history_events);
             $next = next($this->history_events);
             $date_current = new DateTime($current['date_changed']);
-            $date_next = $next ? new DateTime($next['date_changed'] . '-1 day') : $date_current;
+            $date_next = $next && $next['date_changed'] !== $current['date_changed'] ? new DateTime($next['date_changed'] . '-1 day') : $date_current;
 
             // if ($next) {
             $intervals[] = array(
@@ -285,8 +286,10 @@ Class History {
         // >= или > надо уточнить
         $delete_status = $event_date > $this->date_modified ? $event['deleted'] : $event['wialon_group_off'];
         $owner_status = $this->owner_id == $event['owner_id'] ? 0 : 1;
+        // возможно объект был создан и удален в один и тот же день
+        $create_error_status = $this->date_modified == $this->date_created && $event['deleted'] ? 1 : 0;
 
-        $event_status = $delete_status || $owner_status;
+        $event_status = $create_error_status || $delete_status || $owner_status;
 
         return $event_status ;
     }
