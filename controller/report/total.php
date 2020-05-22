@@ -46,14 +46,28 @@ class ControllerReportTotal extends Controller {
         $json = array();
         $this->load->model('report/total');
 
-        $months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        $startDate = new DateTime('last day of this month');
+        $startDate->modify('-1 year');
+        $endDate = new DateTime();
+        // $interval = new \DateInterval('P1M');
+        $interval = DateInterval::createFromDateString('last day of next month');
+        $period = new DatePeriod($startDate, $interval, $endDate);
+
+        $months = [];
+        foreach ($period as $date) {
+         $months[] = $date->format('Y-m-d');
+        }
+        $months[] = $endDate->format('Y-m-d');
+        //$months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
         $id = 1;
         foreach ($months as $month) {
-            $filter['date_start'] = (new DateTime('last day of ' . $month))->format("Y-m-d");
+           // $filter['date_start'] = (new DateTime('last day of ' . $month))->format("Y-m-d");
+            $filter['date_start'] = $month;
             $totals = $this->model_report_total->getTotalObjectsHistory($filter);
             $json[] = array(
                 'id' => (string) $id++,
-                'month' => $month,
+                'month' => date('My',strtotime($month)),
                 'total_objects' => $totals['total_objects'],
                 'total_online' => $totals['total_online'],
                 'total_offline' => $totals['total_offline'],
