@@ -69,6 +69,7 @@ class ControllerReportTotal extends Controller {
                 'id' => (string) $id++,
                 'month' => date('My',strtotime($month)),
                 'total_objects' => $totals['total_objects'],
+                'total_on' => (string) ((int)$totals['total_objects'] - (int)$totals['total_off']),
                 'total_online' => $totals['total_online'],
                 'total_offline' => $totals['total_offline'],
                 'total_off' => $totals['total_off'],
