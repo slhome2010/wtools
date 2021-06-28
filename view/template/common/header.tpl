@@ -19,7 +19,7 @@
 <script src="view/javascript/codebase/webix.js" type="text/javascript" charset="utf-8"></script>
 <script src="view/javascript/codebase/i18n/ru.js" type="text/javascript" charset="utf-8"></script>
 <link href="view/javascript/codebase/webix.css" type="text/css" rel="stylesheet" media="screen" charset="utf-8"/>
-<link href="https://cdn.materialdesignicons.com/2.8.94/css/materialdesignicons.min.css" type="text/css" rel="stylesheet" media="screen" charset="utf-8"/>
+<link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" type="text/css" rel="stylesheet" media="screen" charset="utf-8"/>
 <link href="view/stylesheet/admin.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
 <link href="view/stylesheet/stylesheet.css" type="text/css" rel="stylesheet" media="screen" charset="utf-8"/>
 
