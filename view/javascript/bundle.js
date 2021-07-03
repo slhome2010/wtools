@@ -4514,7 +4514,7 @@ var controls = [{ view: "icon", type: "icon", borderless: false, icon: "mdi mdi-
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var controls = [{ view: "icon", type: "icon", borderless: false, icon: "mdi mdi-file-document-box", tooltip: "Просмотр карточки", click: function click() {
+var controls = [{ view: "icon", type: "icon", borderless: false, icon: "mdi mdi-file-document", tooltip: "Просмотр карточки", click: function click() {
 		//webix.toPNG(webix.grid);
 	}
 }, {}];
@@ -6899,8 +6899,8 @@ var grid = {
     // При необходимости можно вычислять возраст непосредственно в скрипте в разделе $init
     //{id: "_age", header: ["Возраст", {content: "textFilter"}], sort: sortByAge, minWidth: 100, fillspace: 2 },
     { id: "StateType", header: ["Статус", { content: "staFilter", css: "webix_ss_filter" }], sort: "int", minWidth: 100, fillspace: 1,
-        editor: "inline-checkbox", template: views_templates_order_states__WEBPACK_IMPORTED_MODULE_5__["default"], tooltip: false }, { id: "edit", header: "<span class='webix_icon mdi mdi-file-document-box'></span>", width: 35, tooltip: 'Просмотр заявки',
-        template: "<span  style=' cursor:pointer;' class='webix_icon mdi mdi-file-document-box'></span>"
+        editor: "inline-checkbox", template: views_templates_order_states__WEBPACK_IMPORTED_MODULE_5__["default"], tooltip: false }, { id: "edit", header: "<span class='webix_icon mdi mdi-file-document'></span>", width: 35, tooltip: 'Просмотр заявки',
+        template: "<span  style=' cursor:pointer;' class='webix_icon mdi mdi-file-document'></span>"
     }],
     scheme: {
         $init: function $init(obj) {

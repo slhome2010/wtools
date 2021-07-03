@@ -100,8 +100,8 @@ const grid = {
         //{id: "_age", header: ["Возраст", {content: "textFilter"}], sort: sortByAge, minWidth: 100, fillspace: 2 },
         {id: "StateType", header: ["Статус", {content: "staFilter", css: "webix_ss_filter"}], sort: "int", minWidth: 100, fillspace: 1,
             editor: "inline-checkbox", template: staTemplate, tooltip: false},
-        {id: "edit", header: "<span class='webix_icon mdi mdi-file-document-box'></span>", width: 35, tooltip: 'Просмотр заявки',
-            template: "<span  style=' cursor:pointer;' class='webix_icon mdi mdi-file-document-box'></span>"
+        {id: "edit", header: "<span class='webix_icon mdi mdi-file-document'></span>", width: 35, tooltip: 'Просмотр заявки',
+            template: "<span  style=' cursor:pointer;' class='webix_icon mdi mdi-file-document'></span>"
         },
     ],
     scheme: {
