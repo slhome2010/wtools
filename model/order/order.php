@@ -1,5 +1,5 @@
 <?php
-define('BASEURL', 'http://curator.kz/support/nph-genericinterface.pl/Webservice/tickets');
+define('BASEURL', 'https://www.curator.kz/support/nph-genericinterface.pl/Webservice/tickets');
 
 class ModelOrderOrder extends Model
 {

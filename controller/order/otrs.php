@@ -1,5 +1,5 @@
 <?php
-    $BaseURL = 'http://curator.kz/support/nph-genericinterface.pl/Webservice/tickets';
+    $BaseURL = 'https://www.curator.kz/support/nph-genericinterface.pl/Webservice/tickets';
     
     $curl = curl_init();
     
