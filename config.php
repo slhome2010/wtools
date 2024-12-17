@@ -10,7 +10,7 @@ define('HTTPS_SERVER', 'http://' . $host . '/');
 define('HTTPS_CATALOG', 'http://' . $host . '/');
 
 // DIR
-define('DIR_DOCROOT', 'C:/WebServer/Site/localhost/wtools/');
+define('DIR_DOCROOT', 'G:/WebSites/wtools/');
 define('DIR_APPLICATION', DIR_DOCROOT . '');
 define('DIR_SYSTEM', DIR_DOCROOT . 'system/');
 define('DIR_LANGUAGE', DIR_DOCROOT . 'language/');
